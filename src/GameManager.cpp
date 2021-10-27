@@ -2,12 +2,14 @@
 #include <cmath>
 #include <iostream>
 
+const sf::Vector2u windowSize {1280, 720};
+
 GameManager::GameManager() : 
     // First thing we want to do is create a window
     // TODO: Name and size subject to change
-    _gameWindow {sf::VideoMode(1280, 720), "Hallowed Soul"}, 
+    _gameWindow {sf::VideoMode(windowSize.x, windowSize.y), "Hallowed Soul"}, 
     // Initialize the view (camera) 
-    _view {sf::FloatRect(0, 0, 1280.0 / 2.0, 720.0 / 2.0)}
+    _view {sf::FloatRect(0, 0, windowSize.x/2, windowSize.y/2)}
 {
     // Set default game state
     // TODO: If we have a main menu, change the default state to that
@@ -137,9 +139,9 @@ void GameManager::drawFrame()
     // need to update the camera before drawing anything
     // updateView();
 
+    updateViewLoose();
     drawMap();
     // updateViewLocked();
-    updateViewLoose();
 
     // Drawing an entity has two steps: calling the onDraw method to update the entity's sprite
     // and calling the game window draw function
@@ -149,47 +151,6 @@ void GameManager::drawFrame()
 
     // Finally, display the window
     _gameWindow.display();    
-}
-
-void GameManager::updateView()
-{
-    // TODO: this is a mess, clean it up
-
-    // I want to define a 100x50 rectangle in the middle of the view.
-    // If the player walks outside of this rectangle, then we should
-    // move the view to follow it and keep it in the rectangle.
-    const int centerRectWidth = 100;
-    const int centerRectHeight = 50;
-    sf::Vector2i posInView = _gameWindow.mapCoordsToPixel(static_cast<sf::Vector2f>(this->_player.getPosition()));
-    sf::Vector2i viewCenter = static_cast<sf::Vector2i>(_view.getSize() * 0.5f);
-    sf::Vector2i displFromCenter = posInView - viewCenter;
-    sf::Vector2i outsideRect {0, 0}; // Vector that gives us how outside of the rectangle we are
-    if (displFromCenter.x < -(centerRectWidth/2))
-        outsideRect.x = displFromCenter.x + (centerRectWidth/2);
-    else if (displFromCenter.x > (centerRectWidth/2))
-        outsideRect.x = displFromCenter.x - (centerRectWidth/2);
-    
-    if (displFromCenter.y < -(centerRectHeight/2))
-        outsideRect.y = displFromCenter.y + (centerRectHeight/2);
-    else if (displFromCenter.y > (centerRectHeight/2))
-        outsideRect.y = displFromCenter.y - (centerRectHeight/2);
-
-    sf::Vector2i topLeft = static_cast<sf::Vector2i>(_gameWindow.mapPixelToCoords({0, 0}));
-    sf::Vector2i bottomRight = static_cast<sf::Vector2i>(_gameWindow.mapPixelToCoords(static_cast<sf::Vector2i>(_view.getSize())));
-    sf::Vector2i translateView = outsideRect;
-    if (topLeft.x + outsideRect.x < 0)
-        translateView.x = -topLeft.x;
-    else if (bottomRight.x + outsideRect.x > _gameWindow.getSize().x)
-        translateView.x = _gameWindow.getSize().x - bottomRight.x;
-
-    if (topLeft.y + outsideRect.y < 0)
-        translateView.y = -topLeft.y;
-    else if (bottomRight.y + outsideRect.y > _gameWindow.getSize().y)
-        translateView.y = _gameWindow.getSize().y - bottomRight.y;
-
-    _view.move(static_cast<sf::Vector2f>(translateView));
-
-    _gameWindow.setView(_view);
 }
 
 void GameManager::drawMap()
@@ -215,34 +176,63 @@ void GameManager::updateViewLocked()
 void GameManager::updateViewLoose()
 {
     //TODO: restrict camera to the map bounds? move to some place else? adjust buffers?
-    sf::View view = _gameWindow.getView();
-    const sf::Vector2f& viewCenter = view.getCenter();
+    const sf::Vector2f& viewCenter = _view.getCenter();
     const sf::Vector2f& playerLocation = this->_player.getPosition();
     const sf::Vector2u& windowSize = _gameWindow.getSize();
+    sf::Vector2f viewSize = _view.getSize();
     const float playerCamDistX = playerLocation.x - viewCenter.x;
     const float playerCamDistY = playerLocation.y - viewCenter.y;
     const float xBufferSize = windowSize.x * 3/40;
     const float yBufferSize = windowSize.y * 1/40;
 
+    // Get the corners of the world in the view's coordinate frame
+    sf::Vector2f worldTopLeft = static_cast<sf::Vector2f>(_gameWindow.mapCoordsToPixel({0.0f, 0.0f}));
+    sf::Vector2f worldBottomRight = static_cast<sf::Vector2f>(_gameWindow.mapCoordsToPixel(static_cast<sf::Vector2f>(windowSize)));
+
+    std::cout << "Top left: " << worldTopLeft.x << " " << worldTopLeft.y << "\n";
+    std::cout << "Bottom right: " << worldBottomRight.x << " " << worldBottomRight.y << "\n";
+
+    // Define a "move" vector to determine how much to move the view.
+    sf::Vector2f moveView {0.0, 0.0};
+
+
     // If you go past the "buffer" X zone the camera will reposition horizontally.
     if (xBufferSize < std::abs(playerCamDistX)) {
         if (playerLocation.x > viewCenter.x) { // player is to the right of the camera
-            view.setCenter(sf::Vector2f{viewCenter.x + (playerCamDistX - xBufferSize), viewCenter.y});
+            moveView.x = playerCamDistX - xBufferSize; // init move vector x to the amount which the player is outside the buffer
+
+            // Don't allow the view to go past the edge of the window
+            if (worldBottomRight.x < viewSize.x + moveView.x) // if the view would go past the right edge of the world
+                moveView.x = worldBottomRight.x - viewSize.x;
            
         } else if (playerLocation.x < viewCenter.x){ // player is to the left of the camera
-            view.setCenter(sf::Vector2f{viewCenter.x - (std::abs(playerCamDistX) - xBufferSize), viewCenter.y});
+            moveView.x = -(std::abs(playerCamDistX) - xBufferSize);
+
+            if (moveView.x < worldTopLeft.x) // if the amount we are trying to move is farther than the left edge of the world in the view's coordinate frame
+            // i.e. the view would go past the left edge of the world
+                moveView.x = worldTopLeft.x;
         }
     }
 
     // If you go past the "buffer" Y zone the camera will reposition vertically.
     if (yBufferSize < std::abs(playerCamDistY)) {
         if (playerLocation.y > viewCenter.y) { // player is to below the camera
-            view.setCenter(sf::Vector2f{viewCenter.x, viewCenter.y + (playerCamDistY - yBufferSize)});
+            moveView.y = playerCamDistY - yBufferSize;
+
+            if (moveView.y > worldBottomRight.y - viewSize.y) // if the view would go past the bottom edge of the world
+                moveView.y = worldBottomRight.y - viewSize.y;
            
         } else if (playerLocation.y < viewCenter.y){ // player is above of the camera
-            view.setCenter(sf::Vector2f{viewCenter.x, viewCenter.y - (std::abs(playerCamDistY) - yBufferSize)});
+            moveView.y = -(std::abs(playerCamDistY) - yBufferSize);
+
+            if (moveView.y < worldTopLeft.y) // if the view would go past the top edge of the world
+                moveView.y = worldTopLeft.y;
         }
     }
 
-    _gameWindow.setView(view);
+    std::cout << "Move view: " << moveView.x << " " << moveView.y << "\n";
+
+    _view.move(moveView);
+
+    _gameWindow.setView(_view);
 }
