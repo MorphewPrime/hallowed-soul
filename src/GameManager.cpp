@@ -1,12 +1,13 @@
 #include "GameManager.h"
 #include <cmath>
+#include <iostream>
 
 GameManager::GameManager() : 
     // First thing we want to do is create a window
     // TODO: Name and size subject to change
     _gameWindow {sf::VideoMode(1280, 720), "Hallowed Soul"}, 
     // Initialize the view (camera) 
-    _view {sf::FloatRect(0.0, 0.0, 1280.0 / 2.0, 720.0 / 2.0)}
+    _view {sf::FloatRect(0, 0, 1280.0 / 2.0, 720.0 / 2.0)}
 {
     // Set default game state
     // TODO: If we have a main menu, change the default state to that
@@ -136,6 +137,10 @@ void GameManager::drawFrame()
     // need to update the camera before drawing anything
     // updateView();
 
+    drawMap();
+    // updateViewLocked();
+    updateViewLoose();
+
     // Drawing an entity has two steps: calling the onDraw method to update the entity's sprite
     // and calling the game window draw function
     this->_player.onDraw();
@@ -185,4 +190,59 @@ void GameManager::updateView()
     _view.move(static_cast<sf::Vector2f>(translateView));
 
     _gameWindow.setView(_view);
+}
+
+void GameManager::drawMap()
+{
+    sf::Texture texture;
+    texture.loadFromFile("assets/textures/temp_bg.jpg");
+
+    sf::IntRect rectSourceSprite(0, 0, 1500, 1125);
+    sf::Sprite sprite(texture, rectSourceSprite);
+
+    this->_gameWindow.draw(sprite);
+}
+
+void GameManager::updateViewLocked()
+{
+    sf::View view = _gameWindow.getView();
+
+    view.setCenter(this->_player.getPosition());
+
+    _gameWindow.setView(view);
+}
+
+void GameManager::updateViewLoose()
+{
+    //TODO: restrict camera to the map bounds? move to some place else? adjust buffers?
+    sf::View view = _gameWindow.getView();
+    const sf::Vector2f& viewCenter = view.getCenter();
+    const sf::Vector2f& playerLocation = this->_player.getPosition();
+    const sf::Vector2u& windowSize = _gameWindow.getSize();
+    const float playerCamDistX = playerLocation.x - viewCenter.x;
+    const float playerCamDistY = playerLocation.y - viewCenter.y;
+    const float xBufferSize = windowSize.x * 3/40;
+    const float yBufferSize = windowSize.y * 1/40;
+
+    // If you go past the "buffer" X zone the camera will reposition horizontally.
+    if (xBufferSize < std::abs(playerCamDistX)) {
+        if (playerLocation.x > viewCenter.x) { // player is to the right of the camera
+            view.setCenter(sf::Vector2f{viewCenter.x + (playerCamDistX - xBufferSize), viewCenter.y});
+           
+        } else if (playerLocation.x < viewCenter.x){ // player is to the left of the camera
+            view.setCenter(sf::Vector2f{viewCenter.x - (std::abs(playerCamDistX) - xBufferSize), viewCenter.y});
+        }
+    }
+
+    // If you go past the "buffer" Y zone the camera will reposition vertically.
+    if (yBufferSize < std::abs(playerCamDistY)) {
+        if (playerLocation.y > viewCenter.y) { // player is to below the camera
+            view.setCenter(sf::Vector2f{viewCenter.x, viewCenter.y + (playerCamDistY - yBufferSize)});
+           
+        } else if (playerLocation.y < viewCenter.y){ // player is above of the camera
+            view.setCenter(sf::Vector2f{viewCenter.x, viewCenter.y - (std::abs(playerCamDistY) - yBufferSize)});
+        }
+    }
+
+    _gameWindow.setView(view);
 }
