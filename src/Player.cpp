@@ -1,4 +1,5 @@
 #include "Player.h"
+#include <cmath>
 
 Player::Player() : 
     // Initialize movement vector to <0, 0>
