@@ -16,5 +16,8 @@ class Enemy : public Entity
         int getAmmo();
         bool getIsAlive();
 
+        void onCollision(Entity &hitEntity){}
+        void onUpdate(float deltaTime){}
+
         ~Enemy();
 };
