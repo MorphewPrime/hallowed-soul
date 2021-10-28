@@ -139,9 +139,9 @@ void GameManager::drawFrame()
     // need to update the camera before drawing anything
     // updateView();
 
-    updateViewLoose();
+    // updateViewLoose();
     drawMap();
-    // updateViewLocked();
+    updateViewLocked();
 
     // Drawing an entity has two steps: calling the onDraw method to update the entity's sprite
     // and calling the game window draw function
@@ -167,8 +167,30 @@ void GameManager::drawMap()
 void GameManager::updateViewLocked()
 {
     sf::View view = _gameWindow.getView();
+    const sf::Vector2f& playerLocation = this->_player.getPosition();
+    const sf::Vector2f& viewSize = _view.getSize();
+    sf::Vector2f mapSize {1500.0, 1125.0}; // this can probably be moved to a member variable later when the map is made.
 
     view.setCenter(this->_player.getPosition());
+
+    if (playerLocation.x < viewSize.x / 2) // If camera view is extends past left side of the map.
+    {
+        view.setCenter(sf::Vector2f{viewSize.x / 2, view.getCenter().y});
+    }
+    else if (playerLocation.x + viewSize.x / 2 > mapSize.x) // If camera view is extends past right side of the map.
+    {
+        view.setCenter(sf::Vector2f{mapSize.x - (viewSize.x / 2), view.getCenter().y});
+    }
+
+
+    if (playerLocation.y < viewSize.y / 2) // If camera view is extends past top side of the map.
+    {
+        view.setCenter(sf::Vector2f{view.getCenter().x, viewSize.y / 2});
+    }
+    else if (playerLocation.y + viewSize.y / 2 > mapSize.y) // If camera view is extends past bottom side of the map.
+    {
+        view.setCenter(sf::Vector2f{view.getCenter().x, mapSize.y - (viewSize.y / 2)});
+    }
 
     _gameWindow.setView(view);
 }
