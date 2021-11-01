@@ -10,8 +10,17 @@ enum GameState
     /** Game is currently being played. */
     playing,
 
+    /** Game just recieved the signal to resume */
+    justResumed,
+
     /** On the main menu. */
     menu,
+
+    /** Game just recieved the signal to pause */
+    justPaused,
+
+    /** Game is paused. */
+    paused,
 
     /** Game is complete. */
     gameOver,
@@ -55,10 +64,29 @@ class GameManager
         /** The WaveManager, which owns all Enemies. */
         WaveManager _wave;
 
-        /**
-         * @brief Called from main loop, turns all the user inputs into game instructions
+        /** The clock used to get time between frames */
+        sf::Clock gameClock;
+
+        /** A texture holding a freeze frame.
+         * 
+         * Needed as an instance member for lifetime purposes.
          */
-        void handleInput();
+        sf::Texture frozenWindow;
+
+        /** The time elapsed since the last frame.
+         * 
+         * Needed as an instance member for purposes of
+         * persisting the time elapsed when game enters paused
+         * state.
+         */
+        sf::Time timeElapsed;
+
+        /**
+         * @brief Event handler
+         * 
+         * @param event The event to handle
+         */
+        void handleEvent(sf::Event event);
 
         /**
          * @brief Called from handleInput(), will evaluate a keyboard event
@@ -120,4 +148,16 @@ class GameManager
          *  Draw a heads up display on the current round information
          */
         void drawRoundProgressHUD();
+
+        /** Helper function to check if key is pressed and move the player if so. */
+        void movePlayer();
+
+        /** Helper function for game logic/simulation when in the playing state */
+        void tick(sf::Time timeElapsed);
+
+        /** Helper function to get the background for the pause screen. 
+         * 
+         * @post frozenWindow is set to a dimmed version of the current screen.
+         */
+        void captureCurrentFrame();
 };

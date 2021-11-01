@@ -13,6 +13,7 @@ GameManager::GameManager() :
     // TODO: If we have a main menu, change the default state to that
     _currentState = GameState::playing;
 
+
     // This defines where our viewport is set to start
     // TODO: We will probably be spawning the player in the start of the map
     _view.setViewport({0.0f, 0.0f, 1.0f, 1.0f});
@@ -21,77 +22,150 @@ GameManager::GameManager() :
     // but will take up the full size of the RenderWindow. Therefore,
     // this should zoom in on the gameWindow.
     _gameWindow.setView(_view);
+    frozenWindow.create(_gameWindow.getSize().x, _gameWindow.getSize().y);
     this->_wave.setPlayer(this->_player);
 }
 
 void GameManager::runGame()
 {
-    // Game clock for tracking time
-    sf::Clock gameClock;
-
     this->_wave.beginWave();
 
     // Keep going while the window is open
     while(this->_gameWindow.isOpen())
     {
-        // Update the game clock and get the frame time
-        sf::Time frameTime = gameClock.restart();
 
-        // This can go anywhere, really
-        this->_wave.updateWaves();
+        // Andrew R: moving event polling directly in the main loop.
+        // Reason: We have to poll events no matter what or else
+        // the window will become non-responsive
 
-        // This is the main game loop, there's a specific order we want to execute our loop in
-        // First we need to consider that the only thing that will change our objects is
-        // input from the user, so that's the first thing we want to do
-        handleInput();
+        // Event object for the current event we're handling
+        sf::Event currentEvent;
+        // Get the current event
+        _gameWindow.pollEvent(currentEvent);
 
-        // Once input is handled, we now want to update all of our objects
-        updateEntities(frameTime);
+        // Handle that event
+        handleEvent(currentEvent);
 
-        // Next step is to check the collisions on all of our entities
-        checkCollisions();
-
-        // Finally we want to draw the frame
-        drawFrame();
-
-        // We also want to check if the game state is exit, if it is then we break
-        if(_currentState == GameState::exiting)
+        // If we need to exit now, exit
+        if (_currentState == GameState::exiting)
         {
             _gameWindow.close();
             break;
         }
+        // If playing the game, proceed with the simulation
+        else if (_currentState == GameState::playing)
+        {
+            // Update the game clock and get the frame time
+            timeElapsed = gameClock.restart();
+            tick(timeElapsed);
+        }
+
+        // If just paused, capture the current time
+        else if (_currentState == GameState::justPaused)
+        {
+            timeElapsed = gameClock.restart();
+            // DON'T UPDATE THE GAME STATE HERE, this
+            // will be done in drawFrame() because we still
+            // need to capture the contents of the screen.
+        }
+        // If just resumed, start ticking but use the saved timeElapsed,
+        // not the one recorded by the clock.
+        else if (_currentState == GameState::justResumed)
+        {
+            gameClock.restart();
+            tick(timeElapsed);
+            _currentState = GameState::playing; // okay to update game state here
+        }
+        
+        // Finally we want to draw the frame
+        drawFrame();
     }
 }
 
-void GameManager::handleInput()
+void GameManager::handleEvent(sf::Event event)
 {
-    // Event object for the current event we're handling
-    sf::Event currentEvent;
-
-    // We want to poll all avalible events in the game
-    // TODO: This may be unnecessary and slow, since this while loop could be processing up to 50 events at once
-    // We may not even need this at all
-    while(_gameWindow.pollEvent(currentEvent))
+    // TODO: Control variables? Maybe some config file?
+    // First we want to check what type of event it is 
+    switch(event.type)
     {
-        // TODO: Control variables? Maybe some config file?
-        // First we want to check what type of event it is 
-        switch(currentEvent.type)
+        case sf::Event::KeyPressed:
         {
-            case sf::Event::KeyPressed:
-            {
-                this->handleKeyboardEvent(currentEvent);
-                break;
-            }
-            case sf::Event::Closed:
-            {
-                this->_currentState = GameState::exiting;
-                break;
-            }
-            default: // Otherwise just do nothing
-                break;
+            this->handleKeyboardEvent(event);
+            break;
+        }
+        case sf::Event::Closed:
+        {
+            this->_currentState = GameState::exiting;
+            break;
         }
     }       
+}
 
+void GameManager::handleMouseEvent(sf::Event &mouseEvent)
+{
+    // TODO: Do we need this?
+    // If we implement menus we will, but consider remove otherwise
+}
+
+void GameManager::handleKeyboardEvent(sf::Event &kdbEvent)
+{
+    switch (_currentState)
+    {
+        case GameState::playing:
+        {
+            switch(kdbEvent.key.code)
+            {
+                case sf::Keyboard::Space:
+                {
+                    this->_player.dodgeInDirection(sf::Vector2<float>(0, 0));
+                    break;
+                }
+                case sf::Keyboard::Backspace:
+                {
+                    // THE KILL BUTTON
+                    for(int i=0; i<this->_wave.getEnemies(); i++)
+                    {
+                        try
+                        {
+                            if(this->_wave.getEnemy(i)->getIsAlive())
+                            {
+                                this->_wave.getEnemy(i)->kill();
+                                this->_wave.updateAliveEnemyCount();
+                                break;
+                            }
+                        }
+                        catch(const std::exception& e)
+                        {
+                            break;
+                        }
+                    }
+                }
+                case sf::Keyboard::Escape:
+                    _currentState = justPaused;
+                default:
+                    // Do nothing
+                    break;
+            }
+        }
+    }
+}
+
+void GameManager::tick(sf::Time timeElapsed)
+{
+    movePlayer();
+
+    // This can go anywhere, really
+    this->_wave.updateWaves();
+
+    // Once input is handled, we now want to update all of our objects
+    updateEntities(timeElapsed);
+
+    // Next step is to check the collisions on all of our entities
+    checkCollisions();
+}
+
+void GameManager::movePlayer()
+{
     // The following four if statements will tell the player it needs to be moving
     // in the direction based off of the directional keys pressed.
     // We are using all ifs here because we want diagonal movement to be possible
@@ -121,48 +195,6 @@ void GameManager::handleInput()
         // Right is positive x direction
         this->_player.moveInDirection(sf::Vector2<float>(1, 0));
     }
-
-}
-
-void GameManager::handleKeyboardEvent(sf::Event &kdbEvent)
-{
-    switch(kdbEvent.key.code)
-    {
-        case sf::Keyboard::Space:
-        {
-            this->_player.dodgeInDirection(sf::Vector2<float>(0, 0));
-            break;
-        }
-        case sf::Keyboard::Backspace:
-        {
-            // THE KILL BUTTON
-            for(int i=0; i<this->_wave.getEnemies(); i++)
-            {
-                try
-                {
-                    if(this->_wave.getEnemy(i)->getIsAlive())
-                    {
-                        this->_wave.getEnemy(i)->kill();
-                        this->_wave.updateAliveEnemyCount();
-                        break;
-                    }
-                }
-                catch(const std::exception& e)
-                {
-                    break;
-                }
-            }
-        }
-        default:
-            // Do nothing
-            break;
-    }
-}
-
-void GameManager::handleMouseEvent(sf::Event &mouseEvent)
-{
-    // TODO: Do we need this?
-    // If we implement menus we will, but consider remove otherwise
 }
 
 void GameManager::checkCollisions()
@@ -179,35 +211,61 @@ void GameManager::updateEntities(sf::Time frameTime)
 
 void GameManager::drawFrame()
 {
-    // Clear current buffer
-    _gameWindow.clear();
-
-    // Now update the position of the view as nessisary.
-    updateViewLocked();
-
-    // Draw the temporary background before anything else
-    drawMap();
-
-    // Drawing an entity has two steps: calling the onDraw method to update the entity's sprite
-    // and calling the game window draw function
-    this->_player.onDraw();
-    this->_wave.waveDraw();
-    this->_gameWindow.draw(this->_player.getSprite());
-    for(int i=0; i<this->_wave.getEnemies(); i++)
+    switch (_currentState)
     {
-        if(this->_wave.getEnemy(i)->getIsAlive())
+        case GameState::justPaused:
         {
-            this->_gameWindow.draw(this->_wave.getEnemy(i)->getSprite());
+            captureCurrentFrame();
+            _currentState = GameState::paused;
         }
-    }
-    // TODO: Add other entities
+        case GameState::paused:
+        {
+            // Draw the pause background
+            _gameWindow.clear();
+            _gameWindow.setView(_view);
+            _gameWindow.draw(sf::Sprite(frozenWindow));
+            // Generate a mask
+            sf::RenderTexture mask;
+            mask.create(_gameWindow.getSize().x, _gameWindow.getSize().y);
+            mask.clear({0, 0, 0, 127}); // a dark mask with some transparency
+            _gameWindow.draw(sf::Sprite(mask.getTexture()));
+            _gameWindow.display();
 
-    // Draw the HUD over most things
-    drawHealthHUD();
-    drawRoundProgressHUD();
+            // TODO: Also draw buttons
+        }
+        case GameState::playing:
+        {
+            // Clear current buffer
+            _gameWindow.clear();
 
-    // Finally, display the window
-    _gameWindow.display();    
+            // Now update the position of the view as nessisary.
+            updateViewLocked();
+
+            // Draw the temporary background before anything else
+            drawMap();
+
+            // Drawing an entity has two steps: calling the onDraw method to update the entity's sprite
+            // and calling the game window draw function
+            this->_player.onDraw();
+            this->_wave.waveDraw();
+            this->_gameWindow.draw(this->_player.getSprite());
+            for(int i=0; i<this->_wave.getEnemies(); i++)
+            {
+                if(this->_wave.getEnemy(i)->getIsAlive())
+                {
+                    this->_gameWindow.draw(this->_wave.getEnemy(i)->getSprite());
+                }
+            }
+            // TODO: Add other entities
+
+            // Draw the HUD over most things
+            drawHealthHUD();
+            drawRoundProgressHUD();
+
+            // Finally, display the window
+            _gameWindow.display(); 
+        }
+    }   
 }
 
 void GameManager::updateViewLocked()
@@ -323,4 +381,10 @@ void GameManager::drawRoundProgressHUD()
 
     text.setPosition(sf::Vector2f{barPosition.x - padding.x - (text.getGlobalBounds().left + text.getGlobalBounds().width), barPosition.y + lineSize - (text.getGlobalBounds().top + text.getGlobalBounds().height) / 2});
     _gameWindow.draw(text);
+}
+
+void GameManager::captureCurrentFrame()
+{
+    // Grab the current buffer into a texture real quick
+    frozenWindow.update(_gameWindow);
 }
