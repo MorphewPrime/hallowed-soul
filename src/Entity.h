@@ -66,8 +66,17 @@ struct AnimationData {
 class Entity
 {
     public:
+        /** Creates a new entity with default animation data
+         * 
+         * @param entityVec The vector which contains all entities in the game
+         */
         Entity(std::vector<Entity*> *entityVec);
 
+        /** Creates a new entity with the given animation data
+         * 
+         * @param entityVec The vector which contains all entities in the game
+         * @param animationData The animation data to use for this entity
+         */
         Entity(std::vector<Entity*> *entityVec, AnimationData animationData);
 
         /// Getters and Setters
@@ -167,7 +176,10 @@ class Entity
         void onDrawBase();
 
         /// Interface methods that must be overridden 
-        
+        /** Override this for your entity type
+         * 
+         * @returns The type of this entity
+         */
         virtual EntityType getEntityType() = 0;
 
         /**
@@ -298,6 +310,19 @@ class Entity
         // This is going to be the list of all entities in the game, we need this for ray casting
         std::vector<Entity*> *_entityVec;
 
+        /** Checks to see if two lines intersect
+         * 
+         * @param x1 The x coordinate of point 1 that defines line segment 1
+         * @param y1 The y coordinate of point 1 that defines line segment 1
+         * @param x2 The x coordinate of point 2 that defines line segment 1
+         * @param y2 The y coordinate of point 2 that defines line segment 1
+         * @param x3 The x coordinate of point 1 that defines line segment 2
+         * @param y3 The y coordinate of point 1 that defines line segment 2
+         * @param x4 The x coordinate of point 2 that defines line segment 2
+         * @param y4 The y coordinate of point 2 that defines line segment 2
+         * 
+         * @returns Whether the two line segments intersect
+         */
         bool linesIntersect(float x1, float y1, float x2, float y2, float x3, float y3,
                 float x4, float y4);
 };
