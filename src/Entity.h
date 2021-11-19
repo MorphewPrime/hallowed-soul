@@ -176,6 +176,13 @@ class Entity
          */
         virtual void onCollision(Entity &hitEntity) = 0; 
 
+        /**
+         * @brief Does a raycast to detect if it hits any entity in the game world
+         *
+         * @param ray The direction to cast the ray in
+         *
+         * @return 
+         */
         Entity* rayCast(const sf::Vector2<float> &ray);
 
         /** Vector for position in world coordinates.

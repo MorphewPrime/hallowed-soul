@@ -23,6 +23,11 @@ class Enemy : public Entity
         sf::Vector2<float> _attackDir;
         
     public:
+        /**
+         * @brief Constructor
+         *
+         * @param entityVec Vector holding all entities
+         */
         Enemy(std::vector<Entity*> *entityVec);
 
         /**
@@ -93,7 +98,10 @@ class Enemy : public Entity
          */
         void onCollision(Entity &hitEntity) {}
 
+        /**
+         * @brief Gets the entity type
+         *
+         * @return Entity type 
+         */
         EntityType getEntityType();
-
-        ~Enemy();
 };

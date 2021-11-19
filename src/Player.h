@@ -11,6 +11,11 @@
 class Player : public Entity
 {
     public:
+        /**
+         * @brief Constructor
+         *
+         * @param entityVec Vector containing all entities
+         */
         Player(std::vector<Entity*> *entityVec);
 
         /**
@@ -81,6 +86,11 @@ class Player : public Entity
          */
         void onDraw();
 
+        /**
+         * @brief Gets the type of entity this is
+         *
+         * @return The type of entity 
+         */
         EntityType getEntityType();
 
     private:

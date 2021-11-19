@@ -42,11 +42,9 @@ class GameManager
         GameManager();
 
         /**
-         * @brief Displays the start screen 
+         * @brief Displays the main menu starting screen
          */
         void displayStartScreen();
-
-        // Enemy* rayCast(Entity &source, const sf::Vector2<float> &rayDir);
 
     private:
         std::vector<Entity*> _entityVec;
@@ -101,6 +99,10 @@ class GameManager
          */
         void runGame();
 
+        /**
+         * @brief Draws debug lines from raycast command
+         * DEAD CODE
+         */
         void debugDraw();
 
         /**
