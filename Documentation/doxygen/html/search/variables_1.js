@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['aliveenemycount_0',['aliveEnemyCount',['../class_wave_manager.html#aa06b0f91367c6174a3add6f585c31c5a',1,'WaveManager']]]
+  ['currentframe_0',['currentFrame',['../struct_animation_data.html#a822a3100f02e592babb6d6533141f682',1,'AnimationData']]]
 ];

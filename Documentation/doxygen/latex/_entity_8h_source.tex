@@ -13,125 +13,125 @@
 \DoxyCodeLine{24 \};}
 \DoxyCodeLine{25 }
 \DoxyCodeLine{26 \textcolor{comment}{/* A helper struct to store data that has to do with animation */}}
-\DoxyCodeLine{27 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_animation_data}{AnimationData}}\{}
-\DoxyCodeLine{28     \textcolor{keyword}{enum} Direction}
-\DoxyCodeLine{29     \{}
-\DoxyCodeLine{30         Up,}
-\DoxyCodeLine{31         Left,}
-\DoxyCodeLine{32         Down,}
-\DoxyCodeLine{33         Right,}
-\DoxyCodeLine{34     \} direction;}
-\DoxyCodeLine{35     \textcolor{keywordtype}{int} numRows;}
-\DoxyCodeLine{36     \textcolor{keywordtype}{int} numCols;}
-\DoxyCodeLine{37     \textcolor{keywordtype}{int} numWalkingFrames;}
-\DoxyCodeLine{38     \textcolor{keywordtype}{int} upWalkRow;}
-\DoxyCodeLine{39     \textcolor{keywordtype}{int} leftWalkRow;}
-\DoxyCodeLine{40     \textcolor{keywordtype}{int} downWalkRow;}
-\DoxyCodeLine{41     \textcolor{keywordtype}{int} rightWalkRow;}
-\DoxyCodeLine{42     \textcolor{keywordtype}{int} numAttackingFrames;}
-\DoxyCodeLine{43     \textcolor{keywordtype}{int} upAttackRow;}
-\DoxyCodeLine{44     \textcolor{keywordtype}{int} leftAttackRow;}
-\DoxyCodeLine{45     \textcolor{keywordtype}{int} downAttackRow;}
-\DoxyCodeLine{46     \textcolor{keywordtype}{int} rightAttackRow;}
-\DoxyCodeLine{47     sf::Vector2i currentFrame;}
-\DoxyCodeLine{48     \textcolor{keywordtype}{float} timeAccumulated;}
-\DoxyCodeLine{49 \};}
-\DoxyCodeLine{50 }
-\DoxyCodeLine{51 \textcolor{keyword}{class }\mbox{\hyperlink{class_entity}{Entity}}}
-\DoxyCodeLine{52 \{}
-\DoxyCodeLine{53     \textcolor{keyword}{public}:}
-\DoxyCodeLine{54         \mbox{\hyperlink{class_entity}{Entity}}(std::vector<Entity*> *entityVec);}
-\DoxyCodeLine{55 }
-\DoxyCodeLine{56         \mbox{\hyperlink{class_entity}{Entity}}(std::vector<Entity*> *entityVec, \mbox{\hyperlink{struct_animation_data}{AnimationData}} animationData);}
-\DoxyCodeLine{57 }
-\DoxyCodeLine{59 }
-\DoxyCodeLine{64         \textcolor{keyword}{const} sf::Vector2<float>\& \mbox{\hyperlink{class_entity_aeabe846158ff4641d21ffe1d572e5487}{getPosition}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{27 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_animation_data}{AnimationData}} \{}
+\DoxyCodeLine{29     \textcolor{keyword}{enum} \mbox{\hyperlink{struct_animation_data_ae1afeb6a1c07b2f56bf90f29548370fb}{Direction}}}
+\DoxyCodeLine{30     \{}
+\DoxyCodeLine{31         Up,}
+\DoxyCodeLine{32         Left,}
+\DoxyCodeLine{33         Down,}
+\DoxyCodeLine{34         Right,}
+\DoxyCodeLine{35     \} direction;}
+\DoxyCodeLine{37     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_animation_data_a2eb07abe11294a6767bdab235abacbe8}{numRows}};}
+\DoxyCodeLine{39     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_animation_data_ad5df879afe3a9d0bb6cbc914f892d0b2}{numCols}};}
+\DoxyCodeLine{41     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_animation_data_a1dfebe0e5c65f11deab95c1fd8b1ab9c}{numWalkingFrames}};}
+\DoxyCodeLine{43     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_animation_data_acd751024d2dd693eca2b2a2cbf5f4efa}{upWalkRow}};}
+\DoxyCodeLine{45     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_animation_data_aac8c66aec75cc61aae47a7f4cb6413ee}{leftWalkRow}};}
+\DoxyCodeLine{47     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_animation_data_a7e69c341ba75ec8711855a85299f8d7b}{downWalkRow}};}
+\DoxyCodeLine{49     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_animation_data_a016d362edf4f98e80d09e5a6e4d2977a}{rightWalkRow}};}
+\DoxyCodeLine{51     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_animation_data_a607bde89fe88e3b00ce414d9298055bb}{numAttackingFrames}};}
+\DoxyCodeLine{53     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_animation_data_a15748dbc044efe3ba1af3ead36e144a0}{upAttackRow}};}
+\DoxyCodeLine{55     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_animation_data_a70deec2e2c20b66ea59781675548f089}{leftAttackRow}};}
+\DoxyCodeLine{57     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_animation_data_a640fe5b536fe5a702e088aa05c9aeae7}{downAttackRow}};}
+\DoxyCodeLine{59     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_animation_data_a8079989533ad4494103bb9d97e7d1d77}{rightAttackRow}};}
+\DoxyCodeLine{61     sf::Vector2i \mbox{\hyperlink{struct_animation_data_a822a3100f02e592babb6d6533141f682}{currentFrame}};}
+\DoxyCodeLine{63     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_animation_data_a27dd1ee11722911e2f4d54950c83a5ea}{timeAccumulated}};}
+\DoxyCodeLine{64 \};}
 \DoxyCodeLine{65 }
-\DoxyCodeLine{71         \textcolor{keyword}{const} sf::Vector2<float>\& \mbox{\hyperlink{class_entity_a7d1238384a4353e0f5df908726c9bc3e}{getVelocity}}() \textcolor{keyword}{const};}
-\DoxyCodeLine{72 }
-\DoxyCodeLine{78         \textcolor{keyword}{const} sf::Sprite\& \mbox{\hyperlink{class_entity_aece77e1e86fae668e67a57ee7ccce265}{getSprite}}() \textcolor{keyword}{const};}
-\DoxyCodeLine{79 }
-\DoxyCodeLine{85         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_entity_a6a50dadd36f7ad95c8b465b60644c4db}{setTexture}}(std::string path);}
-\DoxyCodeLine{86 }
-\DoxyCodeLine{92         \textcolor{keyword}{const} \textcolor{keywordtype}{int}\& \mbox{\hyperlink{class_entity_ae170fce9596c2e20aa0ec3029b94c349}{getWidth}}() \textcolor{keyword}{const};}
-\DoxyCodeLine{93 }
-\DoxyCodeLine{94 }
-\DoxyCodeLine{100         \textcolor{keyword}{const} \textcolor{keywordtype}{int}\& \mbox{\hyperlink{class_entity_a4422208756dd881274aaec619870776a}{getHeight}}() \textcolor{keyword}{const};}
-\DoxyCodeLine{101 }
-\DoxyCodeLine{102 }
-\DoxyCodeLine{108         \textcolor{keyword}{const} \textcolor{keywordtype}{int}\& \mbox{\hyperlink{class_entity_ac44988c8df8d396eb23d8215e2f26046}{getHealth}}() \textcolor{keyword}{const};}
-\DoxyCodeLine{109 }
-\DoxyCodeLine{111 }
-\DoxyCodeLine{117         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_entity_a205443d87b309a074a6088b6e148f2a2}{update}}(\textcolor{keywordtype}{float} deltaTime);}
-\DoxyCodeLine{118  }
-\DoxyCodeLine{124         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_entity_ab0986ba7a1b24f022b5623781050c0f1}{isAlive}}();}
+\DoxyCodeLine{66 \textcolor{keyword}{class }\mbox{\hyperlink{class_entity}{Entity}}}
+\DoxyCodeLine{67 \{}
+\DoxyCodeLine{68     \textcolor{keyword}{public}:}
+\DoxyCodeLine{73         \mbox{\hyperlink{class_entity_afafd025c271f517fde3afe54281cde7b}{Entity}}(std::vector<Entity*> *entityVec);}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{80         \mbox{\hyperlink{class_entity_afafd025c271f517fde3afe54281cde7b}{Entity}}(std::vector<Entity*> *entityVec, \mbox{\hyperlink{struct_animation_data}{AnimationData}} animationData);}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{83 }
+\DoxyCodeLine{88         \textcolor{keyword}{const} sf::Vector2<float>\& \mbox{\hyperlink{class_entity_aeabe846158ff4641d21ffe1d572e5487}{getPosition}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{95         \textcolor{keyword}{const} sf::Vector2<float>\& \mbox{\hyperlink{class_entity_a7d1238384a4353e0f5df908726c9bc3e}{getVelocity}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{102         \textcolor{keyword}{const} sf::Sprite\& \mbox{\hyperlink{class_entity_aece77e1e86fae668e67a57ee7ccce265}{getSprite}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{109         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_entity_a6a50dadd36f7ad95c8b465b60644c4db}{setTexture}}(std::string path);}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{116         \textcolor{keyword}{const} \textcolor{keywordtype}{int}\& \mbox{\hyperlink{class_entity_ae170fce9596c2e20aa0ec3029b94c349}{getWidth}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118 }
+\DoxyCodeLine{124         \textcolor{keyword}{const} \textcolor{keywordtype}{int}\& \mbox{\hyperlink{class_entity_a4422208756dd881274aaec619870776a}{getHeight}}() \textcolor{keyword}{const};}
 \DoxyCodeLine{125 }
-\DoxyCodeLine{127 }
-\DoxyCodeLine{133         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_entity_a8eafe7d5ebb62407ee5f266518a35292}{spawn}}(sf::Vector2<float> spawnLocation);}
-\DoxyCodeLine{134 }
-\DoxyCodeLine{140         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_entity_a3eb4bd5f0f6698ed9632004ef0d170ba}{doDamage}}(\textcolor{keywordtype}{int} damage);}
-\DoxyCodeLine{141 }
-\DoxyCodeLine{146         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_entity_a522648b330daab91b49f78f0737a943f}{kill}}();}
-\DoxyCodeLine{147 }
-\DoxyCodeLine{152         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_entity_a8d7117f2a97bac217140aad9179a90fc}{onDrawBase}}();}
-\DoxyCodeLine{153 }
-\DoxyCodeLine{155         }
-\DoxyCodeLine{156         \textcolor{keyword}{virtual} EntityType \mbox{\hyperlink{class_entity_aad5218b6073670ba318c5f3b281c5d00}{getEntityType}}() = 0;}
-\DoxyCodeLine{157 }
-\DoxyCodeLine{164         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_entity_aeb0bd1940e7932d3e244984259b5cc0e}{onUpdate}}(\textcolor{keywordtype}{float} deltaTime) = 0;}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{132         \textcolor{keyword}{const} \textcolor{keywordtype}{int}\& \mbox{\hyperlink{class_entity_ac44988c8df8d396eb23d8215e2f26046}{getHealth}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{135 }
+\DoxyCodeLine{141         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_entity_a205443d87b309a074a6088b6e148f2a2}{update}}(\textcolor{keywordtype}{float} deltaTime);}
+\DoxyCodeLine{142  }
+\DoxyCodeLine{148         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_entity_ab0986ba7a1b24f022b5623781050c0f1}{isAlive}}();}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{151 }
+\DoxyCodeLine{157         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_entity_a8eafe7d5ebb62407ee5f266518a35292}{spawn}}(sf::Vector2<float> spawnLocation);}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{164         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_entity_a3eb4bd5f0f6698ed9632004ef0d170ba}{doDamage}}(\textcolor{keywordtype}{int} damage);}
 \DoxyCodeLine{165 }
-\DoxyCodeLine{170         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_entity_a820404587abe78b6383d829348efbe2b}{onDraw}}();}
-\DoxyCodeLine{171         }
-\DoxyCodeLine{177         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_entity_ab61623f60c5a7c04deaf0dcb2d1f97de}{onCollision}}(\mbox{\hyperlink{class_entity}{Entity}} \&hitEntity) = 0; }
-\DoxyCodeLine{178 }
-\DoxyCodeLine{186         \mbox{\hyperlink{class_entity}{Entity}}* \mbox{\hyperlink{class_entity_a11d81211b5bdef1427685d3ded48923a}{rayCast}}(\textcolor{keyword}{const} sf::Vector2<float> \&ray);}
-\DoxyCodeLine{187 }
-\DoxyCodeLine{192         sf::Vector2<float> \mbox{\hyperlink{class_entity_aacc64bc5f7b1d3c24a78e1a492591ca6}{\_position}};}
-\DoxyCodeLine{193 }
-\DoxyCodeLine{194     \textcolor{keyword}{protected}:}
-\DoxyCodeLine{195 }
-\DoxyCodeLine{197         \textcolor{keyword}{enum} \mbox{\hyperlink{class_entity_ac945ee5a37c49b9d0ebb93f71a43bbd6}{MoveState}}}
-\DoxyCodeLine{198         \{}
-\DoxyCodeLine{200             \mbox{\hyperlink{class_entity_ac945ee5a37c49b9d0ebb93f71a43bbd6a20b8edad18007f2c35f9fb9bb7904bcb}{Moving}},}
-\DoxyCodeLine{202             \mbox{\hyperlink{class_entity_ac945ee5a37c49b9d0ebb93f71a43bbd6a10cfa2ff1945dc09709e98b0e6652628}{Dodging}},}
-\DoxyCodeLine{204             \mbox{\hyperlink{class_entity_ac945ee5a37c49b9d0ebb93f71a43bbd6a68d74a39cf485eec60585b3bcfb8237f}{AttackTriggered}},}
-\DoxyCodeLine{206             \mbox{\hyperlink{class_entity_ac945ee5a37c49b9d0ebb93f71a43bbd6a0d1a675e7f147e226420609d1e35afb7}{Attacking}}}
-\DoxyCodeLine{207         \} \_currentMoveState;}
-\DoxyCodeLine{208 }
-\DoxyCodeLine{213         \textcolor{comment}{// Vectors for position and velocity}}
-\DoxyCodeLine{214         sf::Vector2<float> \mbox{\hyperlink{class_entity_a2272f04c6e19fb9aa55c0e8c41217e67}{\_velocity}};}
-\DoxyCodeLine{215 }
-\DoxyCodeLine{217         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_entity_a358f7a5e65c03415b36cc612c36e6f47}{\_width}};}
-\DoxyCodeLine{218 }
-\DoxyCodeLine{220         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_entity_a161dc9b3d8e2b47c59e661dd2000cbf7}{\_height}};}
-\DoxyCodeLine{221 }
-\DoxyCodeLine{223         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_entity_a5d9f213ef26f1e09ebff7fcb46634b97}{\_health}};}
-\DoxyCodeLine{224 }
-\DoxyCodeLine{225         \textcolor{comment}{/* If the entity is alive or not */}}
-\DoxyCodeLine{226         \textcolor{keywordtype}{bool} \_isAlive;}
-\DoxyCodeLine{227 }
-\DoxyCodeLine{238         sf::Texture \mbox{\hyperlink{class_entity_a8e409f1b737a84cd895e42e4ec8c28bc}{\_texture}};}
-\DoxyCodeLine{239 }
-\DoxyCodeLine{258         \textcolor{comment}{// TODO: Sprite array?}}
-\DoxyCodeLine{259         sf::Sprite \mbox{\hyperlink{class_entity_a040bd9d02a9c5d0c7f07348bc15cc0a3}{\_sprite}};}
-\DoxyCodeLine{260 }
-\DoxyCodeLine{262         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_entity_aea2700b0ab9135072346edfcdaad2ec1}{setSpriteDirection}}();}
-\DoxyCodeLine{263 }
-\DoxyCodeLine{265         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_entity_aec5694148b397112af16aff6b4fc1ada}{setWalkingFrame}}();}
+\DoxyCodeLine{170         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_entity_a522648b330daab91b49f78f0737a943f}{kill}}();}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{176         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_entity_a8d7117f2a97bac217140aad9179a90fc}{onDrawBase}}();}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{179 }
+\DoxyCodeLine{183         \textcolor{keyword}{virtual} EntityType \mbox{\hyperlink{class_entity_aad5218b6073670ba318c5f3b281c5d00}{getEntityType}}() = 0;}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{191         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_entity_aeb0bd1940e7932d3e244984259b5cc0e}{onUpdate}}(\textcolor{keywordtype}{float} deltaTime) = 0;}
+\DoxyCodeLine{192 }
+\DoxyCodeLine{197         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_entity_a820404587abe78b6383d829348efbe2b}{onDraw}}();}
+\DoxyCodeLine{198         }
+\DoxyCodeLine{204         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_entity_ab61623f60c5a7c04deaf0dcb2d1f97de}{onCollision}}(\mbox{\hyperlink{class_entity}{Entity}} \&hitEntity) = 0; }
+\DoxyCodeLine{205 }
+\DoxyCodeLine{213         \mbox{\hyperlink{class_entity}{Entity}}* \mbox{\hyperlink{class_entity_a11d81211b5bdef1427685d3ded48923a}{rayCast}}(\textcolor{keyword}{const} sf::Vector2<float> \&ray);}
+\DoxyCodeLine{214 }
+\DoxyCodeLine{219         sf::Vector2<float> \mbox{\hyperlink{class_entity_aacc64bc5f7b1d3c24a78e1a492591ca6}{\_position}};}
+\DoxyCodeLine{220 }
+\DoxyCodeLine{221     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{222 }
+\DoxyCodeLine{224         \textcolor{keyword}{enum} \mbox{\hyperlink{class_entity_ac945ee5a37c49b9d0ebb93f71a43bbd6}{MoveState}}}
+\DoxyCodeLine{225         \{}
+\DoxyCodeLine{227             \mbox{\hyperlink{class_entity_ac945ee5a37c49b9d0ebb93f71a43bbd6a20b8edad18007f2c35f9fb9bb7904bcb}{Moving}},}
+\DoxyCodeLine{229             \mbox{\hyperlink{class_entity_ac945ee5a37c49b9d0ebb93f71a43bbd6a10cfa2ff1945dc09709e98b0e6652628}{Dodging}},}
+\DoxyCodeLine{231             \mbox{\hyperlink{class_entity_ac945ee5a37c49b9d0ebb93f71a43bbd6a68d74a39cf485eec60585b3bcfb8237f}{AttackTriggered}},}
+\DoxyCodeLine{233             \mbox{\hyperlink{class_entity_ac945ee5a37c49b9d0ebb93f71a43bbd6a0d1a675e7f147e226420609d1e35afb7}{Attacking}}}
+\DoxyCodeLine{234         \} \_currentMoveState;}
+\DoxyCodeLine{235 }
+\DoxyCodeLine{240         \textcolor{comment}{// Vectors for position and velocity}}
+\DoxyCodeLine{241         sf::Vector2<float> \mbox{\hyperlink{class_entity_a2272f04c6e19fb9aa55c0e8c41217e67}{\_velocity}};}
+\DoxyCodeLine{242 }
+\DoxyCodeLine{244         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_entity_a358f7a5e65c03415b36cc612c36e6f47}{\_width}};}
+\DoxyCodeLine{245 }
+\DoxyCodeLine{247         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_entity_a161dc9b3d8e2b47c59e661dd2000cbf7}{\_height}};}
+\DoxyCodeLine{248 }
+\DoxyCodeLine{250         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_entity_a5d9f213ef26f1e09ebff7fcb46634b97}{\_health}};}
+\DoxyCodeLine{251 }
+\DoxyCodeLine{252         \textcolor{comment}{/* If the entity is alive or not */}}
+\DoxyCodeLine{253         \textcolor{keywordtype}{bool} \_isAlive;}
+\DoxyCodeLine{254 }
+\DoxyCodeLine{265         sf::Texture \mbox{\hyperlink{class_entity_a8e409f1b737a84cd895e42e4ec8c28bc}{\_texture}};}
 \DoxyCodeLine{266 }
-\DoxyCodeLine{268         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_entity_a991a777b3e9e6c4211fe1903f33745e9}{setAttackingFrame}}();}
-\DoxyCodeLine{269 }
-\DoxyCodeLine{270         \textcolor{comment}{/* A helper struct to store data that has to do with animation */}}
-\DoxyCodeLine{271         \mbox{\hyperlink{struct_animation_data}{AnimationData}} animationData;}
-\DoxyCodeLine{272 }
-\DoxyCodeLine{274         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_entity_abf3b02cb98effb0047ab7e4373d7bb76}{updateTextureRect}}();}
-\DoxyCodeLine{275 }
-\DoxyCodeLine{277         \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_entity_a486e8b1cd15b174d1b0b0fd3019417e6}{getSecondsPerFrame}}() \textcolor{keyword}{const};}
-\DoxyCodeLine{278         \textcolor{comment}{// This is going to be the list of all entities in the game, we need this for ray casting}}
-\DoxyCodeLine{279         std::vector<Entity*> *\_entityVec;}
-\DoxyCodeLine{280 }
-\DoxyCodeLine{281         \textcolor{keywordtype}{bool} linesIntersect(\textcolor{keywordtype}{float} x1, \textcolor{keywordtype}{float} y1, \textcolor{keywordtype}{float} x2, \textcolor{keywordtype}{float} y2, \textcolor{keywordtype}{float} x3, \textcolor{keywordtype}{float} y3,}
-\DoxyCodeLine{282                 \textcolor{keywordtype}{float} x4, \textcolor{keywordtype}{float} y4);}
-\DoxyCodeLine{283 \};}
+\DoxyCodeLine{285         \textcolor{comment}{// TODO: Sprite array?}}
+\DoxyCodeLine{286         sf::Sprite \mbox{\hyperlink{class_entity_a040bd9d02a9c5d0c7f07348bc15cc0a3}{\_sprite}};}
+\DoxyCodeLine{287 }
+\DoxyCodeLine{289         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_entity_aea2700b0ab9135072346edfcdaad2ec1}{setSpriteDirection}}();}
+\DoxyCodeLine{290 }
+\DoxyCodeLine{292         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_entity_aec5694148b397112af16aff6b4fc1ada}{setWalkingFrame}}();}
+\DoxyCodeLine{293 }
+\DoxyCodeLine{295         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_entity_a991a777b3e9e6c4211fe1903f33745e9}{setAttackingFrame}}();}
+\DoxyCodeLine{296 }
+\DoxyCodeLine{297         \textcolor{comment}{/* A helper struct to store data that has to do with animation */}}
+\DoxyCodeLine{298         \mbox{\hyperlink{struct_animation_data}{AnimationData}} animationData;}
+\DoxyCodeLine{299 }
+\DoxyCodeLine{301         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_entity_abf3b02cb98effb0047ab7e4373d7bb76}{updateTextureRect}}();}
+\DoxyCodeLine{302 }
+\DoxyCodeLine{309         \textcolor{keyword}{virtual} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_entity_a486e8b1cd15b174d1b0b0fd3019417e6}{getSecondsPerFrame}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{310         \textcolor{comment}{// This is going to be the list of all entities in the game, we need this for ray casting}}
+\DoxyCodeLine{311         std::vector<Entity*> *\_entityVec;}
+\DoxyCodeLine{312 }
+\DoxyCodeLine{326         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_entity_ac306915b7e5c8f18df5ba6bece0e232b}{linesIntersect}}(\textcolor{keywordtype}{float} x1, \textcolor{keywordtype}{float} y1, \textcolor{keywordtype}{float} x2, \textcolor{keywordtype}{float} y2, \textcolor{keywordtype}{float} x3, \textcolor{keywordtype}{float} y3,}
+\DoxyCodeLine{327                 \textcolor{keywordtype}{float} x4, \textcolor{keywordtype}{float} y4);}
+\DoxyCodeLine{328 \};}
 
 \end{DoxyCode}
