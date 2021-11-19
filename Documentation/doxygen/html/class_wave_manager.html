@@ -64,6 +64,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_wave_manager-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">WaveManager Class Reference</div></div>
@@ -74,8 +75,11 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a1c039c9a7a485f88b68a3f966ffe02c5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wave_manager.html#a1c039c9a7a485f88b68a3f966ffe02c5">WaveManager</a> ()</td></tr>
-<tr class="separator:a1c039c9a7a485f88b68a3f966ffe02c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59a494668e5298a98f0d0e0a34a7a825"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wave_manager.html#a59a494668e5298a98f0d0e0a34a7a825">WaveManager</a> (std::vector&lt; <a class="el" href="class_entity.html">Entity</a> * &gt; *entityVec)</td></tr>
+<tr class="separator:a59a494668e5298a98f0d0e0a34a7a825"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed020b5fb4617a2d25e3ed815e5556ea"><td class="memItemLeft" align="right" valign="top">sf::Text&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wave_manager.html#aed020b5fb4617a2d25e3ed815e5556ea">getHitIndicator</a> (<a class="el" href="class_entity.html">Entity</a> *e, int damage)</td></tr>
+<tr class="memdesc:aed020b5fb4617a2d25e3ed815e5556ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called by drawHitIndicator() Gets the hit indicator text.  <a href="class_wave_manager.html#aed020b5fb4617a2d25e3ed815e5556ea">More...</a><br /></td></tr>
+<tr class="separator:aed020b5fb4617a2d25e3ed815e5556ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1773fbe7e03f6454e7f0a8bfd4ace823"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wave_manager.html#a1773fbe7e03f6454e7f0a8bfd4ace823">setPlayer</a> (<a class="el" href="class_player.html">Player</a> &amp;play)</td></tr>
 <tr class="memdesc:a1773fbe7e03f6454e7f0a8bfd4ace823"><td class="mdescLeft">&#160;</td><td class="mdescRight">establishes a player pointer that can be passed to the enemies  <a href="class_wave_manager.html#a1773fbe7e03f6454e7f0a8bfd4ace823">More...</a><br /></td></tr>
 <tr class="separator:a1773fbe7e03f6454e7f0a8bfd4ace823"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -116,11 +120,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>updateAliveEnemyCount
 void&#160;</td><td class="memItemRight" valign="bottom"><b>waveDraw</b> ()</td></tr>
 <tr class="memdesc:ae2e7deefbbec6e9e4633d8f77bb3d235"><td class="mdescLeft">&#160;</td><td class="mdescRight">calls upon all enemies to prepare for drawing <br /></td></tr>
 <tr class="separator:ae2e7deefbbec6e9e4633d8f77bb3d235"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b19ad150f558a59a1dd6b330c8819c3"><td class="memItemLeft" align="right" valign="top"><a id="a8b19ad150f558a59a1dd6b330c8819c3" name="a8b19ad150f558a59a1dd6b330c8819c3"></a>
-sf::RectangleShape&#160;</td><td class="memItemRight" valign="bottom"><b>getHealthBarBorder</b> (<a class="el" href="class_enemy.html">Enemy</a> *e)</td></tr>
+<tr class="memitem:a8b19ad150f558a59a1dd6b330c8819c3"><td class="memItemLeft" align="right" valign="top">sf::RectangleShape&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wave_manager.html#a8b19ad150f558a59a1dd6b330c8819c3">getHealthBarBorder</a> (<a class="el" href="class_enemy.html">Enemy</a> *e)</td></tr>
+<tr class="memdesc:a8b19ad150f558a59a1dd6b330c8819c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the border rectangle for the enemy health bar.  <a href="class_wave_manager.html#a8b19ad150f558a59a1dd6b330c8819c3">More...</a><br /></td></tr>
 <tr class="separator:a8b19ad150f558a59a1dd6b330c8819c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27fbd49d4fdc70f8b7634481efcbbd5f"><td class="memItemLeft" align="right" valign="top"><a id="a27fbd49d4fdc70f8b7634481efcbbd5f" name="a27fbd49d4fdc70f8b7634481efcbbd5f"></a>
-sf::RectangleShape&#160;</td><td class="memItemRight" valign="bottom"><b>getHealthBar</b> (<a class="el" href="class_enemy.html">Enemy</a> *e)</td></tr>
+<tr class="memitem:a27fbd49d4fdc70f8b7634481efcbbd5f"><td class="memItemLeft" align="right" valign="top">sf::RectangleShape&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wave_manager.html#a27fbd49d4fdc70f8b7634481efcbbd5f">getHealthBar</a> (<a class="el" href="class_enemy.html">Enemy</a> *e)</td></tr>
+<tr class="memdesc:a27fbd49d4fdc70f8b7634481efcbbd5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the health bar rectangle itself.  <a href="class_wave_manager.html#a27fbd49d4fdc70f8b7634481efcbbd5f">More...</a><br /></td></tr>
 <tr class="separator:a27fbd49d4fdc70f8b7634481efcbbd5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a609ef49c78b432fad93ac99cc836df31"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_enemy.html">Enemy</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wave_manager.html#a609ef49c78b432fad93ac99cc836df31">getEnemy</a> (int n)</td></tr>
 <tr class="memdesc:a609ef49c78b432fad93ac99cc836df31"><td class="mdescLeft">&#160;</td><td class="mdescRight">fetches enemy at requested position  <a href="class_wave_manager.html#a609ef49c78b432fad93ac99cc836df31">More...</a><br /></td></tr>
@@ -129,20 +133,30 @@ sf::RectangleShape&#160;</td><td class="memItemRight" valign="bottom"><b>getHeal
 const std::vector&lt; <a class="el" href="class_enemy.html">Enemy</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getEnemiesVec</b> () const</td></tr>
 <tr class="separator:addb85ca2d9126ce4cbd83a495d31b96b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a03acaaa63b5a5fdf73b2458d6d8bbeea"><td class="memTemplParams" colspan="2"><a id="a03acaaa63b5a5fdf73b2458d6d8bbeea" name="a03acaaa63b5a5fdf73b2458d6d8bbeea"></a>
+template&lt;typename Base , typename T &gt; </td></tr>
+<tr class="memitem:a03acaaa63b5a5fdf73b2458d6d8bbeea"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>instanceof</b> (const T *)</td></tr>
+<tr class="separator:a03acaaa63b5a5fdf73b2458d6d8bbeea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a9440cd9b8ec292c041b5f794b2bb3217"><td class="memItemLeft" align="right" valign="top"><a id="a9440cd9b8ec292c041b5f794b2bb3217" name="a9440cd9b8ec292c041b5f794b2bb3217"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>currentWave</b></td></tr>
-<tr class="separator:a9440cd9b8ec292c041b5f794b2bb3217"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8e7bd40c8d27b8d2846bf4f0595c834"><td class="memItemLeft" align="right" valign="top"><a id="ae8e7bd40c8d27b8d2846bf4f0595c834" name="ae8e7bd40c8d27b8d2846bf4f0595c834"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>enemyCount</b></td></tr>
-<tr class="separator:ae8e7bd40c8d27b8d2846bf4f0595c834"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa06b0f91367c6174a3add6f585c31c5a"><td class="memItemLeft" align="right" valign="top"><a id="aa06b0f91367c6174a3add6f585c31c5a" name="aa06b0f91367c6174a3add6f585c31c5a"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>aliveEnemyCount</b></td></tr>
-<tr class="separator:aa06b0f91367c6174a3add6f585c31c5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab944db754938f609b1f5f31c8810c2d"><td class="memItemLeft" align="right" valign="top"><a id="aab944db754938f609b1f5f31c8810c2d" name="aab944db754938f609b1f5f31c8810c2d"></a>
-std::vector&lt; <a class="el" href="class_enemy.html">Enemy</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>enemies</b></td></tr>
-<tr class="separator:aab944db754938f609b1f5f31c8810c2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad538d6e305a2a25cce3440eb5f48ba75"><td class="memItemLeft" align="right" valign="top"><a id="ad538d6e305a2a25cce3440eb5f48ba75" name="ad538d6e305a2a25cce3440eb5f48ba75"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>_currentWave</b></td></tr>
+<tr class="separator:ad538d6e305a2a25cce3440eb5f48ba75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17f60a199159b583885f46f157bafa46"><td class="memItemLeft" align="right" valign="top"><a id="a17f60a199159b583885f46f157bafa46" name="a17f60a199159b583885f46f157bafa46"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>_enemyCount</b></td></tr>
+<tr class="separator:a17f60a199159b583885f46f157bafa46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5bf22ae180106e0f28dd5d37b2ae116"><td class="memItemLeft" align="right" valign="top"><a id="aa5bf22ae180106e0f28dd5d37b2ae116" name="aa5bf22ae180106e0f28dd5d37b2ae116"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>_aliveEnemyCount</b></td></tr>
+<tr class="separator:aa5bf22ae180106e0f28dd5d37b2ae116"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78d3ae9e5d321138c642e966686b120b"><td class="memItemLeft" align="right" valign="top"><a id="a78d3ae9e5d321138c642e966686b120b" name="a78d3ae9e5d321138c642e966686b120b"></a>
+std::vector&lt; <a class="el" href="class_entity.html">Entity</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>_entityVec</b></td></tr>
+<tr class="separator:a78d3ae9e5d321138c642e966686b120b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ec2dfb8a44c07d2e288b90fe0183f61"><td class="memItemLeft" align="right" valign="top"><a id="a2ec2dfb8a44c07d2e288b90fe0183f61" name="a2ec2dfb8a44c07d2e288b90fe0183f61"></a>
+std::vector&lt; <a class="el" href="class_enemy.html">Enemy</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_enemies</b></td></tr>
+<tr class="separator:a2ec2dfb8a44c07d2e288b90fe0183f61"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6b6de063a569584f28406e2acc1efc7"><td class="memItemLeft" align="right" valign="top"><a id="ab6b6de063a569584f28406e2acc1efc7" name="ab6b6de063a569584f28406e2acc1efc7"></a>
 <a class="el" href="class_player.html">Player</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>_player</b></td></tr>
 <tr class="separator:ab6b6de063a569584f28406e2acc1efc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -151,8 +165,8 @@ std::vector&lt; <a class="el" href="class_enemy.html">Enemy</a> * &gt;&#160;</td
 <div class="textblock"><p >Class which is used by <a class="el" href="class_game_manager.html">GameManager</a> to spawn and update hoards of enemies.</p>
 <p ><a class="el" href="class_wave_manager.html">WaveManager</a> exclusively owns the enemies of the game, so it is calling the drawing and updating functions for them. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a1c039c9a7a485f88b68a3f966ffe02c5" name="a1c039c9a7a485f88b68a3f966ffe02c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1c039c9a7a485f88b68a3f966ffe02c5">&#9670;&nbsp;</a></span>WaveManager()</h2>
+<a id="a59a494668e5298a98f0d0e0a34a7a825" name="a59a494668e5298a98f0d0e0a34a7a825"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59a494668e5298a98f0d0e0a34a7a825">&#9670;&nbsp;</a></span>WaveManager()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -160,7 +174,8 @@ std::vector&lt; <a class="el" href="class_enemy.html">Enemy</a> * &gt;&#160;</td
         <tr>
           <td class="memname">WaveManager::WaveManager </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="class_entity.html">Entity</a> * &gt; *&#160;</td>
+          <td class="paramname"><em>entityVec</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -254,6 +269,98 @@ std::vector&lt; <a class="el" href="class_enemy.html">Enemy</a> * &gt;&#160;</td
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>returns a pointer to the requested enemy </dd></dl>
+
+</div>
+</div>
+<a id="a27fbd49d4fdc70f8b7634481efcbbd5f" name="a27fbd49d4fdc70f8b7634481efcbbd5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27fbd49d4fdc70f8b7634481efcbbd5f">&#9670;&nbsp;</a></span>getHealthBar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::RectangleShape WaveManager::getHealthBar </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_enemy.html">Enemy</a> *&#160;</td>
+          <td class="paramname"><em>e</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the health bar rectangle itself. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td>enemy to hold the health bar over</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>rectangle health bar </dd></dl>
+
+</div>
+</div>
+<a id="a8b19ad150f558a59a1dd6b330c8819c3" name="a8b19ad150f558a59a1dd6b330c8819c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b19ad150f558a59a1dd6b330c8819c3">&#9670;&nbsp;</a></span>getHealthBarBorder()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::RectangleShape WaveManager::getHealthBarBorder </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_enemy.html">Enemy</a> *&#160;</td>
+          <td class="paramname"><em>e</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the border rectangle for the enemy health bar. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td>enemy to hold the health bar over</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>rectangle border around health bar </dd></dl>
+
+</div>
+</div>
+<a id="aed020b5fb4617a2d25e3ed815e5556ea" name="aed020b5fb4617a2d25e3ed815e5556ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed020b5fb4617a2d25e3ed815e5556ea">&#9670;&nbsp;</a></span>getHitIndicator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Text WaveManager::getHitIndicator </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_entity.html">Entity</a> *&#160;</td>
+          <td class="paramname"><em>e</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>damage</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Called by drawHitIndicator() Gets the hit indicator text. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td><a class="el" href="class_entity.html">Entity</a> to display indicator on </td></tr>
+    <tr><td class="paramname">damage</td><td>Damage number to be displayed</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Hit indicator text </dd></dl>
 
 </div>
 </div>

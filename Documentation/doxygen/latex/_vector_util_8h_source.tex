@@ -1,0 +1,27 @@
+\hypertarget{_vector_util_8h_source}{}\doxysection{Vector\+Util.\+h}
+\label{_vector_util_8h_source}\index{src/VectorUtil.h@{src/VectorUtil.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}SFML/System/Vector2.hpp"{}}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{keyword}{class }\mbox{\hyperlink{class_vector_util}{VectorUtil}}}
+\DoxyCodeLine{7 \{}
+\DoxyCodeLine{8     \textcolor{keyword}{public}:}
+\DoxyCodeLine{16         \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{17         \textcolor{keyword}{static} T \mbox{\hyperlink{class_vector_util_a6448c03b43d2cba51b6c98d3e151be03}{getVectorMagnitude}}(\textcolor{keyword}{const} sf::Vector2<T>\& vec)}
+\DoxyCodeLine{18         \{}
+\DoxyCodeLine{19             \textcolor{comment}{// Use sqrt(x\string^2 + y\string^2) to get the magnitude of the incoming vector}}
+\DoxyCodeLine{20             \textcolor{keywordflow}{return} std::sqrt((vec.x * vec.x) + (vec.y * vec.y)); }
+\DoxyCodeLine{21         \}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{30         \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{31         \textcolor{keyword}{static} sf::Vector2<T> \mbox{\hyperlink{class_vector_util_aace966cdd2504e2c4d79ba20e11c719a}{getUnitVector}}(\textcolor{keyword}{const} sf::Vector2<T>\& vec)}
+\DoxyCodeLine{32         \{}
+\DoxyCodeLine{33             \textcolor{keywordflow}{return} vec / \mbox{\hyperlink{class_vector_util_a6448c03b43d2cba51b6c98d3e151be03}{getVectorMagnitude}}(vec);}
+\DoxyCodeLine{34         \} }
+\DoxyCodeLine{35 \};}
+
+\end{DoxyCode}

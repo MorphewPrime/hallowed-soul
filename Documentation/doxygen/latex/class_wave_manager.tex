@@ -7,8 +7,10 @@
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_wave_manager_a1c039c9a7a485f88b68a3f966ffe02c5}{Wave\+Manager}} ()
+\mbox{\hyperlink{class_wave_manager_a59a494668e5298a98f0d0e0a34a7a825}{Wave\+Manager}} (std\+::vector$<$ \mbox{\hyperlink{class_entity}{Entity}} $\ast$ $>$ $\ast$entity\+Vec)
 \item 
+sf\+::\+Text \mbox{\hyperlink{class_wave_manager_aed020b5fb4617a2d25e3ed815e5556ea}{get\+Hit\+Indicator}} (\mbox{\hyperlink{class_entity}{Entity}} $\ast$e, int damage)
+\begin{DoxyCompactList}\small\item\em Called by draw\+Hit\+Indicator() Gets the hit indicator text. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_wave_manager_a1773fbe7e03f6454e7f0a8bfd4ace823}{set\+Player}} (\mbox{\hyperlink{class_player}{Player}} \&play)
 \begin{DoxyCompactList}\small\item\em establishes a player pointer that can be passed to the enemies \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_wave_manager_aeb54a0e901acd683bbdb8cec6c01bb02}{wave\+Over}} ()
@@ -37,31 +39,38 @@ void \mbox{\hyperlink{class_wave_manager_a9d89aacb1e2f54a82fe508c82d6cae52}{upda
 \mbox{\Hypertarget{class_wave_manager_ae2e7deefbbec6e9e4633d8f77bb3d235}\label{class_wave_manager_ae2e7deefbbec6e9e4633d8f77bb3d235}} 
 void {\bfseries wave\+Draw} ()
 \begin{DoxyCompactList}\small\item\em calls upon all enemies to prepare for drawing \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_wave_manager_a8b19ad150f558a59a1dd6b330c8819c3}\label{class_wave_manager_a8b19ad150f558a59a1dd6b330c8819c3}} 
-sf\+::\+Rectangle\+Shape {\bfseries get\+Health\+Bar\+Border} (\mbox{\hyperlink{class_enemy}{Enemy}} $\ast$e)
-\item 
-\mbox{\Hypertarget{class_wave_manager_a27fbd49d4fdc70f8b7634481efcbbd5f}\label{class_wave_manager_a27fbd49d4fdc70f8b7634481efcbbd5f}} 
-sf\+::\+Rectangle\+Shape {\bfseries get\+Health\+Bar} (\mbox{\hyperlink{class_enemy}{Enemy}} $\ast$e)
-\item 
+sf\+::\+Rectangle\+Shape \mbox{\hyperlink{class_wave_manager_a8b19ad150f558a59a1dd6b330c8819c3}{get\+Health\+Bar\+Border}} (\mbox{\hyperlink{class_enemy}{Enemy}} $\ast$e)
+\begin{DoxyCompactList}\small\item\em Gets the border rectangle for the enemy health bar. \end{DoxyCompactList}\item 
+sf\+::\+Rectangle\+Shape \mbox{\hyperlink{class_wave_manager_a27fbd49d4fdc70f8b7634481efcbbd5f}{get\+Health\+Bar}} (\mbox{\hyperlink{class_enemy}{Enemy}} $\ast$e)
+\begin{DoxyCompactList}\small\item\em Gets the health bar rectangle itself. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_enemy}{Enemy}} $\ast$ \mbox{\hyperlink{class_wave_manager_a609ef49c78b432fad93ac99cc836df31}{get\+Enemy}} (int n)
 \begin{DoxyCompactList}\small\item\em fetches enemy at requested position \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_wave_manager_addb85ca2d9126ce4cbd83a495d31b96b}\label{class_wave_manager_addb85ca2d9126ce4cbd83a495d31b96b}} 
 const std\+::vector$<$ \mbox{\hyperlink{class_enemy}{Enemy}} $\ast$ $>$ \& {\bfseries get\+Enemies\+Vec} () const
 \end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_wave_manager_a03acaaa63b5a5fdf73b2458d6d8bbeea}\label{class_wave_manager_a03acaaa63b5a5fdf73b2458d6d8bbeea}} 
+{\footnotesize template$<$typename Base , typename T $>$ }\\bool {\bfseries instanceof} (const T $\ast$)
+\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_wave_manager_a9440cd9b8ec292c041b5f794b2bb3217}\label{class_wave_manager_a9440cd9b8ec292c041b5f794b2bb3217}} 
-int {\bfseries current\+Wave}
+\mbox{\Hypertarget{class_wave_manager_ad538d6e305a2a25cce3440eb5f48ba75}\label{class_wave_manager_ad538d6e305a2a25cce3440eb5f48ba75}} 
+int {\bfseries \+\_\+current\+Wave}
 \item 
-\mbox{\Hypertarget{class_wave_manager_ae8e7bd40c8d27b8d2846bf4f0595c834}\label{class_wave_manager_ae8e7bd40c8d27b8d2846bf4f0595c834}} 
-int {\bfseries enemy\+Count}
+\mbox{\Hypertarget{class_wave_manager_a17f60a199159b583885f46f157bafa46}\label{class_wave_manager_a17f60a199159b583885f46f157bafa46}} 
+int {\bfseries \+\_\+enemy\+Count}
 \item 
-\mbox{\Hypertarget{class_wave_manager_aa06b0f91367c6174a3add6f585c31c5a}\label{class_wave_manager_aa06b0f91367c6174a3add6f585c31c5a}} 
-int {\bfseries alive\+Enemy\+Count}
+\mbox{\Hypertarget{class_wave_manager_aa5bf22ae180106e0f28dd5d37b2ae116}\label{class_wave_manager_aa5bf22ae180106e0f28dd5d37b2ae116}} 
+int {\bfseries \+\_\+alive\+Enemy\+Count}
 \item 
-\mbox{\Hypertarget{class_wave_manager_aab944db754938f609b1f5f31c8810c2d}\label{class_wave_manager_aab944db754938f609b1f5f31c8810c2d}} 
-std\+::vector$<$ \mbox{\hyperlink{class_enemy}{Enemy}} $\ast$ $>$ {\bfseries enemies}
+\mbox{\Hypertarget{class_wave_manager_a78d3ae9e5d321138c642e966686b120b}\label{class_wave_manager_a78d3ae9e5d321138c642e966686b120b}} 
+std\+::vector$<$ \mbox{\hyperlink{class_entity}{Entity}} $\ast$ $>$ $\ast$ {\bfseries \+\_\+entity\+Vec}
+\item 
+\mbox{\Hypertarget{class_wave_manager_a2ec2dfb8a44c07d2e288b90fe0183f61}\label{class_wave_manager_a2ec2dfb8a44c07d2e288b90fe0183f61}} 
+std\+::vector$<$ \mbox{\hyperlink{class_enemy}{Enemy}} $\ast$ $>$ {\bfseries \+\_\+enemies}
 \item 
 \mbox{\Hypertarget{class_wave_manager_ab6b6de063a569584f28406e2acc1efc7}\label{class_wave_manager_ab6b6de063a569584f28406e2acc1efc7}} 
 \mbox{\hyperlink{class_player}{Player}} $\ast$ {\bfseries \+\_\+player}
@@ -74,11 +83,11 @@ Class which is used by \mbox{\hyperlink{class_game_manager}{Game\+Manager}} to s
 \mbox{\hyperlink{class_wave_manager}{Wave\+Manager}} exclusively owns the enemies of the game, so it is calling the drawing and updating functions for them. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_wave_manager_a1c039c9a7a485f88b68a3f966ffe02c5}\label{class_wave_manager_a1c039c9a7a485f88b68a3f966ffe02c5}} 
+\mbox{\Hypertarget{class_wave_manager_a59a494668e5298a98f0d0e0a34a7a825}\label{class_wave_manager_a59a494668e5298a98f0d0e0a34a7a825}} 
 \index{WaveManager@{WaveManager}!WaveManager@{WaveManager}}
 \index{WaveManager@{WaveManager}!WaveManager@{WaveManager}}
 \doxysubsubsection{\texorpdfstring{WaveManager()}{WaveManager()}}
-{\footnotesize\ttfamily Wave\+Manager\+::\+Wave\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Wave\+Manager\+::\+Wave\+Manager (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_entity}{Entity}} $\ast$ $>$ $\ast$}]{entity\+Vec }\end{DoxyParamCaption})}
 
 \mbox{\hyperlink{class_wave_manager}{Wave\+Manager}} constructor 
 
@@ -139,6 +148,62 @@ fetches enemy at requested position
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 returns a pointer to the requested enemy 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wave_manager_a27fbd49d4fdc70f8b7634481efcbbd5f}\label{class_wave_manager_a27fbd49d4fdc70f8b7634481efcbbd5f}} 
+\index{WaveManager@{WaveManager}!getHealthBar@{getHealthBar}}
+\index{getHealthBar@{getHealthBar}!WaveManager@{WaveManager}}
+\doxysubsubsection{\texorpdfstring{getHealthBar()}{getHealthBar()}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape Wave\+Manager\+::get\+Health\+Bar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemy}{Enemy}} $\ast$}]{e }\end{DoxyParamCaption})}
+
+
+
+Gets the health bar rectangle itself. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & enemy to hold the health bar over\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+rectangle health bar 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wave_manager_a8b19ad150f558a59a1dd6b330c8819c3}\label{class_wave_manager_a8b19ad150f558a59a1dd6b330c8819c3}} 
+\index{WaveManager@{WaveManager}!getHealthBarBorder@{getHealthBarBorder}}
+\index{getHealthBarBorder@{getHealthBarBorder}!WaveManager@{WaveManager}}
+\doxysubsubsection{\texorpdfstring{getHealthBarBorder()}{getHealthBarBorder()}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape Wave\+Manager\+::get\+Health\+Bar\+Border (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemy}{Enemy}} $\ast$}]{e }\end{DoxyParamCaption})}
+
+
+
+Gets the border rectangle for the enemy health bar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & enemy to hold the health bar over\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+rectangle border around health bar 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_wave_manager_aed020b5fb4617a2d25e3ed815e5556ea}\label{class_wave_manager_aed020b5fb4617a2d25e3ed815e5556ea}} 
+\index{WaveManager@{WaveManager}!getHitIndicator@{getHitIndicator}}
+\index{getHitIndicator@{getHitIndicator}!WaveManager@{WaveManager}}
+\doxysubsubsection{\texorpdfstring{getHitIndicator()}{getHitIndicator()}}
+{\footnotesize\ttfamily sf\+::\+Text Wave\+Manager\+::get\+Hit\+Indicator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entity}{Entity}} $\ast$}]{e,  }\item[{int}]{damage }\end{DoxyParamCaption})}
+
+
+
+Called by draw\+Hit\+Indicator() Gets the hit indicator text. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & \mbox{\hyperlink{class_entity}{Entity}} to display indicator on \\
+\hline
+{\em damage} & Damage number to be displayed\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Hit indicator text 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_wave_manager_ac8fd5ca32a8b501ea7ac4ff8c62099d5}\label{class_wave_manager_ac8fd5ca32a8b501ea7ac4ff8c62099d5}} 
 \index{WaveManager@{WaveManager}!getWave@{getWave}}

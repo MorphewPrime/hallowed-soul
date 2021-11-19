@@ -1,0 +1,30 @@
+\hypertarget{_wave_bar_8h_source}{}\doxysection{Wave\+Bar.\+h}
+\label{_wave_bar_8h_source}\index{src/WaveBar.h@{src/WaveBar.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}WaveManager.h"{}}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{keyword}{class }\mbox{\hyperlink{class_wave_bar}{WaveBar}}}
+\DoxyCodeLine{7 \{}
+\DoxyCodeLine{8     \textcolor{keyword}{public}:}
+\DoxyCodeLine{9         \mbox{\hyperlink{class_wave_manager}{WaveManager}}* \_wave;}
+\DoxyCodeLine{10         sf::RenderWindow* \_gameWindow;}
+\DoxyCodeLine{11         sf::View* \_view;}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13         \textcolor{keywordtype}{int} \_newWaveMatcher;}
+\DoxyCodeLine{14         \textcolor{keywordtype}{float} \_timeElapsed;}
+\DoxyCodeLine{15         \textcolor{keywordtype}{bool} \_isDrawingNotif = \textcolor{keyword}{false};}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{21         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_wave_bar_a30fde622c1b2e4efaa18ada774b88f77}{setData}}(\mbox{\hyperlink{class_wave_manager}{WaveManager}}* wave, sf::RenderWindow* gameWindow, sf::View* view);}
+\DoxyCodeLine{22         }
+\DoxyCodeLine{27         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_wave_bar_a52e993dcb0ce8a7ee802b42b239a9970}{draw}}(sf::Time frameTime);}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{33         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_wave_bar_a95e6a421ab3501c5f945b6e319f6b1c8}{setDeltaTime}}();}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{39         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_wave_bar_aa914fe750cdca3e22907b37f822bfa92}{drawWaveNotification}}(sf::Time frameTime);}
+\DoxyCodeLine{40 \};}
+
+\end{DoxyCode}

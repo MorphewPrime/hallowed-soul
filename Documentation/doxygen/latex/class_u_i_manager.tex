@@ -1,0 +1,72 @@
+\hypertarget{class_u_i_manager}{}\doxysection{UIManager Class Reference}
+\label{class_u_i_manager}\index{UIManager@{UIManager}}
+
+
+{\ttfamily \#include $<$UIManager.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_u_i_manager_a9d615f8a0ee4c31668bb2b8b0e74229f}{set\+Data}} (\mbox{\hyperlink{class_player}{Player}} \&player, \mbox{\hyperlink{class_wave_manager}{Wave\+Manager}} \&\+\_\+wave, sf\+::\+Render\+Window \&game\+Window, sf\+::\+View \&view)
+\begin{DoxyCompactList}\small\item\em establishes a player pointer that can be passed to the enemies \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_u_i_manager_abd6d611223d051fbbb67fdd6c6326576}{on\+Draw}} (sf\+::\+Time frame\+Time)
+\item 
+\mbox{\Hypertarget{class_u_i_manager_a1175f56518b027ea88a45e3cf27509fa}\label{class_u_i_manager_a1175f56518b027ea88a45e3cf27509fa}} 
+void {\bfseries draw\+Map} ()
+\begin{DoxyCompactList}\small\item\em Called from draw\+Frame(), This will draw the map as well as the tutorial sprite. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_u_i_manager_accc8f6af3e848b07affc6cfe5a48ae3c}\label{class_u_i_manager_accc8f6af3e848b07affc6cfe5a48ae3c}} 
+\mbox{\hyperlink{class_player}{Player}} $\ast$ {\bfseries \+\_\+player}
+\item 
+\mbox{\Hypertarget{class_u_i_manager_a6ce0126bf99b1ae73b5bbc1dce4e96b5}\label{class_u_i_manager_a6ce0126bf99b1ae73b5bbc1dce4e96b5}} 
+\mbox{\hyperlink{class_wave_manager}{Wave\+Manager}} $\ast$ {\bfseries \+\_\+wave}
+\item 
+\mbox{\Hypertarget{class_u_i_manager_a5f85c58ac684199a1549cbb20c4ba611}\label{class_u_i_manager_a5f85c58ac684199a1549cbb20c4ba611}} 
+sf\+::\+Render\+Window $\ast$ {\bfseries \+\_\+game\+Window}
+\item 
+\mbox{\Hypertarget{class_u_i_manager_a5ab7b09768311bc3653ae0833e65e196}\label{class_u_i_manager_a5ab7b09768311bc3653ae0833e65e196}} 
+sf\+::\+View $\ast$ {\bfseries \+\_\+view}
+\item 
+\mbox{\Hypertarget{class_u_i_manager_af1844087bb837348dc23fd6547fbaeda}\label{class_u_i_manager_af1844087bb837348dc23fd6547fbaeda}} 
+\mbox{\hyperlink{class_health_bar}{Health\+Bar}} {\bfseries \+\_\+health\+Bar}
+\item 
+\mbox{\Hypertarget{class_u_i_manager_a3261d239280141baf49f118a6fc13f44}\label{class_u_i_manager_a3261d239280141baf49f118a6fc13f44}} 
+\mbox{\hyperlink{class_wave_bar}{Wave\+Bar}} {\bfseries \+\_\+wave\+Bar}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for the player.
+
+The \mbox{\hyperlink{class_player}{Player}} is an \mbox{\hyperlink{class_entity}{Entity}} which is controlled by the player and responds to keyboard input. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_u_i_manager_abd6d611223d051fbbb67fdd6c6326576}\label{class_u_i_manager_abd6d611223d051fbbb67fdd6c6326576}} 
+\index{UIManager@{UIManager}!onDraw@{onDraw}}
+\index{onDraw@{onDraw}!UIManager@{UIManager}}
+\doxysubsubsection{\texorpdfstring{onDraw()}{onDraw()}}
+{\footnotesize\ttfamily void UIManager\+::on\+Draw (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{frame\+Time }\end{DoxyParamCaption})}
+
+Implementation of \mbox{\hyperlink{class_u_i_manager_abd6d611223d051fbbb67fdd6c6326576}{on\+Draw()}} \mbox{\Hypertarget{class_u_i_manager_a9d615f8a0ee4c31668bb2b8b0e74229f}\label{class_u_i_manager_a9d615f8a0ee4c31668bb2b8b0e74229f}} 
+\index{UIManager@{UIManager}!setData@{setData}}
+\index{setData@{setData}!UIManager@{UIManager}}
+\doxysubsubsection{\texorpdfstring{setData()}{setData()}}
+{\footnotesize\ttfamily void UIManager\+::set\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}} \&}]{player,  }\item[{\mbox{\hyperlink{class_wave_manager}{Wave\+Manager}} \&}]{\+\_\+wave,  }\item[{sf\+::\+Render\+Window \&}]{game\+Window,  }\item[{sf\+::\+View \&}]{view }\end{DoxyParamCaption})}
+
+
+
+establishes a player pointer that can be passed to the enemies 
+
+
+\begin{DoxyParams}{Parameters}
+{\em play} & player object passed by reference \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/UIManager.\+h\item 
+src/UIManager.\+cpp\end{DoxyCompactItemize}

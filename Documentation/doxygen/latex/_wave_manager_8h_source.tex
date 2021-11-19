@@ -4,52 +4,64 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
 \DoxyCodeLine{2 }
-\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <vector>}}
-\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}Enemy.h"{}}}
-\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}Player.h"{}}}
-\DoxyCodeLine{6 }
-\DoxyCodeLine{12 \textcolor{keyword}{class }\mbox{\hyperlink{class_wave_manager}{WaveManager}}}
-\DoxyCodeLine{13 \{}
-\DoxyCodeLine{14     \textcolor{keyword}{private}:}
-\DoxyCodeLine{15         \textcolor{keywordtype}{int} currentWave;}
-\DoxyCodeLine{16         \textcolor{keywordtype}{int} enemyCount;}
-\DoxyCodeLine{17         \textcolor{keywordtype}{int} aliveEnemyCount;}
-\DoxyCodeLine{18         std::vector<Enemy*> enemies;}
-\DoxyCodeLine{19         \mbox{\hyperlink{class_player}{Player}}* \_player;}
-\DoxyCodeLine{20 }
-\DoxyCodeLine{21     \textcolor{keyword}{public}:}
-\DoxyCodeLine{23         \mbox{\hyperlink{class_wave_manager_a1c039c9a7a485f88b68a3f966ffe02c5}{WaveManager}}();}
-\DoxyCodeLine{24 }
-\DoxyCodeLine{30         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_wave_manager_a1773fbe7e03f6454e7f0a8bfd4ace823}{setPlayer}}(\mbox{\hyperlink{class_player}{Player}} \&play);}
-\DoxyCodeLine{31 }
-\DoxyCodeLine{37         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_wave_manager_aeb54a0e901acd683bbdb8cec6c01bb02}{waveOver}}();}
-\DoxyCodeLine{38 }
-\DoxyCodeLine{42         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_wave_manager_a6f10f126cf1a50c7365ceed2b2445510}{beginWave}}();}
-\DoxyCodeLine{43 }
-\DoxyCodeLine{47         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_wave_manager_af8c7fed69e3a5403cf363ff475aa25da}{endWave}}();}
-\DoxyCodeLine{48 }
-\DoxyCodeLine{54         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_wave_manager_ac8fd5ca32a8b501ea7ac4ff8c62099d5}{getWave}}();}
-\DoxyCodeLine{55 }
-\DoxyCodeLine{61         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_wave_manager_a01528c206bf7ddc8c2ecf026e2efdc3d}{getEnemies}}();}
-\DoxyCodeLine{62 }
-\DoxyCodeLine{68         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_wave_manager_a1db7d3a41ad3f0d66506a7114b6fde17}{getEnemiesAlive}}();}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <type\_traits>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}Enemy.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}Player.h"{}}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{13 \textcolor{keyword}{class }\mbox{\hyperlink{class_wave_manager}{WaveManager}}}
+\DoxyCodeLine{14 \{}
+\DoxyCodeLine{15     \textcolor{keyword}{private}:}
+\DoxyCodeLine{16         \textcolor{keywordtype}{int} \_currentWave;}
+\DoxyCodeLine{17         \textcolor{keywordtype}{int} \_enemyCount;}
+\DoxyCodeLine{18         \textcolor{keywordtype}{int} \_aliveEnemyCount;}
+\DoxyCodeLine{19         std::vector<Entity*> *\_entityVec;}
+\DoxyCodeLine{20         std::vector<Enemy*> \_enemies;}
+\DoxyCodeLine{21         \mbox{\hyperlink{class_player}{Player}}* \_player;}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Base, \textcolor{keyword}{typename} T>}
+\DoxyCodeLine{24         \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} instanceof(\textcolor{keyword}{const} T*)}
+\DoxyCodeLine{25         \{}
+\DoxyCodeLine{26             \textcolor{keywordflow}{return} std::is\_base\_of<Base, T>::value;}
+\DoxyCodeLine{27         \}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \textcolor{keyword}{public}:}
+\DoxyCodeLine{31         \mbox{\hyperlink{class_wave_manager_a59a494668e5298a98f0d0e0a34a7a825}{WaveManager}}(std::vector<Entity*> *entityVec);}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33         \mbox{\hyperlink{class_wave_manager}{\string~WaveManager}}();}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{44         sf::Text \mbox{\hyperlink{class_wave_manager_aed020b5fb4617a2d25e3ed815e5556ea}{getHitIndicator}}(\mbox{\hyperlink{class_entity}{Entity}}* e, \textcolor{keywordtype}{int} damage);}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{51         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_wave_manager_a1773fbe7e03f6454e7f0a8bfd4ace823}{setPlayer}}(\mbox{\hyperlink{class_player}{Player}} \&play);}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{58         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_wave_manager_aeb54a0e901acd683bbdb8cec6c01bb02}{waveOver}}();}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{63         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_wave_manager_a6f10f126cf1a50c7365ceed2b2445510}{beginWave}}();}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{68         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_wave_manager_af8c7fed69e3a5403cf363ff475aa25da}{endWave}}();}
 \DoxyCodeLine{69 }
-\DoxyCodeLine{75         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_wave_manager_a3a861ebf6827ae9342dacac6820e29e0}{getEnemiesRemaining}}();}
+\DoxyCodeLine{75         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_wave_manager_ac8fd5ca32a8b501ea7ac4ff8c62099d5}{getWave}}();}
 \DoxyCodeLine{76 }
-\DoxyCodeLine{82         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_wave_manager_ac33f0fddd7bae12fd99be5c95fb196f2}{update}}(\textcolor{keywordtype}{float} deltaTime);}
+\DoxyCodeLine{82         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_wave_manager_a01528c206bf7ddc8c2ecf026e2efdc3d}{getEnemies}}();}
 \DoxyCodeLine{83 }
-\DoxyCodeLine{88         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_wave_manager_aa9756dd8edf6df225c6636f7dbcf4569}{updateAliveEnemyCount}}();}
-\DoxyCodeLine{89 }
-\DoxyCodeLine{95         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_wave_manager_a9d89aacb1e2f54a82fe508c82d6cae52}{updateEnemies}}(\textcolor{keywordtype}{float} time);}
-\DoxyCodeLine{96 }
-\DoxyCodeLine{100         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_wave_manager_ae2e7deefbbec6e9e4633d8f77bb3d235}{waveDraw}}();}
-\DoxyCodeLine{101 }
-\DoxyCodeLine{102         sf::RectangleShape getHealthBarBorder(\mbox{\hyperlink{class_enemy}{Enemy}}* e);}
-\DoxyCodeLine{103 }
-\DoxyCodeLine{104         sf::RectangleShape getHealthBar(\mbox{\hyperlink{class_enemy}{Enemy}}* e);}
-\DoxyCodeLine{105 }
-\DoxyCodeLine{113         \mbox{\hyperlink{class_enemy}{Enemy}}* \mbox{\hyperlink{class_wave_manager_a609ef49c78b432fad93ac99cc836df31}{getEnemy}}(\textcolor{keywordtype}{int} n);}
-\DoxyCodeLine{114         \textcolor{keyword}{const} std::vector<Enemy*> \&getEnemiesVec() \textcolor{keyword}{const};}
-\DoxyCodeLine{115 \};}
+\DoxyCodeLine{89         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_wave_manager_a1db7d3a41ad3f0d66506a7114b6fde17}{getEnemiesAlive}}();}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{96         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_wave_manager_a3a861ebf6827ae9342dacac6820e29e0}{getEnemiesRemaining}}();}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{103         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_wave_manager_ac33f0fddd7bae12fd99be5c95fb196f2}{update}}(\textcolor{keywordtype}{float} deltaTime);}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{109         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_wave_manager_aa9756dd8edf6df225c6636f7dbcf4569}{updateAliveEnemyCount}}();}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{116         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_wave_manager_a9d89aacb1e2f54a82fe508c82d6cae52}{updateEnemies}}(\textcolor{keywordtype}{float} time);}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{121         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_wave_manager_ae2e7deefbbec6e9e4633d8f77bb3d235}{waveDraw}}();}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{130         sf::RectangleShape \mbox{\hyperlink{class_wave_manager_a8b19ad150f558a59a1dd6b330c8819c3}{getHealthBarBorder}}(\mbox{\hyperlink{class_enemy}{Enemy}}* e);}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{139         sf::RectangleShape \mbox{\hyperlink{class_wave_manager_a27fbd49d4fdc70f8b7634481efcbbd5f}{getHealthBar}}(\mbox{\hyperlink{class_enemy}{Enemy}}* e);}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{148         \mbox{\hyperlink{class_enemy}{Enemy}}* \mbox{\hyperlink{class_wave_manager_a609ef49c78b432fad93ac99cc836df31}{getEnemy}}(\textcolor{keywordtype}{int} n);}
+\DoxyCodeLine{149         \textcolor{keyword}{const} std::vector<Enemy*> \&getEnemiesVec() \textcolor{keyword}{const};}
+\DoxyCodeLine{150 \};}
 
 \end{DoxyCode}

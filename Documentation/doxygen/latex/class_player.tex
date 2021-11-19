@@ -13,22 +13,31 @@ Inheritance diagram for Player\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{class_player_a12b94ce5d46b659adc05aa59477d4e98}{Player}} (std\+::vector$<$ \mbox{\hyperlink{class_entity}{Entity}} $\ast$ $>$ $\ast$entity\+Vec)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_player_ab9fcfc11975d771581e74d90aff604e4}{move\+In\+Direction}} (sf\+::\+Vector2$<$ float $>$ move\+Dir)
 \begin{DoxyCompactList}\small\item\em Tells the player which direction it needs to be moving. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_player_acabbb13d10a3814ba6df327cc8ce281d}{dodge\+In\+Direction}} (sf\+::\+Vector2$<$ float $>$ dodge\+Dir)
 \begin{DoxyCompactList}\small\item\em Tells the player which direction it needs to be dodging. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_player_abe43a64291d593a878b991eda175e70a}\label{class_player_abe43a64291d593a878b991eda175e70a}} 
-void {\bfseries attack} (\mbox{\hyperlink{class_entity}{Entity}} $\ast$to\+Attack)
+void \mbox{\hyperlink{class_player_aac7890f283832511f69f02bd8d752f2f}{spawn}} (sf\+::\+Vector2$<$ float $>$ spawn\+Location)
+\begin{DoxyCompactList}\small\item\em Spawns the player at a location. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_player_a451aedb20fa8c4f9ce6f543d8f1c5d35}\label{class_player_a451aedb20fa8c4f9ce6f543d8f1c5d35}} 
+\mbox{\hyperlink{class_entity}{Entity}} $\ast$ {\bfseries attack} (int damage)
 \begin{DoxyCompactList}\small\item\em Tells the player it needs to be attacking. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_player_a8214c55a7c5e24f8d0e0ad7ef39f9c13}\label{class_player_a8214c55a7c5e24f8d0e0ad7ef39f9c13}} 
-void {\bfseries counter} ()
-\begin{DoxyCompactList}\small\item\em Tells the player it needs to be countering. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_player_a9a90e678f21a5a94df5fd91c6cc78b39}{is\+Dodging}} ()
 \begin{DoxyCompactList}\small\item\em checks if player is dodging \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_player_ac08be244d40af5835899e9780100d2bd}{is\+Red}} ()
+\begin{DoxyCompactList}\small\item\em checks if player is red \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_aca80188027634eeb28c9a29eeba13b59}{do\+Damage}} (int damage)
+\begin{DoxyCompactList}\small\item\em override for entity\textquotesingle{}s do\+Damage \end{DoxyCompactList}\item 
 const sf\+::\+Vector2$<$ float $>$ \& \mbox{\hyperlink{class_player_ad35f18e31ec9b823b81c7fabf8ba6226}{get\+Last\+Move\+Direction}} () const
 \begin{DoxyCompactList}\small\item\em Gets the last direction the player moved in (for attacking) \end{DoxyCompactList}\item 
-const float \& \mbox{\hyperlink{class_player_a97f07f22467c7fa0322010aa09f2a650}{get\+Attack\+Range}} () const
-\begin{DoxyCompactList}\small\item\em Getter for attack range. \end{DoxyCompactList}\end{DoxyCompactItemize}
+float \mbox{\hyperlink{class_player_a41278bda190e1f6b514f19afdbaef937}{get\+Attack\+Range}} () const
+\begin{DoxyCompactList}\small\item\em Getter for attack range. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_a866cf4afd5f6c4bc41fcb1906d27022d}{on\+Draw}} ()
+\item 
+Entity\+Type \mbox{\hyperlink{class_player_a2e083637a013f232b670f1d2d14a4eee}{get\+Entity\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Gets the type of entity this is. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -38,15 +47,13 @@ void \mbox{\hyperlink{class_player_a91567245da0d74ae16791c230decb4e4}{on\+Collis
 \begin{DoxyCompactList}\small\item\em Overrided function from \mbox{\hyperlink{class_entity}{Entity}}, auto called from \mbox{\hyperlink{class_game_manager}{Game\+Manager}} Used to handle collisions. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{class_player_a5e61505b6f406cd389af4fc16d0201b8}{check\+Dead\+Move\+Axis}} (float vel\+Axis, float move\+Axis, float friction, float delta\+Time)
 \begin{DoxyCompactList}\small\item\em Handles slowing down when player isn\textquotesingle{}t moving in a particular direction. \end{DoxyCompactList}\item 
-float \mbox{\hyperlink{class_player_afa77ba15f98a744866cc10234f04b324}{get\+Vector\+Magnitude}} (sf\+::\+Vector2$<$ float $>$ vec)
-\begin{DoxyCompactList}\small\item\em Get the magnitude of a vector. \end{DoxyCompactList}\item 
-sf\+::\+Vector2$<$ float $>$ \mbox{\hyperlink{class_player_a35bfa3cd92a684ccdeaff94da41aeb3e}{get\+Unit\+Vector}} (sf\+::\+Vector2$<$ float $>$ vec)
-\begin{DoxyCompactList}\small\item\em Get the unit vector of any vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+float \mbox{\hyperlink{class_player_ab9429d7ae67713444f59d5e7d64f3505}{get\+Seconds\+Per\+Frame}} () const
+\begin{DoxyCompactList}\small\item\em Get the seconds per frame for the player. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_player_a6c4c3a22ed21fe26812b196035825350}\label{class_player_a6c4c3a22ed21fe26812b196035825350}} 
-const float {\bfseries \+\_\+move\+Speed} = 350
+const float {\bfseries \+\_\+move\+Speed} = 200
 \item 
 \mbox{\Hypertarget{class_player_a75edf1815a6a6519dda118cbcfecbd8b}\label{class_player_a75edf1815a6a6519dda118cbcfecbd8b}} 
 const float {\bfseries \+\_\+dodge\+Speed} = 1100
@@ -55,22 +62,37 @@ const float {\bfseries \+\_\+dodge\+Speed} = 1100
 const float {\bfseries \+\_\+friction} = 1600
 \item 
 \mbox{\Hypertarget{class_player_af7e97d6468a7d0357d4e304065902fad}\label{class_player_af7e97d6468a7d0357d4e304065902fad}} 
-const float {\bfseries \+\_\+dodge\+Friction} = 6000
+const float {\bfseries \+\_\+dodge\+Friction} = 9000
 \item 
 \mbox{\Hypertarget{class_player_a39f993af157e0b475ed9772760b74228}\label{class_player_a39f993af157e0b475ed9772760b74228}} 
-const float {\bfseries \+\_\+attack\+Range} = 250
+const float {\bfseries \+\_\+attack\+Range} = 40
 \item 
 \mbox{\Hypertarget{class_player_a3574734a0e306af4aac3038fb81823ea}\label{class_player_a3574734a0e306af4aac3038fb81823ea}} 
 const float {\bfseries \+\_\+dead\+Zone} = 0.\+01
 \item 
-\mbox{\Hypertarget{class_player_ac9dff5b524b4ac74bbd26f6bf1bbfa81}\label{class_player_ac9dff5b524b4ac74bbd26f6bf1bbfa81}} 
-Move\+State {\bfseries \+\_\+current\+Move\+State}
+\mbox{\Hypertarget{class_player_a8143557914d9449c70a43bc094dbf137}\label{class_player_a8143557914d9449c70a43bc094dbf137}} 
+const float {\bfseries \+\_\+attack\+Time} = 0.\+6
+\item 
+\mbox{\Hypertarget{class_player_a7b86ad6e5bb6d6620b0161d22f8b65db}\label{class_player_a7b86ad6e5bb6d6620b0161d22f8b65db}} 
+const float {\bfseries \+\_\+dodge\+Time} = 0.\+6
 \item 
 \mbox{\Hypertarget{class_player_a993a1169b0b696a972639f4a6b95a4e6}\label{class_player_a993a1169b0b696a972639f4a6b95a4e6}} 
 sf\+::\+Vector2$<$ float $>$ {\bfseries \+\_\+move\+Vec}
 \item 
 \mbox{\Hypertarget{class_player_a37bfba9f58fe44568492f3ba1c449a32}\label{class_player_a37bfba9f58fe44568492f3ba1c449a32}} 
 sf\+::\+Vector2$<$ float $>$ {\bfseries \+\_\+last\+Move\+Vec}
+\item 
+\mbox{\Hypertarget{class_player_a44296c577d5fc3f4ce2fe570d131236f}\label{class_player_a44296c577d5fc3f4ce2fe570d131236f}} 
+float {\bfseries \+\_\+last\+Attack\+Time}
+\item 
+\mbox{\Hypertarget{class_player_a2eccdb4abedfc7966b679212330eb154}\label{class_player_a2eccdb4abedfc7966b679212330eb154}} 
+float {\bfseries \+\_\+last\+Dodge\+Time}
+\item 
+\mbox{\Hypertarget{class_player_aa59a2c9d4e447319a1afbdbe1f3b9f1b}\label{class_player_aa59a2c9d4e447319a1afbdbe1f3b9f1b}} 
+float {\bfseries \+\_\+red\+Time}
+\item 
+\mbox{\Hypertarget{class_player_a6340ba9b410e07bd61b714e66950d63e}\label{class_player_a6340ba9b410e07bd61b714e66950d63e}} 
+bool {\bfseries \+\_\+is\+Red}
 \item 
 \mbox{\Hypertarget{class_player_a6c5f342d131a0e3ea66d53f4ccb03664}\label{class_player_a6c5f342d131a0e3ea66d53f4ccb03664}} 
 sf\+::\+Vector2$<$ float $>$ {\bfseries \+\_\+dodge\+Vec}
@@ -82,6 +104,24 @@ sf\+::\+Vector2$<$ float $>$ {\bfseries \+\_\+dodge\+Vec}
 Class for the player.
 
 The \mbox{\hyperlink{class_player}{Player}} is an \mbox{\hyperlink{class_entity}{Entity}} which is controlled by the player and responds to keyboard input. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_player_a12b94ce5d46b659adc05aa59477d4e98}\label{class_player_a12b94ce5d46b659adc05aa59477d4e98}} 
+\index{Player@{Player}!Player@{Player}}
+\index{Player@{Player}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{Player()}{Player()}}
+{\footnotesize\ttfamily Player\+::\+Player (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_entity}{Entity}} $\ast$ $>$ $\ast$}]{entity\+Vec }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity\+Vec} & Vector containing all entities \\
+\hline
+\end{DoxyParams}
+
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_player_a5e61505b6f406cd389af4fc16d0201b8}\label{class_player_a5e61505b6f406cd389af4fc16d0201b8}} 
@@ -108,6 +148,25 @@ Handles slowing down when player isn\textquotesingle{}t moving in a particular d
 \begin{DoxyReturn}{Returns}
 The new value for the velocity after slow down 
 \end{DoxyReturn}
+\mbox{\Hypertarget{class_player_aca80188027634eeb28c9a29eeba13b59}\label{class_player_aca80188027634eeb28c9a29eeba13b59}} 
+\index{Player@{Player}!doDamage@{doDamage}}
+\index{doDamage@{doDamage}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{doDamage()}{doDamage()}}
+{\footnotesize\ttfamily void Player\+::do\+Damage (\begin{DoxyParamCaption}\item[{int}]{damage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+override for entity\textquotesingle{}s do\+Damage 
+
+
+\begin{DoxyParams}{Parameters}
+{\em damage} & damage amount \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_entity_a3eb4bd5f0f6698ed9632004ef0d170ba}{Entity}}.
+
 \mbox{\Hypertarget{class_player_acabbb13d10a3814ba6df327cc8ce281d}\label{class_player_acabbb13d10a3814ba6df327cc8ce281d}} 
 \index{Player@{Player}!dodgeInDirection@{dodgeInDirection}}
 \index{dodgeInDirection@{dodgeInDirection}!Player@{Player}}
@@ -123,11 +182,11 @@ Tells the player which direction it needs to be dodging.
 {\em dodge\+Dir} & Pretty sure we don\textquotesingle{}t need the direction, to be removed \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_player_a97f07f22467c7fa0322010aa09f2a650}\label{class_player_a97f07f22467c7fa0322010aa09f2a650}} 
+\mbox{\Hypertarget{class_player_a41278bda190e1f6b514f19afdbaef937}\label{class_player_a41278bda190e1f6b514f19afdbaef937}} 
 \index{Player@{Player}!getAttackRange@{getAttackRange}}
 \index{getAttackRange@{getAttackRange}!Player@{Player}}
 \doxysubsubsection{\texorpdfstring{getAttackRange()}{getAttackRange()}}
-{\footnotesize\ttfamily const float \& Player\+::get\+Attack\+Range (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily float Player\+::get\+Attack\+Range (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
@@ -136,6 +195,23 @@ Getter for attack range.
 \begin{DoxyReturn}{Returns}
 It returns a random number. Just kidding it\textquotesingle{}s the constant attack range of the player 
 \end{DoxyReturn}
+\mbox{\Hypertarget{class_player_a2e083637a013f232b670f1d2d14a4eee}\label{class_player_a2e083637a013f232b670f1d2d14a4eee}} 
+\index{Player@{Player}!getEntityType@{getEntityType}}
+\index{getEntityType@{getEntityType}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{getEntityType()}{getEntityType()}}
+{\footnotesize\ttfamily Entity\+Type Player\+::get\+Entity\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the type of entity this is. 
+
+\begin{DoxyReturn}{Returns}
+The type of entity 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_entity_aad5218b6073670ba318c5f3b281c5d00}{Entity}}.
+
 \mbox{\Hypertarget{class_player_ad35f18e31ec9b823b81c7fabf8ba6226}\label{class_player_ad35f18e31ec9b823b81c7fabf8ba6226}} 
 \index{Player@{Player}!getLastMoveDirection@{getLastMoveDirection}}
 \index{getLastMoveDirection@{getLastMoveDirection}!Player@{Player}}
@@ -149,42 +225,25 @@ Gets the last direction the player moved in (for attacking)
 \begin{DoxyReturn}{Returns}
 Hmmmm, I wonder? Maybe the last direction the player moved in?? 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_player_a35bfa3cd92a684ccdeaff94da41aeb3e}\label{class_player_a35bfa3cd92a684ccdeaff94da41aeb3e}} 
-\index{Player@{Player}!getUnitVector@{getUnitVector}}
-\index{getUnitVector@{getUnitVector}!Player@{Player}}
-\doxysubsubsection{\texorpdfstring{getUnitVector()}{getUnitVector()}}
-{\footnotesize\ttfamily sf\+::\+Vector2$<$ float $>$ Player\+::get\+Unit\+Vector (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2$<$ float $>$}]{vec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+\mbox{\Hypertarget{class_player_ab9429d7ae67713444f59d5e7d64f3505}\label{class_player_ab9429d7ae67713444f59d5e7d64f3505}} 
+\index{Player@{Player}!getSecondsPerFrame@{getSecondsPerFrame}}
+\index{getSecondsPerFrame@{getSecondsPerFrame}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{getSecondsPerFrame()}{getSecondsPerFrame()}}
+{\footnotesize\ttfamily float Player\+::get\+Seconds\+Per\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
 
 
 
-Get the unit vector of any vector. 
+Get the seconds per frame for the player. 
 
+Overrides the method in \mbox{\hyperlink{class_entity}{Entity}} because there is only one attack frame, so it needs to be given more time.
 
-\begin{DoxyParams}{Parameters}
-{\em vec} & The vector to get the unit of\\
-\hline
-\end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The unit vector 
+the seconds per frame to animate at. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_player_afa77ba15f98a744866cc10234f04b324}\label{class_player_afa77ba15f98a744866cc10234f04b324}} 
-\index{Player@{Player}!getVectorMagnitude@{getVectorMagnitude}}
-\index{getVectorMagnitude@{getVectorMagnitude}!Player@{Player}}
-\doxysubsubsection{\texorpdfstring{getVectorMagnitude()}{getVectorMagnitude()}}
-{\footnotesize\ttfamily float Player\+::get\+Vector\+Magnitude (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2$<$ float $>$}]{vec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
+Reimplemented from \mbox{\hyperlink{class_entity_a486e8b1cd15b174d1b0b0fd3019417e6}{Entity}}.
 
-Get the magnitude of a vector. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em vec} & The vector to get the magnitude of\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-The magnitude of the vector 
-\end{DoxyReturn}
 \mbox{\Hypertarget{class_player_a9a90e678f21a5a94df5fd91c6cc78b39}\label{class_player_a9a90e678f21a5a94df5fd91c6cc78b39}} 
 \index{Player@{Player}!isDodging@{isDodging}}
 \index{isDodging@{isDodging}!Player@{Player}}
@@ -197,6 +256,19 @@ checks if player is dodging
 
 \begin{DoxyReturn}{Returns}
 true if dodging 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_player_ac08be244d40af5835899e9780100d2bd}\label{class_player_ac08be244d40af5835899e9780100d2bd}} 
+\index{Player@{Player}!isRed@{isRed}}
+\index{isRed@{isRed}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{isRed()}{isRed()}}
+{\footnotesize\ttfamily bool Player\+::is\+Red (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+checks if player is red 
+
+\begin{DoxyReturn}{Returns}
+true if red 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_player_ab9fcfc11975d771581e74d90aff604e4}\label{class_player_ab9fcfc11975d771581e74d90aff604e4}} 
 \index{Player@{Player}!moveInDirection@{moveInDirection}}
@@ -232,6 +304,16 @@ Overrided function from \mbox{\hyperlink{class_entity}{Entity}}, auto called fro
 
 Implements \mbox{\hyperlink{class_entity_ab61623f60c5a7c04deaf0dcb2d1f97de}{Entity}}.
 
+\mbox{\Hypertarget{class_player_a866cf4afd5f6c4bc41fcb1906d27022d}\label{class_player_a866cf4afd5f6c4bc41fcb1906d27022d}} 
+\index{Player@{Player}!onDraw@{onDraw}}
+\index{onDraw@{onDraw}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{onDraw()}{onDraw()}}
+{\footnotesize\ttfamily void Player\+::on\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Implementation of \mbox{\hyperlink{class_player_a866cf4afd5f6c4bc41fcb1906d27022d}{on\+Draw()}} 
+
+Reimplemented from \mbox{\hyperlink{class_entity_a820404587abe78b6383d829348efbe2b}{Entity}}.
+
 \mbox{\Hypertarget{class_player_a464755533654054313735283c44747dd}\label{class_player_a464755533654054313735283c44747dd}} 
 \index{Player@{Player}!onUpdate@{onUpdate}}
 \index{onUpdate@{onUpdate}!Player@{Player}}
@@ -250,6 +332,25 @@ Overrided function from \mbox{\hyperlink{class_entity}{Entity}}, auto called fro
 
 
 Implements \mbox{\hyperlink{class_entity_aeb0bd1940e7932d3e244984259b5cc0e}{Entity}}.
+
+\mbox{\Hypertarget{class_player_aac7890f283832511f69f02bd8d752f2f}\label{class_player_aac7890f283832511f69f02bd8d752f2f}} 
+\index{Player@{Player}!spawn@{spawn}}
+\index{spawn@{spawn}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{spawn()}{spawn()}}
+{\footnotesize\ttfamily void Player\+::spawn (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2$<$ float $>$}]{spawn\+Location }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Spawns the player at a location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spawn\+Location} & The location to spawn the player at \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_entity_a8eafe7d5ebb62407ee5f266518a35292}{Entity}}.
 
 
 

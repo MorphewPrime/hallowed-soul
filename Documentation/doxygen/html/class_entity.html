@@ -65,27 +65,32 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pro-types">Protected Types</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="class_entity-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Entity Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
-
-<p><code>#include &lt;<a class="el" href="_entity_8h_source.html">Entity.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Entity:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_entity.png" usemap="#Entity_map" alt=""/>
   <map id="Entity_map" name="Entity_map">
-<area href="class_enemy.html" alt="Enemy" shape="rect" coords="0,56,66,80"/>
-<area href="class_player.html" alt="Player" shape="rect" coords="76,56,142,80"/>
-<area href="class_test_entity.html" alt="TestEntity" shape="rect" coords="152,56,218,80"/>
+<area href="class_enemy.html" alt="Enemy" shape="rect" coords="0,56,50,80"/>
+<area href="class_player.html" alt="Player" shape="rect" coords="60,56,110,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:afafd025c271f517fde3afe54281cde7b"><td class="memItemLeft" align="right" valign="top"><a id="afafd025c271f517fde3afe54281cde7b" name="afafd025c271f517fde3afe54281cde7b"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Entity</b> (std::vector&lt; <a class="el" href="class_entity.html">Entity</a> * &gt; *entityVec)</td></tr>
+<tr class="separator:afafd025c271f517fde3afe54281cde7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95d687d57fc99f69045c4b07d1e2f449"><td class="memItemLeft" align="right" valign="top"><a id="a95d687d57fc99f69045c4b07d1e2f449" name="a95d687d57fc99f69045c4b07d1e2f449"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Entity</b> (std::vector&lt; <a class="el" href="class_entity.html">Entity</a> * &gt; *entityVec, <a class="el" href="struct_animation_data.html">AnimationData</a> animationData)</td></tr>
+<tr class="separator:a95d687d57fc99f69045c4b07d1e2f449"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeabe846158ff4641d21ffe1d572e5487"><td class="memItemLeft" align="right" valign="top">const sf::Vector2&lt; float &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity.html#aeabe846158ff4641d21ffe1d572e5487">getPosition</a> () const</td></tr>
 <tr class="memdesc:aeabe846158ff4641d21ffe1d572e5487"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getters and Setters.  <a href="class_entity.html#aeabe846158ff4641d21ffe1d572e5487">More...</a><br /></td></tr>
 <tr class="separator:aeabe846158ff4641d21ffe1d572e5487"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -95,6 +100,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aece77e1e86fae668e67a57ee7ccce265"><td class="memItemLeft" align="right" valign="top">const sf::Sprite &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity.html#aece77e1e86fae668e67a57ee7ccce265">getSprite</a> () const</td></tr>
 <tr class="memdesc:aece77e1e86fae668e67a57ee7ccce265"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for entity active sprite.  <a href="class_entity.html#aece77e1e86fae668e67a57ee7ccce265">More...</a><br /></td></tr>
 <tr class="separator:aece77e1e86fae668e67a57ee7ccce265"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a50dadd36f7ad95c8b465b60644c4db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity.html#a6a50dadd36f7ad95c8b465b60644c4db">setTexture</a> (std::string path)</td></tr>
+<tr class="memdesc:a6a50dadd36f7ad95c8b465b60644c4db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the texture of this entity.  <a href="class_entity.html#a6a50dadd36f7ad95c8b465b60644c4db">More...</a><br /></td></tr>
+<tr class="separator:a6a50dadd36f7ad95c8b465b60644c4db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae170fce9596c2e20aa0ec3029b94c349"><td class="memItemLeft" align="right" valign="top">const int &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity.html#ae170fce9596c2e20aa0ec3029b94c349">getWidth</a> () const</td></tr>
 <tr class="memdesc:ae170fce9596c2e20aa0ec3029b94c349"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for entity width.  <a href="class_entity.html#ae170fce9596c2e20aa0ec3029b94c349">More...</a><br /></td></tr>
 <tr class="separator:ae170fce9596c2e20aa0ec3029b94c349"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -107,37 +115,72 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a205443d87b309a074a6088b6e148f2a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity.html#a205443d87b309a074a6088b6e148f2a2">update</a> (float deltaTime)</td></tr>
 <tr class="memdesc:a205443d87b309a074a6088b6e148f2a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main function to update an entity.  <a href="class_entity.html#a205443d87b309a074a6088b6e148f2a2">More...</a><br /></td></tr>
 <tr class="separator:a205443d87b309a074a6088b6e148f2a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3eb4bd5f0f6698ed9632004ef0d170ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity.html#a3eb4bd5f0f6698ed9632004ef0d170ba">doDamage</a> (int damage)</td></tr>
-<tr class="memdesc:a3eb4bd5f0f6698ed9632004ef0d170ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will tell this entity to lower it's health.  <a href="class_entity.html#a3eb4bd5f0f6698ed9632004ef0d170ba">More...</a><br /></td></tr>
-<tr class="separator:a3eb4bd5f0f6698ed9632004ef0d170ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab0986ba7a1b24f022b5623781050c0f1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity.html#ab0986ba7a1b24f022b5623781050c0f1">isAlive</a> ()</td></tr>
 <tr class="memdesc:ab0986ba7a1b24f022b5623781050c0f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for is entity is alive.  <a href="class_entity.html#ab0986ba7a1b24f022b5623781050c0f1">More...</a><br /></td></tr>
 <tr class="separator:ab0986ba7a1b24f022b5623781050c0f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8eafe7d5ebb62407ee5f266518a35292"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity.html#a8eafe7d5ebb62407ee5f266518a35292">spawn</a> (sf::Vector2&lt; float &gt; spawnLocation)</td></tr>
 <tr class="memdesc:a8eafe7d5ebb62407ee5f266518a35292"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface methods with a default implementation, can be overridden.  <a href="class_entity.html#a8eafe7d5ebb62407ee5f266518a35292">More...</a><br /></td></tr>
 <tr class="separator:a8eafe7d5ebb62407ee5f266518a35292"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3eb4bd5f0f6698ed9632004ef0d170ba"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity.html#a3eb4bd5f0f6698ed9632004ef0d170ba">doDamage</a> (int damage)</td></tr>
+<tr class="memdesc:a3eb4bd5f0f6698ed9632004ef0d170ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will tell this entity to lower it's health.  <a href="class_entity.html#a3eb4bd5f0f6698ed9632004ef0d170ba">More...</a><br /></td></tr>
+<tr class="separator:a3eb4bd5f0f6698ed9632004ef0d170ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a522648b330daab91b49f78f0737a943f"><td class="memItemLeft" align="right" valign="top"><a id="a522648b330daab91b49f78f0737a943f" name="a522648b330daab91b49f78f0737a943f"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>kill</b> ()</td></tr>
 <tr class="memdesc:a522648b330daab91b49f78f0737a943f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kills the entity, stops it from being rendered on the scene and affecting collisions. <br /></td></tr>
 <tr class="separator:a522648b330daab91b49f78f0737a943f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a820404587abe78b6383d829348efbe2b"><td class="memItemLeft" align="right" valign="top"><a id="a820404587abe78b6383d829348efbe2b" name="a820404587abe78b6383d829348efbe2b"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>onDraw</b> ()</td></tr>
-<tr class="memdesc:a820404587abe78b6383d829348efbe2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called from update, change the active sprite to draw to the scene, and set up current sprite for rendering. <br /></td></tr>
-<tr class="separator:a820404587abe78b6383d829348efbe2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d7117f2a97bac217140aad9179a90fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity.html#a8d7117f2a97bac217140aad9179a90fc">onDrawBase</a> ()</td></tr>
+<tr class="separator:a8d7117f2a97bac217140aad9179a90fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad5218b6073670ba318c5f3b281c5d00"><td class="memItemLeft" align="right" valign="top">virtual EntityType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity.html#aad5218b6073670ba318c5f3b281c5d00">getEntityType</a> ()=0</td></tr>
+<tr class="memdesc:aad5218b6073670ba318c5f3b281c5d00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface methods that must be overridden.  <a href="class_entity.html#aad5218b6073670ba318c5f3b281c5d00">More...</a><br /></td></tr>
+<tr class="separator:aad5218b6073670ba318c5f3b281c5d00"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb0bd1940e7932d3e244984259b5cc0e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity.html#aeb0bd1940e7932d3e244984259b5cc0e">onUpdate</a> (float deltaTime)=0</td></tr>
-<tr class="memdesc:aeb0bd1940e7932d3e244984259b5cc0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface methods that must be overridden.  <a href="class_entity.html#aeb0bd1940e7932d3e244984259b5cc0e">More...</a><br /></td></tr>
+<tr class="memdesc:aeb0bd1940e7932d3e244984259b5cc0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called from update, the overridable function for specific entities to change their members based off user input.  <a href="class_entity.html#aeb0bd1940e7932d3e244984259b5cc0e">More...</a><br /></td></tr>
 <tr class="separator:aeb0bd1940e7932d3e244984259b5cc0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a820404587abe78b6383d829348efbe2b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity.html#a820404587abe78b6383d829348efbe2b">onDraw</a> ()</td></tr>
+<tr class="memdesc:a820404587abe78b6383d829348efbe2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called from draw, change the active sprite to draw to the scene, and set up current sprite for rendering.  <a href="class_entity.html#a820404587abe78b6383d829348efbe2b">More...</a><br /></td></tr>
+<tr class="separator:a820404587abe78b6383d829348efbe2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab61623f60c5a7c04deaf0dcb2d1f97de"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity.html#ab61623f60c5a7c04deaf0dcb2d1f97de">onCollision</a> (<a class="el" href="class_entity.html">Entity</a> &amp;hitEntity)=0</td></tr>
 <tr class="memdesc:ab61623f60c5a7c04deaf0dcb2d1f97de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called from the game manager after a collision with another entity.  <a href="class_entity.html#ab61623f60c5a7c04deaf0dcb2d1f97de">More...</a><br /></td></tr>
 <tr class="separator:ab61623f60c5a7c04deaf0dcb2d1f97de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11d81211b5bdef1427685d3ded48923a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_entity.html">Entity</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity.html#a11d81211b5bdef1427685d3ded48923a">rayCast</a> (const sf::Vector2&lt; float &gt; &amp;ray)</td></tr>
+<tr class="memdesc:a11d81211b5bdef1427685d3ded48923a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Does a raycast to detect if it hits any entity in the game world.  <a href="class_entity.html#a11d81211b5bdef1427685d3ded48923a">More...</a><br /></td></tr>
+<tr class="separator:a11d81211b5bdef1427685d3ded48923a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:aacc64bc5f7b1d3c24a78e1a492591ca6"><td class="memItemLeft" align="right" valign="top">sf::Vector2&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity.html#aacc64bc5f7b1d3c24a78e1a492591ca6">_position</a></td></tr>
 <tr class="separator:aacc64bc5f7b1d3c24a78e1a492591ca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-types" name="pro-types"></a>
+Protected Types</h2></td></tr>
+<tr class="memitem:ac945ee5a37c49b9d0ebb93f71a43bbd6"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity.html#ac945ee5a37c49b9d0ebb93f71a43bbd6">MoveState</a> { <a class="el" href="class_entity.html#ac945ee5a37c49b9d0ebb93f71a43bbd6a20b8edad18007f2c35f9fb9bb7904bcb">Moving</a>
+, <a class="el" href="class_entity.html#ac945ee5a37c49b9d0ebb93f71a43bbd6a10cfa2ff1945dc09709e98b0e6652628">Dodging</a>
+, <a class="el" href="class_entity.html#ac945ee5a37c49b9d0ebb93f71a43bbd6a68d74a39cf485eec60585b3bcfb8237f">AttackTriggered</a>
+, <a class="el" href="class_entity.html#ac945ee5a37c49b9d0ebb93f71a43bbd6a0d1a675e7f147e226420609d1e35afb7">Attacking</a>
+ }</td></tr>
+<tr class="separator:ac945ee5a37c49b9d0ebb93f71a43bbd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:aea2700b0ab9135072346edfcdaad2ec1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity.html#aea2700b0ab9135072346edfcdaad2ec1">setSpriteDirection</a> ()</td></tr>
+<tr class="separator:aea2700b0ab9135072346edfcdaad2ec1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec5694148b397112af16aff6b4fc1ada"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity.html#aec5694148b397112af16aff6b4fc1ada">setWalkingFrame</a> ()</td></tr>
+<tr class="separator:aec5694148b397112af16aff6b4fc1ada"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a991a777b3e9e6c4211fe1903f33745e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity.html#a991a777b3e9e6c4211fe1903f33745e9">setAttackingFrame</a> ()</td></tr>
+<tr class="separator:a991a777b3e9e6c4211fe1903f33745e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf3b02cb98effb0047ab7e4373d7bb76"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity.html#abf3b02cb98effb0047ab7e4373d7bb76">updateTextureRect</a> ()</td></tr>
+<tr class="separator:abf3b02cb98effb0047ab7e4373d7bb76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a486e8b1cd15b174d1b0b0fd3019417e6"><td class="memItemLeft" align="right" valign="top">virtual float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity.html#a486e8b1cd15b174d1b0b0fd3019417e6">getSecondsPerFrame</a> () const</td></tr>
+<tr class="separator:a486e8b1cd15b174d1b0b0fd3019417e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac306915b7e5c8f18df5ba6bece0e232b"><td class="memItemLeft" align="right" valign="top"><a id="ac306915b7e5c8f18df5ba6bece0e232b" name="ac306915b7e5c8f18df5ba6bece0e232b"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>linesIntersect</b> (float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4)</td></tr>
+<tr class="separator:ac306915b7e5c8f18df5ba6bece0e232b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
+<tr class="memitem:a0c0eb00368fcb283ca47e77108e3bea6"><td class="memItemLeft" align="right" valign="top"><a id="a0c0eb00368fcb283ca47e77108e3bea6" name="a0c0eb00368fcb283ca47e77108e3bea6"></a>
+enum <a class="el" href="class_entity.html#ac945ee5a37c49b9d0ebb93f71a43bbd6">Entity::MoveState</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_currentMoveState</b></td></tr>
+<tr class="separator:a0c0eb00368fcb283ca47e77108e3bea6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2272f04c6e19fb9aa55c0e8c41217e67"><td class="memItemLeft" align="right" valign="top">sf::Vector2&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity.html#a2272f04c6e19fb9aa55c0e8c41217e67">_velocity</a></td></tr>
 <tr class="separator:a2272f04c6e19fb9aa55c0e8c41217e67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a358f7a5e65c03415b36cc612c36e6f47"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity.html#a358f7a5e65c03415b36cc612c36e6f47">_width</a></td></tr>
@@ -153,23 +196,56 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>_isAlive</b></td></tr
 <tr class="separator:a8e409f1b737a84cd895e42e4ec8c28bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a040bd9d02a9c5d0c7f07348bc15cc0a3"><td class="memItemLeft" align="right" valign="top">sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity.html#a040bd9d02a9c5d0c7f07348bc15cc0a3">_sprite</a></td></tr>
 <tr class="separator:a040bd9d02a9c5d0c7f07348bc15cc0a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c6b2119c520990f24512f3267d29a84"><td class="memItemLeft" align="right" valign="top"><a id="a3c6b2119c520990f24512f3267d29a84" name="a3c6b2119c520990f24512f3267d29a84"></a>
+<a class="el" href="struct_animation_data.html">AnimationData</a>&#160;</td><td class="memItemRight" valign="bottom"><b>animationData</b></td></tr>
+<tr class="separator:a3c6b2119c520990f24512f3267d29a84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05db16ebfd630cf1ae6301048d95276a"><td class="memItemLeft" align="right" valign="top"><a id="a05db16ebfd630cf1ae6301048d95276a" name="a05db16ebfd630cf1ae6301048d95276a"></a>
+std::vector&lt; <a class="el" href="class_entity.html">Entity</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>_entityVec</b></td></tr>
+<tr class="separator:a05db16ebfd630cf1ae6301048d95276a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Abstract base class which entities are based off of.</p>
-<p >Entities are generally anything that can have a sprite and/or a position.</p>
-<p >To make your subclass of <a class="el" href="class_entity.html">Entity</a> visible on the screen, you need to do the following:</p>
-<ol type="1">
-<li>set _texture</li>
-<li>set _sprite</li>
-<li>Somewhere in the main game loop where drawing happens, call your subclass's <a class="el" href="class_entity.html#a820404587abe78b6383d829348efbe2b" title="Called from update, change the active sprite to draw to the scene, and set up current sprite for rend...">onDraw()</a> method and draw() the entity's sprite to the screen.</li>
-</ol>
-<p >Updating position is handled by <a class="el" href="class_entity.html#a205443d87b309a074a6088b6e148f2a2" title="Main function to update an entity.">update()</a>. Position is set based on the value of _velocity. You can set _position or _velocity in <a class="el" href="class_entity.html#aeb0bd1940e7932d3e244984259b5cc0e" title="Interface methods that must be overridden.">onUpdate()</a> to define the movement behavior of your <a class="el" href="class_entity.html">Entity</a>. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="ac945ee5a37c49b9d0ebb93f71a43bbd6" name="ac945ee5a37c49b9d0ebb93f71a43bbd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac945ee5a37c49b9d0ebb93f71a43bbd6">&#9670;&nbsp;</a></span>MoveState</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_entity.html#ac945ee5a37c49b9d0ebb93f71a43bbd6">Entity::MoveState</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Enum which holds what state the entity is in. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac945ee5a37c49b9d0ebb93f71a43bbd6a20b8edad18007f2c35f9fb9bb7904bcb" name="ac945ee5a37c49b9d0ebb93f71a43bbd6a20b8edad18007f2c35f9fb9bb7904bcb"></a>Moving&#160;</td><td class="fielddoc"><p >The entity is moving. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac945ee5a37c49b9d0ebb93f71a43bbd6a10cfa2ff1945dc09709e98b0e6652628" name="ac945ee5a37c49b9d0ebb93f71a43bbd6a10cfa2ff1945dc09709e98b0e6652628"></a>Dodging&#160;</td><td class="fielddoc"><p >The entity is dodging. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac945ee5a37c49b9d0ebb93f71a43bbd6a68d74a39cf485eec60585b3bcfb8237f" name="ac945ee5a37c49b9d0ebb93f71a43bbd6a68d74a39cf485eec60585b3bcfb8237f"></a>AttackTriggered&#160;</td><td class="fielddoc"><p >An attack was just triggered </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac945ee5a37c49b9d0ebb93f71a43bbd6a0d1a675e7f147e226420609d1e35afb7" name="ac945ee5a37c49b9d0ebb93f71a43bbd6a0d1a675e7f147e226420609d1e35afb7"></a>Attacking&#160;</td><td class="fielddoc"><p >The entity is attacking. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a id="a3eb4bd5f0f6698ed9632004ef0d170ba" name="a3eb4bd5f0f6698ed9632004ef0d170ba"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3eb4bd5f0f6698ed9632004ef0d170ba">&#9670;&nbsp;</a></span>doDamage()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void Entity::doDamage </td>
@@ -179,6 +255,11 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>_isAlive</b></td></tr
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Will tell this entity to lower it's health. </p>
@@ -188,6 +269,37 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>_isAlive</b></td></tr
   </table>
   </dd>
 </dl>
+
+<p>Reimplemented in <a class="el" href="class_enemy.html#aa8201464e3975d93b2d10c92556bb86f">Enemy</a>, and <a class="el" href="class_player.html#aca80188027634eeb28c9a29eeba13b59">Player</a>.</p>
+
+</div>
+</div>
+<a id="aad5218b6073670ba318c5f3b281c5d00" name="aad5218b6073670ba318c5f3b281c5d00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad5218b6073670ba318c5f3b281c5d00">&#9670;&nbsp;</a></span>getEntityType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual EntityType Entity::getEntityType </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Interface methods that must be overridden. </p>
+
+<p>Implemented in <a class="el" href="class_enemy.html#a760a4479ccb7f736d5d9c4ea0417a29a">Enemy</a>, and <a class="el" href="class_player.html#a2e083637a013f232b670f1d2d14a4eee">Player</a>.</p>
 
 </div>
 </div>
@@ -249,6 +361,34 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>_isAlive</b></td></tr
 <p>Getters and Setters. </p>
 <p >Getter for entity position</p>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_entity.html">Entity</a>'s position </dd></dl>
+
+</div>
+</div>
+<a id="a486e8b1cd15b174d1b0b0fd3019417e6" name="a486e8b1cd15b174d1b0b0fd3019417e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a486e8b1cd15b174d1b0b0fd3019417e6">&#9670;&nbsp;</a></span>getSecondsPerFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Entity::getSecondsPerFrame </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Compute seconds per frame based on velocity </p>
+
+<p>Reimplemented in <a class="el" href="class_player.html#ab9429d7ae67713444f59d5e7d64f3505">Player</a>.</p>
 
 </div>
 </div>
@@ -368,6 +508,54 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>_isAlive</b></td></tr
 
 </div>
 </div>
+<a id="a820404587abe78b6383d829348efbe2b" name="a820404587abe78b6383d829348efbe2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a820404587abe78b6383d829348efbe2b">&#9670;&nbsp;</a></span>onDraw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Entity::onDraw </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Called from draw, change the active sprite to draw to the scene, and set up current sprite for rendering. </p>
+
+<p>Reimplemented in <a class="el" href="class_enemy.html#a59d6c0c2623f38542868baf584985a7e">Enemy</a>, and <a class="el" href="class_player.html#a866cf4afd5f6c4bc41fcb1906d27022d">Player</a>.</p>
+
+</div>
+</div>
+<a id="a8d7117f2a97bac217140aad9179a90fc" name="a8d7117f2a97bac217140aad9179a90fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d7117f2a97bac217140aad9179a90fc">&#9670;&nbsp;</a></span>onDrawBase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Entity::onDrawBase </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Called from <a class="el" href="class_game_manager.html">GameManager</a> to draw the entity.</p>
+<p >Calls subclass implementation of <a class="el" href="class_entity.html#a820404587abe78b6383d829348efbe2b" title="Called from draw, change the active sprite to draw to the scene, and set up current sprite for render...">onDraw()</a>. </p>
+
+</div>
+</div>
 <a id="aeb0bd1940e7932d3e244984259b5cc0e" name="aeb0bd1940e7932d3e244984259b5cc0e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeb0bd1940e7932d3e244984259b5cc0e">&#9670;&nbsp;</a></span>onUpdate()</h2>
 
@@ -392,16 +580,146 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>_isAlive</b></td></tr
 </table>
 </div><div class="memdoc">
 
-<p>Interface methods that must be overridden. </p>
-<p >Called from update, the overridable function for specific entities to change their members based off user input</p>
+<p>Called from update, the overridable function for specific entities to change their members based off user input. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">deltaTime</td><td>The time between this update and the last one </td></tr>
+    <tr><td class="paramname">deltaTime</td><td>The time between this update and the last one in seconds </td></tr>
   </table>
   </dd>
 </dl>
 
 <p>Implemented in <a class="el" href="class_enemy.html#abc8c4fbe9e8e78885ac9bf33a9923029">Enemy</a>, and <a class="el" href="class_player.html#a464755533654054313735283c44747dd">Player</a>.</p>
+
+</div>
+</div>
+<a id="a11d81211b5bdef1427685d3ded48923a" name="a11d81211b5bdef1427685d3ded48923a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11d81211b5bdef1427685d3ded48923a">&#9670;&nbsp;</a></span>rayCast()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_entity.html">Entity</a> * Entity::rayCast </td>
+          <td>(</td>
+          <td class="paramtype">const sf::Vector2&lt; float &gt; &amp;&#160;</td>
+          <td class="paramname"><em>ray</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Does a raycast to detect if it hits any entity in the game world. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ray</td><td>The direction to cast the ray in</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a991a777b3e9e6c4211fe1903f33745e9" name="a991a777b3e9e6c4211fe1903f33745e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a991a777b3e9e6c4211fe1903f33745e9">&#9670;&nbsp;</a></span>setAttackingFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Entity::setAttackingFrame </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Sets the attacking frame, general for entities that can attack. </p>
+
+</div>
+</div>
+<a id="aea2700b0ab9135072346edfcdaad2ec1" name="aea2700b0ab9135072346edfcdaad2ec1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea2700b0ab9135072346edfcdaad2ec1">&#9670;&nbsp;</a></span>setSpriteDirection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Entity::setSpriteDirection </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Sets the sprite direction </p>
+
+</div>
+</div>
+<a id="a6a50dadd36f7ad95c8b465b60644c4db" name="a6a50dadd36f7ad95c8b465b60644c4db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a50dadd36f7ad95c8b465b60644c4db">&#9670;&nbsp;</a></span>setTexture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Entity::setTexture </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the texture of this entity. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>The path of the texture </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aec5694148b397112af16aff6b4fc1ada" name="aec5694148b397112af16aff6b4fc1ada"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec5694148b397112af16aff6b4fc1ada">&#9670;&nbsp;</a></span>setWalkingFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Entity::setWalkingFrame </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Sets the walking frame, general for entities that can walk. </p>
 
 </div>
 </div>
@@ -438,7 +756,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>_isAlive</b></td></tr
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="class_enemy.html#a875a1e7b6e595165f3600e1929f4182c">Enemy</a>.</p>
+<p>Reimplemented in <a class="el" href="class_enemy.html#a875a1e7b6e595165f3600e1929f4182c">Enemy</a>, and <a class="el" href="class_player.html#aac7890f283832511f69f02bd8d752f2f">Player</a>.</p>
 
 </div>
 </div>
@@ -466,6 +784,32 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>_isAlive</b></td></tr
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="abf3b02cb98effb0047ab7e4373d7bb76" name="abf3b02cb98effb0047ab7e4373d7bb76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf3b02cb98effb0047ab7e4373d7bb76">&#9670;&nbsp;</a></span>updateTextureRect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Entity::updateTextureRect </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Helper function to update the sprite rectangle </p>
 
 </div>
 </div>

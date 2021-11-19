@@ -79,16 +79,21 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><b>GameManager</b> ()</td></tr>
 <tr class="memdesc:aa0e2424dc1a39d380e5b6605b179bf05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. <br /></td></tr>
 <tr class="separator:aa0e2424dc1a39d380e5b6605b179bf05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab803a972e5b0cdb621125b0129bd2826"><td class="memItemLeft" align="right" valign="top"><a id="ab803a972e5b0cdb621125b0129bd2826" name="ab803a972e5b0cdb621125b0129bd2826"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>displayStartScreen</b> ()</td></tr>
+<tr class="memdesc:ab803a972e5b0cdb621125b0129bd2826"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays the main menu starting screen. <br /></td></tr>
+<tr class="separator:ab803a972e5b0cdb621125b0129bd2826"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
 <tr class="memitem:a2fb23fc6c6f1616329d67840e3e63b33"><td class="memItemLeft" align="right" valign="top"><a id="a2fb23fc6c6f1616329d67840e3e63b33" name="a2fb23fc6c6f1616329d67840e3e63b33"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>runGame</b> ()</td></tr>
 <tr class="memdesc:a2fb23fc6c6f1616329d67840e3e63b33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run the main game loop. <br /></td></tr>
 <tr class="separator:a2fb23fc6c6f1616329d67840e3e63b33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a758c55eb4565edeac73393f800943f05"><td class="memItemLeft" align="right" valign="top"><a id="a758c55eb4565edeac73393f800943f05" name="a758c55eb4565edeac73393f800943f05"></a>
-<a class="el" href="class_entity.html">Entity</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>rayCast</b> (<a class="el" href="class_entity.html">Entity</a> &amp;source, const sf::Vector2&lt; float &gt; &amp;rayDir)</td></tr>
-<tr class="separator:a758c55eb4565edeac73393f800943f05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
+<tr class="memitem:a92ffc03fada00e7aa045dc6736e0951f"><td class="memItemLeft" align="right" valign="top"><a id="a92ffc03fada00e7aa045dc6736e0951f" name="a92ffc03fada00e7aa045dc6736e0951f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>debugDraw</b> ()</td></tr>
+<tr class="memdesc:a92ffc03fada00e7aa045dc6736e0951f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws debug lines from raycast command DEAD CODE. <br /></td></tr>
+<tr class="separator:a92ffc03fada00e7aa045dc6736e0951f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53965fe19bf3351541159ce74608844e"><td class="memItemLeft" align="right" valign="top"><a id="a53965fe19bf3351541159ce74608844e" name="a53965fe19bf3351541159ce74608844e"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>handleInput</b> ()</td></tr>
 <tr class="memdesc:a53965fe19bf3351541159ce74608844e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called from main loop, turns all the user inputs into game instructions. <br /></td></tr>
@@ -106,34 +111,79 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>handleInput</b> ()</t
 void&#160;</td><td class="memItemRight" valign="bottom"><b>checkCollisions</b> ()</td></tr>
 <tr class="memdesc:a7143f70233ab5e2bfd20fb6485f33ef8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called from main loop, will check for collisions between entities and objects. <br /></td></tr>
 <tr class="separator:a7143f70233ab5e2bfd20fb6485f33ef8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afcc9d6822674dc400f1be8fba348c43c"><td class="memItemLeft" align="right" valign="top"><a id="afcc9d6822674dc400f1be8fba348c43c" name="afcc9d6822674dc400f1be8fba348c43c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>drawFrame</b> ()</td></tr>
-<tr class="memdesc:afcc9d6822674dc400f1be8fba348c43c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called from main game loop, will render all of our objects and entities to the view. <br /></td></tr>
-<tr class="separator:afcc9d6822674dc400f1be8fba348c43c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63f97a095803da4c762fdcea3445545d"><td class="memItemLeft" align="right" valign="top"><a id="a63f97a095803da4c762fdcea3445545d" name="a63f97a095803da4c762fdcea3445545d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>drawFrame</b> (sf::Time frameTime)</td></tr>
+<tr class="memdesc:a63f97a095803da4c762fdcea3445545d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called from main game loop, will render all of our objects and entities to the view. <br /></td></tr>
+<tr class="separator:a63f97a095803da4c762fdcea3445545d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaaed530fafa985fc7d8b08950924a171"><td class="memItemLeft" align="right" valign="top"><a id="aaaed530fafa985fc7d8b08950924a171" name="aaaed530fafa985fc7d8b08950924a171"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>updateViewLocked</b> ()</td></tr>
-<tr class="memdesc:aaaed530fafa985fc7d8b08950924a171"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called from <a class="el" href="class_game_manager.html#afcc9d6822674dc400f1be8fba348c43c" title="Called from main game loop, will render all of our objects and entities to the view.">drawFrame()</a>, will move the current view based off of the player's location. <br /></td></tr>
+<tr class="memdesc:aaaed530fafa985fc7d8b08950924a171"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called from <a class="el" href="class_game_manager.html#a63f97a095803da4c762fdcea3445545d" title="Called from main game loop, will render all of our objects and entities to the view.">drawFrame()</a>, will move the current view based off of the player's location. <br /></td></tr>
 <tr class="separator:aaaed530fafa985fc7d8b08950924a171"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8466cc7bff5c6a0af5fb4717d6b50be0"><td class="memItemLeft" align="right" valign="top"><a id="a8466cc7bff5c6a0af5fb4717d6b50be0" name="a8466cc7bff5c6a0af5fb4717d6b50be0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>drawMap</b> ()</td></tr>
-<tr class="memdesc:a8466cc7bff5c6a0af5fb4717d6b50be0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called from <a class="el" href="class_game_manager.html#afcc9d6822674dc400f1be8fba348c43c" title="Called from main game loop, will render all of our objects and entities to the view.">drawFrame()</a>, Temporary function to draw a basic background of our map. <br /></td></tr>
-<tr class="separator:a8466cc7bff5c6a0af5fb4717d6b50be0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a821123851e0ab85335edacbcb121626a"><td class="memItemLeft" align="right" valign="top"><a id="a821123851e0ab85335edacbcb121626a" name="a821123851e0ab85335edacbcb121626a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>drawHealthHUD</b> ()</td></tr>
-<tr class="memdesc:a821123851e0ab85335edacbcb121626a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called from <a class="el" href="class_game_manager.html#afcc9d6822674dc400f1be8fba348c43c" title="Called from main game loop, will render all of our objects and entities to the view.">drawFrame()</a>, Draw the players health heads up display. <br /></td></tr>
-<tr class="separator:a821123851e0ab85335edacbcb121626a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50bf9ee9800e01b44f4bf2b762a41072"><td class="memItemLeft" align="right" valign="top"><a id="a50bf9ee9800e01b44f4bf2b762a41072" name="a50bf9ee9800e01b44f4bf2b762a41072"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>drawRed</b> ()</td></tr>
+<tr class="memdesc:a50bf9ee9800e01b44f4bf2b762a41072"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called from <a class="el" href="class_game_manager.html#a63f97a095803da4c762fdcea3445545d" title="Called from main game loop, will render all of our objects and entities to the view.">drawFrame()</a>, Draw a red glow. <br /></td></tr>
+<tr class="separator:a50bf9ee9800e01b44f4bf2b762a41072"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a246974db163dec4d89ebae44e1059a53"><td class="memItemLeft" align="right" valign="top"><a id="a246974db163dec4d89ebae44e1059a53" name="a246974db163dec4d89ebae44e1059a53"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>drawEnemyHealth</b> ()</td></tr>
+<tr class="memdesc:a246974db163dec4d89ebae44e1059a53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called from <a class="el" href="class_game_manager.html#a63f97a095803da4c762fdcea3445545d" title="Called from main game loop, will render all of our objects and entities to the view.">drawFrame()</a>, Draws the enemy health bars. <br /></td></tr>
 <tr class="separator:a246974db163dec4d89ebae44e1059a53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a581a5901af3bf713375aeef596f2eb7f"><td class="memItemLeft" align="right" valign="top"><a id="a581a5901af3bf713375aeef596f2eb7f" name="a581a5901af3bf713375aeef596f2eb7f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>drawRoundProgressHUD</b> ()</td></tr>
-<tr class="memdesc:a581a5901af3bf713375aeef596f2eb7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called from <a class="el" href="class_game_manager.html#afcc9d6822674dc400f1be8fba348c43c" title="Called from main game loop, will render all of our objects and entities to the view.">drawFrame()</a>, Draw a heads up display on the current round information. <br /></td></tr>
-<tr class="separator:a581a5901af3bf713375aeef596f2eb7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afaa77e274246f791d5585b309a7dcd5a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#afaa77e274246f791d5585b309a7dcd5a">drawHitIndicator</a> (<a class="el" href="class_entity.html">Entity</a> *e, sf::Time frameTime, int damage)</td></tr>
+<tr class="memdesc:afaa77e274246f791d5585b309a7dcd5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called from <a class="el" href="class_game_manager.html#a63f97a095803da4c762fdcea3445545d" title="Called from main game loop, will render all of our objects and entities to the view.">drawFrame()</a>, Draws the enemy hit indicators.  <a href="class_game_manager.html#afaa77e274246f791d5585b309a7dcd5a">More...</a><br /></td></tr>
+<tr class="separator:afaa77e274246f791d5585b309a7dcd5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a136ec1f75b78ecb61c1ef5662772fe70"><td class="memItemLeft" align="right" valign="top"><a id="a136ec1f75b78ecb61c1ef5662772fe70" name="a136ec1f75b78ecb61c1ef5662772fe70"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>drawStartScreen</b> ()</td></tr>
+<tr class="memdesc:a136ec1f75b78ecb61c1ef5662772fe70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called from <a class="el" href="class_game_manager.html#ab803a972e5b0cdb621125b0129bd2826" title="Displays the main menu starting screen.">displayStartScreen()</a>, Draws the start screen. <br /></td></tr>
+<tr class="separator:a136ec1f75b78ecb61c1ef5662772fe70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75cda159c90c181f2f1e7173d101af9a"><td class="memItemLeft" align="right" valign="top">sf::Text&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a75cda159c90c181f2f1e7173d101af9a">getTitle</a> ()</td></tr>
+<tr class="memdesc:a75cda159c90c181f2f1e7173d101af9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called from <a class="el" href="class_game_manager.html#a136ec1f75b78ecb61c1ef5662772fe70" title="Called from displayStartScreen(), Draws the start screen.">drawStartScreen()</a>, Draws the start screen.  <a href="class_game_manager.html#a75cda159c90c181f2f1e7173d101af9a">More...</a><br /></td></tr>
+<tr class="separator:a75cda159c90c181f2f1e7173d101af9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a127c517010c2d1e172e293442018dd57"><td class="memItemLeft" align="right" valign="top">sf::Text&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a127c517010c2d1e172e293442018dd57">getStartText</a> ()</td></tr>
+<tr class="memdesc:a127c517010c2d1e172e293442018dd57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called from <a class="el" href="class_game_manager.html#ab803a972e5b0cdb621125b0129bd2826" title="Displays the main menu starting screen.">displayStartScreen()</a>, Draws the start screen.  <a href="class_game_manager.html#a127c517010c2d1e172e293442018dd57">More...</a><br /></td></tr>
+<tr class="separator:a127c517010c2d1e172e293442018dd57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07d9a6f081707888dfd2c07e5700b421"><td class="memItemLeft" align="right" valign="top"><a id="a07d9a6f081707888dfd2c07e5700b421" name="a07d9a6f081707888dfd2c07e5700b421"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>startScreenHandleInput</b> ()</td></tr>
+<tr class="memdesc:a07d9a6f081707888dfd2c07e5700b421"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called from <a class="el" href="class_game_manager.html#ab803a972e5b0cdb621125b0129bd2826" title="Displays the main menu starting screen.">displayStartScreen()</a>, Checks if the window is closed or if the space bar is pressed to start the game. <br /></td></tr>
+<tr class="separator:a07d9a6f081707888dfd2c07e5700b421"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a605415d42133cc40723740b37c397d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a7a605415d42133cc40723740b37c397d">getHighScore</a> ()</td></tr>
+<tr class="memdesc:a7a605415d42133cc40723740b37c397d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the player's high score.  <a href="class_game_manager.html#a7a605415d42133cc40723740b37c397d">More...</a><br /></td></tr>
+<tr class="separator:a7a605415d42133cc40723740b37c397d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4f411a936acedfeeacc01b7f3874bd7"><td class="memItemLeft" align="right" valign="top"><a id="ad4f411a936acedfeeacc01b7f3874bd7" name="ad4f411a936acedfeeacc01b7f3874bd7"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>displayDeathScreen</b> ()</td></tr>
+<tr class="memdesc:ad4f411a936acedfeeacc01b7f3874bd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called from <a class="el" href="class_game_manager.html#a2fb23fc6c6f1616329d67840e3e63b33" title="Run the main game loop.">runGame()</a>, Displays the death screen. <br /></td></tr>
+<tr class="separator:ad4f411a936acedfeeacc01b7f3874bd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa10c394008885ccab7407ead6bcf1bb"><td class="memItemLeft" align="right" valign="top">sf::Text&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#afa10c394008885ccab7407ead6bcf1bb">getGameOverText</a> ()</td></tr>
+<tr class="memdesc:afa10c394008885ccab7407ead6bcf1bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called from <a class="el" href="class_game_manager.html#aed1cbd75f9a2a19151c95a41e32a57ed" title="Called from displayDeathScreen(), Draws the death screen.">drawDeathScreen()</a> Gets the "Game Over text".  <a href="class_game_manager.html#afa10c394008885ccab7407ead6bcf1bb">More...</a><br /></td></tr>
+<tr class="separator:afa10c394008885ccab7407ead6bcf1bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed1cbd75f9a2a19151c95a41e32a57ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#aed1cbd75f9a2a19151c95a41e32a57ed">drawDeathScreen</a> (double time)</td></tr>
+<tr class="memdesc:aed1cbd75f9a2a19151c95a41e32a57ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called from <a class="el" href="class_game_manager.html#ad4f411a936acedfeeacc01b7f3874bd7" title="Called from runGame(), Displays the death screen.">displayDeathScreen()</a>, Draws the death screen.  <a href="class_game_manager.html#aed1cbd75f9a2a19151c95a41e32a57ed">More...</a><br /></td></tr>
+<tr class="separator:aed1cbd75f9a2a19151c95a41e32a57ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02897de7bd5f913df1131f0390dee8d0"><td class="memItemLeft" align="right" valign="top"><a id="a02897de7bd5f913df1131f0390dee8d0" name="a02897de7bd5f913df1131f0390dee8d0"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>deathScreenHandleInput</b> ()</td></tr>
+<tr class="memdesc:a02897de7bd5f913df1131f0390dee8d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called from <a class="el" href="class_game_manager.html#ad4f411a936acedfeeacc01b7f3874bd7" title="Called from runGame(), Displays the death screen.">displayDeathScreen()</a>, Checks if the window is closed or if the space bar is pressed to close the window. <br /></td></tr>
+<tr class="separator:a02897de7bd5f913df1131f0390dee8d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95a3a11e0caa93fc7b71358bf03f0b93"><td class="memItemLeft" align="right" valign="top"><a id="a95a3a11e0caa93fc7b71358bf03f0b93" name="a95a3a11e0caa93fc7b71358bf03f0b93"></a>
+sf::Text&#160;</td><td class="memItemRight" valign="bottom"><b>getHighScoreText</b> ()</td></tr>
+<tr class="memdesc:a95a3a11e0caa93fc7b71358bf03f0b93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called from <a class="el" href="class_game_manager.html#ab803a972e5b0cdb621125b0129bd2826" title="Displays the main menu starting screen.">displayStartScreen()</a>, Checks if the window is closed or if the space bar is pressed to close. <br /></td></tr>
+<tr class="separator:a95a3a11e0caa93fc7b71358bf03f0b93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6273e9a5d42471c23f0303f11d1f9842"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a6273e9a5d42471c23f0303f11d1f9842">updateHighScoreFile</a> ()</td></tr>
+<tr class="memdesc:a6273e9a5d42471c23f0303f11d1f9842"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function that updates the high score file when game is over.  <a href="class_game_manager.html#a6273e9a5d42471c23f0303f11d1f9842">More...</a><br /></td></tr>
+<tr class="separator:a6273e9a5d42471c23f0303f11d1f9842"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
+<tr class="memitem:a0dbbb4be5124e8912fca9c44278026a9"><td class="memItemLeft" align="right" valign="top"><a id="a0dbbb4be5124e8912fca9c44278026a9" name="a0dbbb4be5124e8912fca9c44278026a9"></a>
+std::vector&lt; <a class="el" href="class_entity.html">Entity</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_entityVec</b></td></tr>
+<tr class="separator:a0dbbb4be5124e8912fca9c44278026a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fa8a8f96d310f33598e221de0b0aa39"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_entity.html">Entity</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a1fa8a8f96d310f33598e221de0b0aa39">_hitEnemy</a></td></tr>
+<tr class="separator:a1fa8a8f96d310f33598e221de0b0aa39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12a75eaf43c2d4cb987d7c30f51b77ab"><td class="memItemLeft" align="right" valign="top">sf::Text&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a12a75eaf43c2d4cb987d7c30f51b77ab">_hitIndicator</a></td></tr>
+<tr class="separator:a12a75eaf43c2d4cb987d7c30f51b77ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5c6eeaddf158604cd047a3bf28a3091"><td class="memItemLeft" align="right" valign="top">sf::RenderWindow&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#aa5c6eeaddf158604cd047a3bf28a3091">_gameWindow</a></td></tr>
 <tr class="separator:aa5c6eeaddf158604cd047a3bf28a3091"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ed3e46e1a4aa78407742fb7db5ea54e"><td class="memItemLeft" align="right" valign="top">sf::RenderWindow&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a9ed3e46e1a4aa78407742fb7db5ea54e">_startScreen</a></td></tr>
+<tr class="separator:a9ed3e46e1a4aa78407742fb7db5ea54e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae845b90e6e33e73997663e6ecc2da965"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#ae845b90e6e33e73997663e6ecc2da965">_enemyDamage</a></td></tr>
+<tr class="separator:ae845b90e6e33e73997663e6ecc2da965"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea722fd68caa74e5e6d8fa5ab4c358a4"><td class="memItemLeft" align="right" valign="top">sf::View&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#aea722fd68caa74e5e6d8fa5ab4c358a4">_view</a></td></tr>
 <tr class="separator:aea722fd68caa74e5e6d8fa5ab4c358a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80bf09e4b8a066686f4d81cb9c1d5715"><td class="memItemLeft" align="right" valign="top">GameState&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a80bf09e4b8a066686f4d81cb9c1d5715">_currentState</a></td></tr>
@@ -142,11 +192,226 @@ Private Attributes</h2></td></tr>
 <tr class="separator:adc8b1b79cad1edad88e2ce2e0832263a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff94f0fe7a6c9de291d8ed025e80303e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_wave_manager.html">WaveManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#aff94f0fe7a6c9de291d8ed025e80303e">_wave</a></td></tr>
 <tr class="separator:aff94f0fe7a6c9de291d8ed025e80303e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bc6858bd29c0b6cdaaf4edd66eb91bf"><td class="memItemLeft" align="right" valign="top"><a id="a1bc6858bd29c0b6cdaaf4edd66eb91bf" name="a1bc6858bd29c0b6cdaaf4edd66eb91bf"></a>
+<a class="el" href="class_u_i_manager.html">UIManager</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_UIManager</b></td></tr>
+<tr class="separator:a1bc6858bd29c0b6cdaaf4edd66eb91bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1b90f949861bf49498cdb32cc9a4011"><td class="memItemLeft" align="right" valign="top">sf::Font&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#ac1b90f949861bf49498cdb32cc9a4011">_font</a></td></tr>
+<tr class="separator:ac1b90f949861bf49498cdb32cc9a4011"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecb641422e42c43ef94144487d4c20c8"><td class="memItemLeft" align="right" valign="top">sf::Font&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#aecb641422e42c43ef94144487d4c20c8">_titleFont</a></td></tr>
+<tr class="separator:aecb641422e42c43ef94144487d4c20c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac82b4265d291d42e18d71af6d23d5279"><td class="memItemLeft" align="right" valign="top">sf::Font&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#ac82b4265d291d42e18d71af6d23d5279">_deathFont</a></td></tr>
+<tr class="separator:ac82b4265d291d42e18d71af6d23d5279"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7bc66b73a01a92022a1f47da6003d86"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#aa7bc66b73a01a92022a1f47da6003d86">_indicatorTotal</a></td></tr>
+<tr class="separator:aa7bc66b73a01a92022a1f47da6003d86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a516e611bb327eb88fd61c02de40f16e7"><td class="memItemLeft" align="right" valign="top"><a id="a516e611bb327eb88fd61c02de40f16e7" name="a516e611bb327eb88fd61c02de40f16e7"></a>
+std::vector&lt; sf::Vertex &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_debugLines</b></td></tr>
+<tr class="separator:a516e611bb327eb88fd61c02de40f16e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85ecd999a0dcf3160024ce4d11154888"><td class="memItemLeft" align="right" valign="top"><a id="a85ecd999a0dcf3160024ce4d11154888" name="a85ecd999a0dcf3160024ce4d11154888"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>_highScore</b></td></tr>
+<tr class="separator:a85ecd999a0dcf3160024ce4d11154888"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Class which handles the main loop, timing, and game logic.</p>
 <p >Calls drawing and updating functions explicitly on the <a class="el" href="class_player.html">Player</a> and non-enemy Entities. Enemies are fully handled and owned by <a class="el" href="class_wave_manager.html">WaveManager</a>; <a class="el" href="class_game_manager.html">GameManager</a> calls <a class="el" href="class_wave_manager.html">WaveManager</a>'s drawing and updating functions to control Enemies. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="aed1cbd75f9a2a19151c95a41e32a57ed" name="aed1cbd75f9a2a19151c95a41e32a57ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed1cbd75f9a2a19151c95a41e32a57ed">&#9670;&nbsp;</a></span>drawDeathScreen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameManager::drawDeathScreen </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>time</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Called from <a class="el" href="class_game_manager.html#ad4f411a936acedfeeacc01b7f3874bd7" title="Called from runGame(), Displays the death screen.">displayDeathScreen()</a>, Draws the death screen. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">time</td><td>Time to control the fade in of the text </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afaa77e274246f791d5585b309a7dcd5a" name="afaa77e274246f791d5585b309a7dcd5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afaa77e274246f791d5585b309a7dcd5a">&#9670;&nbsp;</a></span>drawHitIndicator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameManager::drawHitIndicator </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_entity.html">Entity</a> *&#160;</td>
+          <td class="paramname"><em>e</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sf::Time&#160;</td>
+          <td class="paramname"><em>frameTime</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>damage</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Called from <a class="el" href="class_game_manager.html#a63f97a095803da4c762fdcea3445545d" title="Called from main game loop, will render all of our objects and entities to the view.">drawFrame()</a>, Draws the enemy hit indicators. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td>The enemy to draw the indicator on </td></tr>
+    <tr><td class="paramname">frameTime</td><td>The time to keep track of how long th indicator has displayed for </td></tr>
+    <tr><td class="paramname">damage</td><td>Damage number to be displayed </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afa10c394008885ccab7407ead6bcf1bb" name="afa10c394008885ccab7407ead6bcf1bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa10c394008885ccab7407ead6bcf1bb">&#9670;&nbsp;</a></span>getGameOverText()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Text GameManager::getGameOverText </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Called from <a class="el" href="class_game_manager.html#aed1cbd75f9a2a19151c95a41e32a57ed" title="Called from displayDeathScreen(), Draws the death screen.">drawDeathScreen()</a> Gets the "Game Over text". </p>
+<dl class="section return"><dt>Returns</dt><dd>the "game over" text </dd></dl>
+
+</div>
+</div>
+<a id="a7a605415d42133cc40723740b37c397d" name="a7a605415d42133cc40723740b37c397d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a605415d42133cc40723740b37c397d">&#9670;&nbsp;</a></span>getHighScore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GameManager::getHighScore </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the player's high score. </p>
+<dl class="section return"><dt>Returns</dt><dd>int The player's high score from a previous game </dd></dl>
+
+</div>
+</div>
+<a id="a127c517010c2d1e172e293442018dd57" name="a127c517010c2d1e172e293442018dd57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a127c517010c2d1e172e293442018dd57">&#9670;&nbsp;</a></span>getStartText()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Text GameManager::getStartText </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Called from <a class="el" href="class_game_manager.html#ab803a972e5b0cdb621125b0129bd2826" title="Displays the main menu starting screen.">displayStartScreen()</a>, Draws the start screen. </p>
+<dl class="section return"><dt>Returns</dt><dd>Title text </dd></dl>
+
+</div>
+</div>
+<a id="a75cda159c90c181f2f1e7173d101af9a" name="a75cda159c90c181f2f1e7173d101af9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75cda159c90c181f2f1e7173d101af9a">&#9670;&nbsp;</a></span>getTitle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Text GameManager::getTitle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Called from <a class="el" href="class_game_manager.html#a136ec1f75b78ecb61c1ef5662772fe70" title="Called from displayStartScreen(), Draws the start screen.">drawStartScreen()</a>, Draws the start screen. </p>
+<dl class="section return"><dt>Returns</dt><dd>Title text </dd></dl>
+
+</div>
+</div>
 <a id="a94d31dbea498ccdaaabc355d84fe659d" name="a94d31dbea498ccdaaabc355d84fe659d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a94d31dbea498ccdaaabc355d84fe659d">&#9670;&nbsp;</a></span>handleKeyboardEvent()</h2>
 
@@ -249,6 +514,35 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a6273e9a5d42471c23f0303f11d1f9842" name="a6273e9a5d42471c23f0303f11d1f9842"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6273e9a5d42471c23f0303f11d1f9842">&#9670;&nbsp;</a></span>updateHighScoreFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameManager::updateHighScoreFile </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Helper function that updates the high score file when game is over. </p>
+<dl class="section pre"><dt>Precondition</dt><dd>Game is over or player is exiting game</dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>new high score is written to highscore.txt </dd></dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a id="a80bf09e4b8a066686f4d81cb9c1d5715" name="a80bf09e4b8a066686f4d81cb9c1d5715"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a80bf09e4b8a066686f4d81cb9c1d5715">&#9670;&nbsp;</a></span>_currentState</h2>
@@ -270,6 +564,75 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p >The current game state. </p>
+
+</div>
+</div>
+<a id="ac82b4265d291d42e18d71af6d23d5279" name="ac82b4265d291d42e18d71af6d23d5279"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac82b4265d291d42e18d71af6d23d5279">&#9670;&nbsp;</a></span>_deathFont</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Font GameManager::_deathFont</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Font used to display the Game Over text </p>
+
+</div>
+</div>
+<a id="ae845b90e6e33e73997663e6ecc2da965" name="ae845b90e6e33e73997663e6ecc2da965"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae845b90e6e33e73997663e6ecc2da965">&#9670;&nbsp;</a></span>_enemyDamage</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GameManager::_enemyDamage</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Damage that is dealt to the enemy </p>
+
+</div>
+</div>
+<a id="ac1b90f949861bf49498cdb32cc9a4011" name="ac1b90f949861bf49498cdb32cc9a4011"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1b90f949861bf49498cdb32cc9a4011">&#9670;&nbsp;</a></span>_font</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Font GameManager::_font</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Font used to display in-game text </p>
 
 </div>
 </div>
@@ -296,6 +659,75 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a1fa8a8f96d310f33598e221de0b0aa39" name="a1fa8a8f96d310f33598e221de0b0aa39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fa8a8f96d310f33598e221de0b0aa39">&#9670;&nbsp;</a></span>_hitEnemy</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_entity.html">Entity</a>* GameManager::_hitEnemy</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p ><a class="el" href="class_enemy.html">Enemy</a> that is returned by the player's attack call </p>
+
+</div>
+</div>
+<a id="a12a75eaf43c2d4cb987d7c30f51b77ab" name="a12a75eaf43c2d4cb987d7c30f51b77ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12a75eaf43c2d4cb987d7c30f51b77ab">&#9670;&nbsp;</a></span>_hitIndicator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Text GameManager::_hitIndicator</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Text that displays the damage dealt to the enemy </p>
+
+</div>
+</div>
+<a id="aa7bc66b73a01a92022a1f47da6003d86" name="aa7bc66b73a01a92022a1f47da6003d86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7bc66b73a01a92022a1f47da6003d86">&#9670;&nbsp;</a></span>_indicatorTotal</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float GameManager::_indicatorTotal</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Number that records how long the hit indicators have displayed for </p>
+
+</div>
+</div>
 <a id="adc8b1b79cad1edad88e2ce2e0832263a" name="adc8b1b79cad1edad88e2ce2e0832263a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adc8b1b79cad1edad88e2ce2e0832263a">&#9670;&nbsp;</a></span>_player</h2>
 
@@ -316,6 +748,52 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p >The player. </p>
+
+</div>
+</div>
+<a id="a9ed3e46e1a4aa78407742fb7db5ea54e" name="a9ed3e46e1a4aa78407742fb7db5ea54e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ed3e46e1a4aa78407742fb7db5ea54e">&#9670;&nbsp;</a></span>_startScreen</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::RenderWindow GameManager::_startScreen</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Window that displays the start screen </p>
+
+</div>
+</div>
+<a id="aecb641422e42c43ef94144487d4c20c8" name="aecb641422e42c43ef94144487d4c20c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecb641422e42c43ef94144487d4c20c8">&#9670;&nbsp;</a></span>_titleFont</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Font GameManager::_titleFont</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Font used to display the title </p>
 
 </div>
 </div>
@@ -368,6 +846,7 @@ Private Attributes</h2></td></tr>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="_game_manager_8h_source.html">GameManager.h</a></li>
 <li>src/GameManager.cpp</li>
+<li>src/GameManagerGFX.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

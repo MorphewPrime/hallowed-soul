@@ -6,61 +6,67 @@
 \DoxyCodeLine{2 }
 \DoxyCodeLine{3 \textcolor{preprocessor}{\#include <math.h>}}
 \DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}Entity.h"{}}}
-\DoxyCodeLine{5 }
-\DoxyCodeLine{7 \textcolor{keyword}{enum} MoveState}
-\DoxyCodeLine{8 \{}
-\DoxyCodeLine{10     Moving,}
-\DoxyCodeLine{12     Dodging,}
-\DoxyCodeLine{14     None}
-\DoxyCodeLine{15 \};}
-\DoxyCodeLine{16 }
-\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{class_player}{Player}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_entity}{Entity}}}
-\DoxyCodeLine{22 \{}
-\DoxyCodeLine{23     \textcolor{keyword}{public}:}
-\DoxyCodeLine{24         \mbox{\hyperlink{class_player}{Player}}();}
-\DoxyCodeLine{25 }
-\DoxyCodeLine{32         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_ab9fcfc11975d771581e74d90aff604e4}{moveInDirection}}(sf::Vector2<float> moveDir);}
-\DoxyCodeLine{33 }
-\DoxyCodeLine{39         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_acabbb13d10a3814ba6df327cc8ce281d}{dodgeInDirection}}(sf::Vector2<float> dodgeDir);}
-\DoxyCodeLine{40 }
-\DoxyCodeLine{44         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_abe43a64291d593a878b991eda175e70a}{attack}}(\mbox{\hyperlink{class_entity}{Entity}}* toAttack);}
-\DoxyCodeLine{45 }
-\DoxyCodeLine{49         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_a8214c55a7c5e24f8d0e0ad7ef39f9c13}{counter}}();}
-\DoxyCodeLine{50 }
-\DoxyCodeLine{56         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_player_a9a90e678f21a5a94df5fd91c6cc78b39}{isDodging}}();}
-\DoxyCodeLine{57 }
-\DoxyCodeLine{63         \textcolor{keyword}{const} sf::Vector2<float>\& \mbox{\hyperlink{class_player_ad35f18e31ec9b823b81c7fabf8ba6226}{getLastMoveDirection}}() \textcolor{keyword}{const};}
-\DoxyCodeLine{64 }
-\DoxyCodeLine{71         \textcolor{keyword}{const} \textcolor{keywordtype}{float}\& \mbox{\hyperlink{class_player_a97f07f22467c7fa0322010aa09f2a650}{getAttackRange}}() \textcolor{keyword}{const};}
-\DoxyCodeLine{72 }
-\DoxyCodeLine{73     \textcolor{keyword}{private}:}
-\DoxyCodeLine{74         \textcolor{comment}{// Constants for player movement}}
-\DoxyCodeLine{75         \textcolor{keyword}{const} \textcolor{keywordtype}{float} \_moveSpeed = 350;}
-\DoxyCodeLine{76         \textcolor{keyword}{const} \textcolor{keywordtype}{float} \_dodgeSpeed = 1100;}
-\DoxyCodeLine{77         \textcolor{keyword}{const} \textcolor{keywordtype}{float} \_friction = 1600;}
-\DoxyCodeLine{78         \textcolor{keyword}{const} \textcolor{keywordtype}{float} \_dodgeFriction = 6000;}
-\DoxyCodeLine{79         \textcolor{keyword}{const} \textcolor{keywordtype}{float} \_attackRange = 250;}
-\DoxyCodeLine{80         \textcolor{keyword}{const} \textcolor{keywordtype}{float} \_deadZone = 0.01;}
-\DoxyCodeLine{81 }
-\DoxyCodeLine{82         \textcolor{comment}{// TODO: Unsure if this is needed}}
-\DoxyCodeLine{83         MoveState \_currentMoveState;}
-\DoxyCodeLine{84 }
-\DoxyCodeLine{85         \textcolor{comment}{// Current direction to move in based off given user input}}
-\DoxyCodeLine{86         sf::Vector2<float> \_moveVec;}
-\DoxyCodeLine{87         sf::Vector2<float> \_lastMoveVec;}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}VectorUtil.h"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_player}{Player}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_entity}{Entity}}}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13     \textcolor{keyword}{public}:}
+\DoxyCodeLine{19         \mbox{\hyperlink{class_player_a12b94ce5d46b659adc05aa59477d4e98}{Player}}(std::vector<Entity*> *entityVec);}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{27         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_ab9fcfc11975d771581e74d90aff604e4}{moveInDirection}}(sf::Vector2<float> moveDir);}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{34         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_acabbb13d10a3814ba6df327cc8ce281d}{dodgeInDirection}}(sf::Vector2<float> dodgeDir);}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{41         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_aac7890f283832511f69f02bd8d752f2f}{spawn}}(sf::Vector2<float> spawnLocation);}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{46         \mbox{\hyperlink{class_entity}{Entity}}* \mbox{\hyperlink{class_player_a451aedb20fa8c4f9ce6f543d8f1c5d35}{attack}}(\textcolor{keywordtype}{int} damage);}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{53         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_player_a9a90e678f21a5a94df5fd91c6cc78b39}{isDodging}}();}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{60         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_player_ac08be244d40af5835899e9780100d2bd}{isRed}}();}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{67         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_aca80188027634eeb28c9a29eeba13b59}{doDamage}}(\textcolor{keywordtype}{int} damage);}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{74         \textcolor{keyword}{const} sf::Vector2<float>\& \mbox{\hyperlink{class_player_ad35f18e31ec9b823b81c7fabf8ba6226}{getLastMoveDirection}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{82         \textcolor{keywordtype}{float} \mbox{\hyperlink{class_player_a41278bda190e1f6b514f19afdbaef937}{getAttackRange}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{87         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_a866cf4afd5f6c4bc41fcb1906d27022d}{onDraw}}();}
 \DoxyCodeLine{88 }
-\DoxyCodeLine{89         \textcolor{comment}{// Current direction player is dodging in, as well as the speed of the dodge}}
-\DoxyCodeLine{90         sf::Vector2<float> \_dodgeVec;}
-\DoxyCodeLine{91 }
-\DoxyCodeLine{98         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_a464755533654054313735283c44747dd}{onUpdate}}(\textcolor{keywordtype}{float} deltaTime);}
-\DoxyCodeLine{99 }
-\DoxyCodeLine{106         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_a91567245da0d74ae16791c230decb4e4}{onCollision}}(\mbox{\hyperlink{class_entity}{Entity}} \&hitEntity); }
-\DoxyCodeLine{107 }
-\DoxyCodeLine{118         \textcolor{keywordtype}{float} \mbox{\hyperlink{class_player_a5e61505b6f406cd389af4fc16d0201b8}{checkDeadMoveAxis}}(\textcolor{keywordtype}{float} velAxis, \textcolor{keywordtype}{float} moveAxis, \textcolor{keywordtype}{float} friction, \textcolor{keywordtype}{float} deltaTime);}
-\DoxyCodeLine{119 }
-\DoxyCodeLine{127         \textcolor{keywordtype}{float} \mbox{\hyperlink{class_player_afa77ba15f98a744866cc10234f04b324}{getVectorMagnitude}}(sf::Vector2<float> vec);}
+\DoxyCodeLine{94         EntityType \mbox{\hyperlink{class_player_a2e083637a013f232b670f1d2d14a4eee}{getEntityType}}();}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96     \textcolor{keyword}{private}:}
+\DoxyCodeLine{97         \textcolor{comment}{// Constants for player movement}}
+\DoxyCodeLine{98         \textcolor{keyword}{const} \textcolor{keywordtype}{float} \_moveSpeed = 200;}
+\DoxyCodeLine{99         \textcolor{keyword}{const} \textcolor{keywordtype}{float} \_dodgeSpeed = 1100;}
+\DoxyCodeLine{100         \textcolor{keyword}{const} \textcolor{keywordtype}{float} \_friction = 1600;}
+\DoxyCodeLine{101         \textcolor{keyword}{const} \textcolor{keywordtype}{float} \_dodgeFriction = 9000;}
+\DoxyCodeLine{102         \textcolor{keyword}{const} \textcolor{keywordtype}{float} \_attackRange = 40;}
+\DoxyCodeLine{103         \textcolor{keyword}{const} \textcolor{keywordtype}{float} \_deadZone = 0.01;}
+\DoxyCodeLine{104         \textcolor{keyword}{const} \textcolor{keywordtype}{float} \_attackTime = 0.6;}
+\DoxyCodeLine{105         \textcolor{keyword}{const} \textcolor{keywordtype}{float} \_dodgeTime = 0.6;}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107         \textcolor{comment}{// Current direction to move in based off given user input}}
+\DoxyCodeLine{108         sf::Vector2<float> \_moveVec;}
+\DoxyCodeLine{109         sf::Vector2<float> \_lastMoveVec;}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111         \textcolor{comment}{// Current time since last attack}}
+\DoxyCodeLine{112         \textcolor{keywordtype}{float} \_lastAttackTime, \_lastDodgeTime;}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114         \textcolor{comment}{// tracking red glow}}
+\DoxyCodeLine{115         \textcolor{keywordtype}{float} \_redTime;}
+\DoxyCodeLine{116         \textcolor{keywordtype}{bool} \_isRed;}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118         \textcolor{comment}{// Current direction player is dodging in, as well as the speed of the dodge}}
+\DoxyCodeLine{119         sf::Vector2<float> \_dodgeVec;}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{127         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_a464755533654054313735283c44747dd}{onUpdate}}(\textcolor{keywordtype}{float} deltaTime);}
 \DoxyCodeLine{128 }
-\DoxyCodeLine{136         sf::Vector2<float> \mbox{\hyperlink{class_player_a35bfa3cd92a684ccdeaff94da41aeb3e}{getUnitVector}}(sf::Vector2<float> vec);}
-\DoxyCodeLine{137 \};}
+\DoxyCodeLine{135         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_a91567245da0d74ae16791c230decb4e4}{onCollision}}(\mbox{\hyperlink{class_entity}{Entity}} \&hitEntity); }
+\DoxyCodeLine{136 }
+\DoxyCodeLine{147         \textcolor{keywordtype}{float} \mbox{\hyperlink{class_player_a5e61505b6f406cd389af4fc16d0201b8}{checkDeadMoveAxis}}(\textcolor{keywordtype}{float} velAxis, \textcolor{keywordtype}{float} moveAxis, \textcolor{keywordtype}{float} friction, \textcolor{keywordtype}{float} deltaTime);}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{157         \textcolor{keywordtype}{float} \mbox{\hyperlink{class_player_ab9429d7ae67713444f59d5e7d64f3505}{getSecondsPerFrame}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{158 \};}
 
 \end{DoxyCode}

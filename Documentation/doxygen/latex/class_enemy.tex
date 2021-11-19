@@ -13,6 +13,8 @@ Inheritance diagram for Enemy\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{class_enemy_a680328a921b401178c42b0fe8bc09629}{Enemy}} (std\+::vector$<$ \mbox{\hyperlink{class_entity}{Entity}} $\ast$ $>$ $\ast$entity\+Vec)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_enemy_ae01c62a474fbcd547000ff1068976d49}{take\+Damage}} (int damage)
 \begin{DoxyCompactList}\small\item\em changes enemy health amount \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_enemy_a174811c422d9cb491845d3dd6a4215d8}{get\+Ammo}} ()
@@ -27,13 +29,19 @@ void \mbox{\hyperlink{class_enemy_ad9f1ccac5aaf2536b37c049ef54abce9}{set\+Friend
 \begin{DoxyCompactList}\small\item\em establishes pointer to other enemies \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_enemy_abc8c4fbe9e8e78885ac9bf33a9923029}{on\+Update}} (float delta\+Time)
 \begin{DoxyCompactList}\small\item\em basic AI structure, determines movement/attacks \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_enemy_a59d6c0c2623f38542868baf584985a7e}{on\+Draw}} ()
+\item 
+void \mbox{\hyperlink{class_enemy_aa8201464e3975d93b2d10c92556bb86f}{do\+Damage}} (int damage)
+\begin{DoxyCompactList}\small\item\em do\+Damage override to stun enemies \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_enemy_ab3d0a8e5e9254a0c003358fa363313f4}{on\+Collision}} (\mbox{\hyperlink{class_entity}{Entity}} \&hit\+Entity)
-\begin{DoxyCompactList}\small\item\em does nothing, exists for pure virtual override \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em does nothing, exists for pure virtual override \end{DoxyCompactList}\item 
+Entity\+Type \mbox{\hyperlink{class_enemy_a760a4479ccb7f736d5d9c4ea0417a29a}{get\+Entity\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Gets the entity type. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_enemy_aa177bcd158893703ddf0b1d9a2f02093}\label{class_enemy_aa177bcd158893703ddf0b1d9a2f02093}} 
-int {\bfseries ammo}
+\mbox{\Hypertarget{class_enemy_a27eb42d3e5d0ffdc1795004ccce4fec3}\label{class_enemy_a27eb42d3e5d0ffdc1795004ccce4fec3}} 
+int {\bfseries \+\_\+ammo}
 \item 
 \mbox{\Hypertarget{class_enemy_a2334ddf66f07d7f4fa0fb1c51c0d75e7}\label{class_enemy_a2334ddf66f07d7f4fa0fb1c51c0d75e7}} 
 float {\bfseries \+\_\+atk\+Time}
@@ -44,8 +52,20 @@ bool {\bfseries \+\_\+attacking}
 \mbox{\Hypertarget{class_enemy_a5774e85c3a450191e5862a4c143f34f2}\label{class_enemy_a5774e85c3a450191e5862a4c143f34f2}} 
 \mbox{\hyperlink{class_player}{Player}} $\ast$ {\bfseries \+\_\+player}
 \item 
-\mbox{\Hypertarget{class_enemy_a04f56cbdcd0862e77894d4d220fe342b}\label{class_enemy_a04f56cbdcd0862e77894d4d220fe342b}} 
-std\+::vector$<$ \mbox{\hyperlink{class_enemy}{Enemy}} $\ast$ $>$ $\ast$ {\bfseries friends}
+\mbox{\Hypertarget{class_enemy_a0bfa694c3ec2ac217ae1a9749d8f9bec}\label{class_enemy_a0bfa694c3ec2ac217ae1a9749d8f9bec}} 
+std\+::vector$<$ \mbox{\hyperlink{class_enemy}{Enemy}} $\ast$ $>$ $\ast$ {\bfseries \+\_\+friends}
+\item 
+\mbox{\Hypertarget{class_enemy_a5ad8a827b28dd24331a434d1993d5c01}\label{class_enemy_a5ad8a827b28dd24331a434d1993d5c01}} 
+float {\bfseries \+\_\+speed}
+\item 
+\mbox{\Hypertarget{class_enemy_aeb2696c48a37973db2f876ebb338b159}\label{class_enemy_aeb2696c48a37973db2f876ebb338b159}} 
+float {\bfseries \+\_\+stun}
+\item 
+\mbox{\Hypertarget{class_enemy_a0081f133b18fefdc08b63ffc38b940b1}\label{class_enemy_a0081f133b18fefdc08b63ffc38b940b1}} 
+const float {\bfseries \+\_\+attack\+Range} = 50
+\item 
+\mbox{\Hypertarget{class_enemy_a6e1d698ca22208da2720c91306a30b28}\label{class_enemy_a6e1d698ca22208da2720c91306a30b28}} 
+sf\+::\+Vector2$<$ float $>$ {\bfseries \+\_\+attack\+Dir}
 \end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
@@ -53,7 +73,44 @@ std\+::vector$<$ \mbox{\hyperlink{class_enemy}{Enemy}} $\ast$ $>$ $\ast$ {\bfser
 \doxysubsection{Detailed Description}
 \mbox{\hyperlink{class_enemy}{Enemy}} class 
 
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_enemy_a680328a921b401178c42b0fe8bc09629}\label{class_enemy_a680328a921b401178c42b0fe8bc09629}} 
+\index{Enemy@{Enemy}!Enemy@{Enemy}}
+\index{Enemy@{Enemy}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{Enemy()}{Enemy()}}
+{\footnotesize\ttfamily Enemy\+::\+Enemy (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_entity}{Entity}} $\ast$ $>$ $\ast$}]{entity\+Vec }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity\+Vec} & Vector holding all entities \\
+\hline
+\end{DoxyParams}
+
+
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_enemy_aa8201464e3975d93b2d10c92556bb86f}\label{class_enemy_aa8201464e3975d93b2d10c92556bb86f}} 
+\index{Enemy@{Enemy}!doDamage@{doDamage}}
+\index{doDamage@{doDamage}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{doDamage()}{doDamage()}}
+{\footnotesize\ttfamily void Enemy\+::do\+Damage (\begin{DoxyParamCaption}\item[{int}]{damage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+do\+Damage override to stun enemies 
+
+
+\begin{DoxyParams}{Parameters}
+{\em damage} & damage amount \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_entity_a3eb4bd5f0f6698ed9632004ef0d170ba}{Entity}}.
+
 \mbox{\Hypertarget{class_enemy_a174811c422d9cb491845d3dd6a4215d8}\label{class_enemy_a174811c422d9cb491845d3dd6a4215d8}} 
 \index{Enemy@{Enemy}!getAmmo@{getAmmo}}
 \index{getAmmo@{getAmmo}!Enemy@{Enemy}}
@@ -67,6 +124,23 @@ get current ammo note\+: ammo not currently in use
 \begin{DoxyReturn}{Returns}
 ammo 
 \end{DoxyReturn}
+\mbox{\Hypertarget{class_enemy_a760a4479ccb7f736d5d9c4ea0417a29a}\label{class_enemy_a760a4479ccb7f736d5d9c4ea0417a29a}} 
+\index{Enemy@{Enemy}!getEntityType@{getEntityType}}
+\index{getEntityType@{getEntityType}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{getEntityType()}{getEntityType()}}
+{\footnotesize\ttfamily Entity\+Type Enemy\+::get\+Entity\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the entity type. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_entity}{Entity}} type 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_entity_aad5218b6073670ba318c5f3b281c5d00}{Entity}}.
+
 \mbox{\Hypertarget{class_enemy_a4deeb25f9d678adfee645c25b300309b}\label{class_enemy_a4deeb25f9d678adfee645c25b300309b}} 
 \index{Enemy@{Enemy}!getIsAlive@{getIsAlive}}
 \index{getIsAlive@{getIsAlive}!Enemy@{Enemy}}
@@ -94,6 +168,16 @@ does nothing, exists for pure virtual override
 
 Implements \mbox{\hyperlink{class_entity_ab61623f60c5a7c04deaf0dcb2d1f97de}{Entity}}.
 
+\mbox{\Hypertarget{class_enemy_a59d6c0c2623f38542868baf584985a7e}\label{class_enemy_a59d6c0c2623f38542868baf584985a7e}} 
+\index{Enemy@{Enemy}!onDraw@{onDraw}}
+\index{onDraw@{onDraw}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{onDraw()}{onDraw()}}
+{\footnotesize\ttfamily void Enemy\+::on\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Implementation of \mbox{\hyperlink{class_enemy_a59d6c0c2623f38542868baf584985a7e}{on\+Draw()}} 
+
+Reimplemented from \mbox{\hyperlink{class_entity_a820404587abe78b6383d829348efbe2b}{Entity}}.
+
 \mbox{\Hypertarget{class_enemy_abc8c4fbe9e8e78885ac9bf33a9923029}\label{class_enemy_abc8c4fbe9e8e78885ac9bf33a9923029}} 
 \index{Enemy@{Enemy}!onUpdate@{onUpdate}}
 \index{onUpdate@{onUpdate}!Enemy@{Enemy}}
@@ -106,7 +190,7 @@ basic AI structure, determines movement/attacks
 
 
 \begin{DoxyParams}{Parameters}
-{\em delta\+Time} & time since last frame \\
+{\em delta\+Time} & time since last frame in seconds \\
 \hline
 \end{DoxyParams}
 

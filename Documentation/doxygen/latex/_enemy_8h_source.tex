@@ -9,37 +9,47 @@
 \DoxyCodeLine{5 }
 \DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}Entity.h"{}}}
 \DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}Player.h"{}}}
-\DoxyCodeLine{8 }
-\DoxyCodeLine{10 \textcolor{keyword}{class }\mbox{\hyperlink{class_enemy}{Enemy}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_entity}{Entity}}}
-\DoxyCodeLine{11 \{}
-\DoxyCodeLine{12     \textcolor{keyword}{private}:}
-\DoxyCodeLine{13         \textcolor{keywordtype}{int} ammo;}
-\DoxyCodeLine{14         \textcolor{keywordtype}{float} \_atkTime;}
-\DoxyCodeLine{15         \textcolor{keywordtype}{bool} \_attacking;}
-\DoxyCodeLine{16         \mbox{\hyperlink{class_player}{Player}}* \_player;}
-\DoxyCodeLine{17         std::vector<Enemy*>* friends;}
-\DoxyCodeLine{18         }
-\DoxyCodeLine{19     \textcolor{keyword}{public}:}
-\DoxyCodeLine{20         \mbox{\hyperlink{class_enemy}{Enemy}}();}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}VectorUtil.h"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_enemy}{Enemy}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_entity}{Entity}}}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13     \textcolor{keyword}{private}:}
+\DoxyCodeLine{14         \textcolor{keywordtype}{int} \_ammo;}
+\DoxyCodeLine{15         \textcolor{keywordtype}{float} \_atkTime;}
+\DoxyCodeLine{16         \textcolor{keywordtype}{bool} \_attacking;}
+\DoxyCodeLine{17         \mbox{\hyperlink{class_player}{Player}}* \_player;}
+\DoxyCodeLine{18         std::vector<Enemy*>* \_friends;}
+\DoxyCodeLine{19         \textcolor{keywordtype}{float} \_speed;}
+\DoxyCodeLine{20         \textcolor{keywordtype}{float} \_stun;}
 \DoxyCodeLine{21 }
-\DoxyCodeLine{27         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_enemy_ae01c62a474fbcd547000ff1068976d49}{takeDamage}}(\textcolor{keywordtype}{int} damage);}
-\DoxyCodeLine{28 }
-\DoxyCodeLine{35         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_enemy_a174811c422d9cb491845d3dd6a4215d8}{getAmmo}}();}
-\DoxyCodeLine{36         }
-\DoxyCodeLine{42         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_enemy_a4deeb25f9d678adfee645c25b300309b}{getIsAlive}}();}
-\DoxyCodeLine{43 }
-\DoxyCodeLine{49         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_enemy_a875a1e7b6e595165f3600e1929f4182c}{spawn}}(sf::Vector2<float> pos);}
-\DoxyCodeLine{50 }
-\DoxyCodeLine{56         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_enemy_af95d8a33e1f1a5be9f9c36e400013161}{setPlayer}}(\mbox{\hyperlink{class_player}{Player}}* playerRef);}
-\DoxyCodeLine{57 }
-\DoxyCodeLine{63         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_enemy_ad9f1ccac5aaf2536b37c049ef54abce9}{setFriends}}(std::vector<Enemy*>\& friendRef);}
-\DoxyCodeLine{64 }
-\DoxyCodeLine{65 }
-\DoxyCodeLine{71         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_enemy_abc8c4fbe9e8e78885ac9bf33a9923029}{onUpdate}}(\textcolor{keywordtype}{float} deltaTime);}
-\DoxyCodeLine{72 }
-\DoxyCodeLine{76         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_enemy_ab3d0a8e5e9254a0c003358fa363313f4}{onCollision}}(\mbox{\hyperlink{class_entity}{Entity}} \&hitEntity) \{\}}
-\DoxyCodeLine{77 }
-\DoxyCodeLine{78         \mbox{\hyperlink{class_enemy}{\string~Enemy}}();}
-\DoxyCodeLine{79 \};}
+\DoxyCodeLine{22         \textcolor{keyword}{const} \textcolor{keywordtype}{float} \_attackRange = 50; }
+\DoxyCodeLine{23         sf::Vector2<float> \_attackDir;}
+\DoxyCodeLine{24         }
+\DoxyCodeLine{25     \textcolor{keyword}{public}:}
+\DoxyCodeLine{31         \mbox{\hyperlink{class_enemy_a680328a921b401178c42b0fe8bc09629}{Enemy}}(std::vector<Entity*> *entityVec);}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{38         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_enemy_ae01c62a474fbcd547000ff1068976d49}{takeDamage}}(\textcolor{keywordtype}{int} damage);}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{46         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_enemy_a174811c422d9cb491845d3dd6a4215d8}{getAmmo}}();}
+\DoxyCodeLine{47         }
+\DoxyCodeLine{53         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_enemy_a4deeb25f9d678adfee645c25b300309b}{getIsAlive}}();}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{60         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_enemy_a875a1e7b6e595165f3600e1929f4182c}{spawn}}(sf::Vector2<float> pos);}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{67         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_enemy_af95d8a33e1f1a5be9f9c36e400013161}{setPlayer}}(\mbox{\hyperlink{class_player}{Player}}* playerRef);}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{74         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_enemy_ad9f1ccac5aaf2536b37c049ef54abce9}{setFriends}}(std::vector<Enemy*>\& friendRef);}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 }
+\DoxyCodeLine{82         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_enemy_abc8c4fbe9e8e78885ac9bf33a9923029}{onUpdate}}(\textcolor{keywordtype}{float} deltaTime);}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{87         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_enemy_a59d6c0c2623f38542868baf584985a7e}{onDraw}}();}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{94         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_enemy_aa8201464e3975d93b2d10c92556bb86f}{doDamage}}(\textcolor{keywordtype}{int} damage);}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{99         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_enemy_ab3d0a8e5e9254a0c003358fa363313f4}{onCollision}}(\mbox{\hyperlink{class_entity}{Entity}} \&hitEntity) \{\}}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{106         EntityType \mbox{\hyperlink{class_enemy_a760a4479ccb7f736d5d9c4ea0417a29a}{getEntityType}}();}
+\DoxyCodeLine{107 \};}
 
 \end{DoxyCode}

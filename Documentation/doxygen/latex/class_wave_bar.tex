@@ -1,0 +1,44 @@
+\hypertarget{class_wave_bar}{}\doxysection{Wave\+Bar Class Reference}
+\label{class_wave_bar}\index{WaveBar@{WaveBar}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_wave_bar_a30fde622c1b2e4efaa18ada774b88f77}\label{class_wave_bar_a30fde622c1b2e4efaa18ada774b88f77}} 
+void {\bfseries set\+Data} (\mbox{\hyperlink{class_wave_manager}{Wave\+Manager}} $\ast$wave, sf\+::\+Render\+Window $\ast$game\+Window, sf\+::\+View $\ast$view)
+\begin{DoxyCompactList}\small\item\em Called from \mbox{\hyperlink{class_u_i_manager}{UIManager}}\textquotesingle{}s own \mbox{\hyperlink{class_wave_bar_a30fde622c1b2e4efaa18ada774b88f77}{set\+Data()}}. Set pointers needed to get round information. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_wave_bar_a52e993dcb0ce8a7ee802b42b239a9970}\label{class_wave_bar_a52e993dcb0ce8a7ee802b42b239a9970}} 
+void {\bfseries draw} (sf\+::\+Time frame\+Time)
+\begin{DoxyCompactList}\small\item\em Called from \mbox{\hyperlink{class_u_i_manager}{UIManager}} on\+Draw(), Draw a heads up display on the current round information. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_wave_bar_a95e6a421ab3501c5f945b6e319f6b1c8}\label{class_wave_bar_a95e6a421ab3501c5f945b6e319f6b1c8}} 
+void {\bfseries set\+Delta\+Time} ()
+\begin{DoxyCompactList}\small\item\em Called from \mbox{\hyperlink{class_u_i_manager}{UIManager}} on\+Draw(). Sets member variable \+\_\+delta\+Time for later use. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_wave_bar_aa914fe750cdca3e22907b37f822bfa92}\label{class_wave_bar_aa914fe750cdca3e22907b37f822bfa92}} 
+void {\bfseries draw\+Wave\+Notification} (sf\+::\+Time frame\+Time)
+\begin{DoxyCompactList}\small\item\em Called from \mbox{\hyperlink{class_wave_bar}{Wave\+Bar}} \mbox{\hyperlink{class_wave_bar_a52e993dcb0ce8a7ee802b42b239a9970}{draw()}}, Set pointers needed to get round information. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_wave_bar_a41df889af90fab8f4f47602a53ebde5e}\label{class_wave_bar_a41df889af90fab8f4f47602a53ebde5e}} 
+\mbox{\hyperlink{class_wave_manager}{Wave\+Manager}} $\ast$ {\bfseries \+\_\+wave}
+\item 
+\mbox{\Hypertarget{class_wave_bar_a6d8ea49df578ecb399020e486296ae39}\label{class_wave_bar_a6d8ea49df578ecb399020e486296ae39}} 
+sf\+::\+Render\+Window $\ast$ {\bfseries \+\_\+game\+Window}
+\item 
+\mbox{\Hypertarget{class_wave_bar_aca0a58caf8791829321fb9906f7e05c3}\label{class_wave_bar_aca0a58caf8791829321fb9906f7e05c3}} 
+sf\+::\+View $\ast$ {\bfseries \+\_\+view}
+\item 
+\mbox{\Hypertarget{class_wave_bar_a3e3a252f1712057a0c5ec93ec536ce7f}\label{class_wave_bar_a3e3a252f1712057a0c5ec93ec536ce7f}} 
+int {\bfseries \+\_\+new\+Wave\+Matcher}
+\item 
+\mbox{\Hypertarget{class_wave_bar_a09c07f02544bc6e4e24c04c476459cfd}\label{class_wave_bar_a09c07f02544bc6e4e24c04c476459cfd}} 
+float {\bfseries \+\_\+time\+Elapsed}
+\item 
+\mbox{\Hypertarget{class_wave_bar_a62d4ce15332711464485a0db61d68aa5}\label{class_wave_bar_a62d4ce15332711464485a0db61d68aa5}} 
+bool {\bfseries \+\_\+is\+Drawing\+Notif} = false
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/Wave\+Bar.\+h\item 
+src/Wave\+Bar.\+cpp\end{DoxyCompactItemize}

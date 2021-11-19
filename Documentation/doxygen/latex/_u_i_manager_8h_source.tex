@@ -1,0 +1,35 @@
+\hypertarget{_u_i_manager_8h_source}{}\doxysection{UIManager.\+h}
+\label{_u_i_manager_8h_source}\index{src/UIManager.h@{src/UIManager.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}Player.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}WaveManager.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}HealthBar.h"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}WaveBar.h"{}}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{14 \textcolor{keyword}{class }\mbox{\hyperlink{class_u_i_manager}{UIManager}}}
+\DoxyCodeLine{15 \{}
+\DoxyCodeLine{16     \textcolor{keyword}{public}:        }
+\DoxyCodeLine{17         \mbox{\hyperlink{class_player}{Player}}* \_player;}
+\DoxyCodeLine{18         \mbox{\hyperlink{class_wave_manager}{WaveManager}}* \_wave;}
+\DoxyCodeLine{19         sf::RenderWindow* \_gameWindow;}
+\DoxyCodeLine{20         sf::View* \_view;}
+\DoxyCodeLine{21         \mbox{\hyperlink{class_health_bar}{HealthBar}} \_healthBar;}
+\DoxyCodeLine{22         \mbox{\hyperlink{class_wave_bar}{WaveBar}} \_waveBar;}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{29         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_u_i_manager_a9d615f8a0ee4c31668bb2b8b0e74229f}{setData}}(\mbox{\hyperlink{class_player}{Player}} \&player, \mbox{\hyperlink{class_wave_manager}{WaveManager}} \&\_wave,  sf::RenderWindow \&gameWindow, sf::View \&view );}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{34         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_u_i_manager_abd6d611223d051fbbb67fdd6c6326576}{onDraw}}(sf::Time frameTime);}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{40         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_u_i_manager_a1175f56518b027ea88a45e3cf27509fa}{drawMap}}();}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42     \textcolor{keyword}{private}:}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \};}
+\DoxyCodeLine{45 }
+
+\end{DoxyCode}
