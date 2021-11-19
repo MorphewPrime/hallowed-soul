@@ -24,7 +24,8 @@ enum EntityType
 };
 
 /* A helper struct to store data that has to do with animation */
-struct AnimationData{
+struct AnimationData {
+    /** The current direction */
     enum Direction
     {
         Up,
@@ -32,19 +33,33 @@ struct AnimationData{
         Down,
         Right,
     } direction;
+    /** The number of rows in the sprite sheet */
     int numRows;
+    /** The number of columns in the sprite sheet */
     int numCols;
+    /** The number of frames in the walking animation */
     int numWalkingFrames;
+    /** The 0-indexed row number for the walking up animation */
     int upWalkRow;
+    /** The 0-indexed row number for the walking left animation */
     int leftWalkRow;
+    /** The 0-indexed row number for the walking down animation */
     int downWalkRow;
+    /** The 0-indexed row number for the walking right animation */
     int rightWalkRow;
+    /** The number of frames in the attacking animation */
     int numAttackingFrames;
+    /** The 0-indexed row number for the attacking up animation */
     int upAttackRow;
+    /** The 0-indexed row number for the attacking left animation */
     int leftAttackRow;
+    /** The 0-indexed row number for the attacking down animation */
     int downAttackRow;
+    /** The 0-indexed row number for the attacking right animation */
     int rightAttackRow;
+    /** The (column, row) of the current frame to display */
     sf::Vector2i currentFrame;
+    /** The amount of time since the frame was last changed */
     float timeAccumulated;
 };
 
@@ -258,7 +273,7 @@ class Entity
         // TODO: Sprite array?
         sf::Sprite _sprite;
 
-        /** Sets the sprite direction */
+        /** Sets the sprite direction by reading the entity's velocity*/
         void setSpriteDirection();
 
         /** Sets the walking frame, general for entities that can walk. */
@@ -273,7 +288,12 @@ class Entity
         /** Helper function to update the sprite rectangle */
         void updateTextureRect();
 
-        /** Compute seconds per frame based on velocity */
+        /** Compute seconds per frame based on velocity 
+         * 
+         * Override this to define how fast you would like your subclass to be animated at any given time.
+         * 
+         * @returns how many seconds to display the current frame
+        */
         virtual float getSecondsPerFrame() const;
         // This is going to be the list of all entities in the game, we need this for ray casting
         std::vector<Entity*> *_entityVec;
