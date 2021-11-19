@@ -146,5 +146,11 @@ class WaveManager
          * @return returns a pointer to the requested enemy
          */
         Enemy* getEnemy(int n);
+
+        /**
+         * @brief Get the vector containing all enemies
+         * 
+         * @return the enemies vector
+         */
         const std::vector<Enemy*> &getEnemiesVec() const;
 };
